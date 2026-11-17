@@ -1,0 +1,161 @@
+/* ============================================================
+   T03 DARK OFFER STACK — derived from Template-example/promo-banner/t03.css
+   Same look: dark poster, big headline, offer line, check-mark benefits,
+   two round photos, cream footer. Differences, on purpose:
+   - colors, fonts and safe area come from engine tokens (--lf-*), not hard-coded
+   - one design-unit scale per format (--u); the original is 540 px wide, 1 unit = 1 px of it
+   - square is a two-column composition, portrait and vertical are one column
+   - proof, offer and the footer's second segment come from verified facts or brand data,
+     not from fixed text (no Trustpilot, discount code, delivery, returns or Klarna wording)
+   ============================================================ */
+
+.lf-dark-offer-stack {
+  --u: 1.45;
+  --dos-ink: #ffffff;           /* text on the dark background: schema checks contrast against brand.primary */
+  --dos-footer-ink: #1a1a1a;    /* text on the footer: schema checks contrast against brand.secondary */
+  --dos-divider: #cccccc;
+
+  display: flex;
+  flex-direction: column;
+  gap: calc(26px * var(--u));
+  padding: var(--lf-safe-top) var(--lf-safe-right) var(--lf-safe-bottom) var(--lf-safe-left);
+  background: var(--lf-brand-primary);
+  color: var(--dos-ink);
+  font-family: var(--lf-font-body);
+  text-align: center;
+}
+.lf-dark-offer-stack[data-format="portrait"] { --u: 1.45; }
+.lf-dark-offer-stack[data-format="vertical"] { --u: 1.5; }
+.lf-dark-offer-stack * { margin: 0; }
+/* Words are never broken mid-word to make text "fit": a word that is too wide must be shrunk by the fit groups,
+   and if it still does not fit the render fails with LAYOUT_OVERFLOW instead of showing a broken word. */
+
+/* ---- 1. proof (optional) ---- */
+.lf-dark-offer-stack .dos-top { display: flex; justify-content: center; }
+.lf-dark-offer-stack .dos-top:empty { display: none; }
+.lf-dark-offer-stack .dos-proof {
+  max-width: 100%;
+  padding: calc(10px * var(--u)) calc(24px * var(--u));
+  border: calc(2px * var(--u)) solid var(--lf-brand-accent);
+  border-radius: calc(30px * var(--u));
+  font-size: calc(20px * var(--u) * var(--lf-fit-proof, 1));
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+/* ---- 2–4. headline, offer, benefits ---- */
+.lf-dark-offer-stack .dos-main { display: flex; flex-direction: column; align-items: center; }
+.lf-dark-offer-stack .dos-headline {
+  font-family: var(--lf-font-heading);
+  font-weight: 900;
+  font-size: calc(58px * var(--u) * var(--lf-fit-headline, 1));
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.lf-dark-offer-stack .dos-accent { color: var(--lf-brand-accent); }
+.lf-dark-offer-stack .dos-offer {
+  margin-top: calc(20px * var(--u));
+  font-size: calc(26px * var(--u) * var(--lf-fit-offer, 1));
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+}
+.lf-dark-offer-stack .dos-benefits {
+  list-style: none;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: calc(34px * var(--u));
+  padding: 0;
+  text-align: left;
+  font-size: calc(19px * var(--u) * var(--lf-fit-benefits, 1));
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.012em;
+}
+.lf-dark-offer-stack .dos-benefits li { display: flex; align-items: center; gap: calc(13px * var(--u)); }
+.lf-dark-offer-stack .dos-benefits li + li { margin-top: calc(20px * var(--u)); }
+.lf-dark-offer-stack .dos-check { flex: none; width: calc(27px * var(--u)); height: calc(27px * var(--u)); }
+.lf-dark-offer-stack .dos-check circle { fill: var(--lf-brand-accent); }
+
+/* ---- 5. photos: round apertures ---- */
+/* The photo block takes whatever height is left and the circles shrink to fit it (never beyond --photo), so long copy
+   above never pushes the footer out of the safe box. Below the minimum the layout reports an overflow instead. */
+.lf-dark-offer-stack .dos-photos {
+  --photo: calc(290px * var(--u));
+  flex: 1 1 0;
+  min-height: calc(130px * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(18px * var(--u));
+}
+.lf-dark-offer-stack .dos-photos--1 { --photo: calc(370px * var(--u)); }
+.lf-dark-offer-stack .dos-photo {
+  flex: none;
+  height: min(100%, var(--photo));
+  width: auto;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffffff;
+}
+/* A whole product inside a circle: inset the image to the circle's inscribed square so nothing is cut at the edge.
+   The inset is a share of the figure's own width: padding in % refers to the parent, so it is set on an inner box instead. */
+.lf-dark-offer-stack .dos-photo--contain .dos-img { width: 70%; height: 70%; margin: 15%; }
+.lf-dark-offer-stack .dos-img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.lf-dark-offer-stack .dos-photo--cover .dos-img { object-fit: cover; }
+
+/* ---- 6. footer panel, inside the safe box ---- */
+.lf-dark-offer-stack .dos-footer {
+  display: flex;
+  align-items: stretch;
+  min-height: calc(58px * var(--u));
+  overflow: hidden;
+  border-radius: calc(18px * var(--u));
+  background: var(--lf-brand-secondary);
+  color: var(--dos-footer-ink);
+}
+.lf-dark-offer-stack .dos-footer__seg {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(9px * var(--u));
+  padding: calc(11px * var(--u)) calc(14px * var(--u));
+  font-size: calc(17px * var(--u) * var(--lf-fit-footer, 1));
+  line-height: 1.25;
+}
+.lf-dark-offer-stack .dos-footer__divider { flex: none; width: 1px; background: var(--dos-divider); }
+.lf-dark-offer-stack .dos-cta { font-weight: 700; }
+.lf-dark-offer-stack .dos-brand { font-family: var(--lf-font-heading); font-weight: 800; }
+.lf-dark-offer-stack .dos-arrow { flex: none; width: calc(21px * var(--u)); height: calc(21px * var(--u)); fill: var(--lf-brand-accent); }
+.lf-dark-offer-stack .dos-logo { display: block; width: auto; max-width: 100%; max-height: calc(36px * var(--u)); object-fit: contain; }
+
+/* ---- square: two columns (copy left, photos right), footer across ---- */
+.lf-dark-offer-stack[data-format="square"] {
+  --u: 1.5;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas: "top photos" "main photos" "footer footer";
+  column-gap: calc(36px * var(--u));
+  row-gap: calc(24px * var(--u));
+  text-align: left;
+}
+.lf-dark-offer-stack[data-format="square"] .dos-top { grid-area: top; justify-content: flex-start; }
+.lf-dark-offer-stack[data-format="square"] .dos-main { grid-area: main; align-items: flex-start; justify-content: center; }
+/* 200 units × 1.5 = 300 px: fits the right column (about 310 px) for one or two photos. */
+.lf-dark-offer-stack[data-format="square"] .dos-photos { grid-area: photos; flex-direction: column; flex: none; min-height: 0; --photo: calc(200px * var(--u)); }
+.lf-dark-offer-stack[data-format="square"] .dos-photos--1 { --photo: calc(200px * var(--u)); }
+.lf-dark-offer-stack[data-format="square"] .dos-photo { height: var(--photo); }
+/* The square copy column is the tightest space in the set, so its blocks sit closer together. */
+.lf-dark-offer-stack[data-format="square"] .dos-offer { margin-top: calc(14px * var(--u)); }
+.lf-dark-offer-stack[data-format="square"] .dos-benefits { margin-top: calc(24px * var(--u)); }
+.lf-dark-offer-stack[data-format="square"] .dos-benefits li + li { margin-top: calc(14px * var(--u)); }
+.lf-dark-offer-stack[data-format="square"] .dos-footer { grid-area: footer; }
