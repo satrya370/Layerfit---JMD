@@ -1,0 +1,9 @@
+references/
+node_modules/
+.next/
+dist/
+data/
+artifacts/
+.env*
+!.env.example
+*.tsbuildinfo
