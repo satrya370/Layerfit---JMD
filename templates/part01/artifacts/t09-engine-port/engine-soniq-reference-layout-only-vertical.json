@@ -1,0 +1,48 @@
+{
+  "status": "success",
+  "taskId": "42bd66f2-3d00-45ba-9e26-62ab624d1ecf",
+  "creativeId": "a9111111-1111-4111-8111-111111111111",
+  "revision": 1,
+  "format": "vertical",
+  "artifacts": [
+    {
+      "encoding": "png",
+      "storageKey": "campaigns/99999999-9999-4999-8999-999999999999/creatives/a9111111-1111-4111-8111-111111111111/r1/4506dde44a5992ce/vertical.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 279606,
+      "sha256": "e4b61f28b329c211b4e31164369c6ab1d475ae09c9f877f85c998a677d1ad367"
+    },
+    {
+      "encoding": "jpg",
+      "storageKey": "campaigns/99999999-9999-4999-8999-999999999999/creatives/a9111111-1111-4111-8111-111111111111/r1/4506dde44a5992ce/vertical.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 182541,
+      "sha256": "f05acd2e5698f5d7ce4b3c7d640b858d93df377ea422c8971d7cb64bdd7fb269"
+    }
+  ],
+  "diagnostics": {
+    "templateId": "question-hook-t09",
+    "templateVersion": "0.1.0",
+    "browserVersion": "Chrome/157.0.8103.79",
+    "cssHash": "a2a25e6f0b16a2df90d02300e945be7a44ce43acaa89a800a2a4da4ee671cd7d",
+    "fingerprint": "4506dde44a5992ce",
+    "durationMs": 920,
+    "stageMs": {
+      "validate": 0,
+      "assets": 2,
+      "fonts": 0,
+      "template": 4,
+      "content": 189,
+      "readiness": 24,
+      "layout": 6,
+      "screenshot": 262,
+      "encode": 132,
+      "storage": 70
+    },
+    "warnings": [],
+    "fittingSteps": 0,
+    "violations": []
+  }
+}

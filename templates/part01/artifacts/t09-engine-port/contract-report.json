@@ -1,0 +1,548 @@
+{
+  "contractVersion": "0.2",
+  "template": {
+    "id": "question-hook-t09",
+    "version": "0.1.0"
+  },
+  "passed": true,
+  "counts": {
+    "pass": 65,
+    "fail": 0,
+    "warn": 12
+  },
+  "checks": [
+    {
+      "id": "module.registry",
+      "status": "pass",
+      "detail": "registry accepts id, version, formats, rootClass and slot manifest"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "soniq-reference-layout-only"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "12 hostile or malformed variants rejected",
+      "case": "soniq-reference-layout-only"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "warn",
+      "detail": "4 selector(s) not scoped under .lf-question-hook-t09 or [data-template=\"question-hook-t09\"], e.g. .question[data-headline=\"lg\"] | .question[data-headline=\"md\"] | .hero[data-image-mode=\"cover\"] .hero__ring",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "soniq-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "warn",
+      "detail": "4 selector(s) not scoped under .lf-question-hook-t09 or [data-template=\"question-hook-t09\"], e.g. .question[data-headline=\"lg\"] | .question[data-headline=\"md\"] | .hero[data-image-mode=\"cover\"] .hero__ring",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "soniq-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "warn",
+      "detail": "4 selector(s) not scoped under .lf-question-hook-t09 or [data-template=\"question-hook-t09\"], e.g. .question[data-headline=\"lg\"] | .question[data-headline=\"md\"] | .hero[data-image-mode=\"cover\"] .hero__ring",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "soniq-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "toni-reference-layout-only"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "toni-reference-layout-only"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "warn",
+      "detail": "4 selector(s) not scoped under .lf-question-hook-t09 or [data-template=\"question-hook-t09\"], e.g. .question[data-headline=\"lg\"] | .question[data-headline=\"md\"] | .hero[data-image-mode=\"cover\"] .hero__ring",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "toni-reference-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "warn",
+      "detail": "4 selector(s) not scoped under .lf-question-hook-t09 or [data-template=\"question-hook-t09\"], e.g. .question[data-headline=\"lg\"] | .question[data-headline=\"md\"] | .hero[data-image-mode=\"cover\"] .hero__ring",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "toni-reference-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "warn",
+      "detail": "4 selector(s) not scoped under .lf-question-hook-t09 or [data-template=\"question-hook-t09\"], e.g. .question[data-headline=\"lg\"] | .question[data-headline=\"md\"] | .hero[data-image-mode=\"cover\"] .hero__ring",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "toni-reference-layout-only",
+      "format": "vertical"
+    }
+  ]
+}

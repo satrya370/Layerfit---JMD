@@ -1,0 +1,137 @@
+/* ============================================================
+   LayerFit T08 — Photo Overlay (standalone package)
+   Part 1 (this block): local fonts, canvas size and safe-area tokens, brand defaults.
+   Part 2 (below the marker): the design itself, identical to the engine module's
+   src/templates/part02/photo-overlay/styles.css. Edit the design there and copy it here;
+   a test in the engine repository fails when the two differ.
+   The design reads only --lf-* tokens, so the same CSS runs in the engine and here.
+   ============================================================ */
+
+/* Bundled fonts (SIL OFL 1.1, see assets/fonts/LICENSE-*.txt). No CDN: the renderer blocks all network requests. */
+@font-face { font-family: "LF Fraunces"; src: url("assets/fonts/fraunces-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: block; }
+@font-face { font-family: "LF Fraunces"; src: url("assets/fonts/fraunces-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: block; }
+@font-face { font-family: "LF Inter"; src: url("assets/fonts/inter-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: block; }
+@font-face { font-family: "LF Inter"; src: url("assets/fonts/inter-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: block; }
+@font-face { font-family: "LF Inter"; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: block; }
+@font-face { font-family: "LF Inter"; src: url("assets/fonts/inter-latin-900-normal.woff2") format("woff2"); font-weight: 900; font-display: block; }
+@font-face { font-family: "LF Montserrat"; src: url("assets/fonts/montserrat-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: block; }
+@font-face { font-family: "LF Montserrat"; src: url("assets/fonts/montserrat-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: block; }
+@font-face { font-family: "LF Montserrat"; src: url("assets/fonts/montserrat-latin-900-normal.woff2") format("woff2"); font-weight: 900; font-display: block; }
+@font-face { font-family: "LF Poppins"; src: url("assets/fonts/poppins-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: block; }
+@font-face { font-family: "LF Poppins"; src: url("assets/fonts/poppins-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "LF Poppins"; src: url("assets/fonts/poppins-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "LF Poppins"; src: url("assets/fonts/poppins-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: block; }
+
+/* Base rules the engine's document shell applies to every template. border-box matters: the safe-area padding sits inside the canvas size. */
+*, *::before, *::after { box-sizing: border-box; animation: none !important; transition: none !important; caret-color: transparent !important; }
+html, body { margin: 0; padding: 0; background: #c9ccc9; }
+.creative { position: relative; overflow: hidden; margin: 0 auto; }
+
+/* Canvas size and safe area per format. Order of insets: top / right / bottom / left.
+   Safe areas are a conservative baseline, not a guarantee against every placement: sources agree on about 14 %
+   (250 px) clear at the top of 9:16, and disagree on the bottom (about 20 to 35 %). */
+.lf-photo-overlay[data-format="square"]   { width: 1080px; height: 1080px; --lf-canvas-w: 1080px; --lf-canvas-h: 1080px; --lf-safe-top: 60px;  --lf-safe-right: 70px; --lf-safe-bottom: 60px;  --lf-safe-left: 70px; }
+.lf-photo-overlay[data-format="portrait"] { width: 1080px; height: 1350px; --lf-canvas-w: 1080px; --lf-canvas-h: 1350px; --lf-safe-top: 70px;  --lf-safe-right: 70px; --lf-safe-bottom: 70px;  --lf-safe-left: 70px; }
+.lf-photo-overlay[data-format="vertical"] { width: 1080px; height: 1920px; --lf-canvas-w: 1080px; --lf-canvas-h: 1920px; --lf-safe-top: 250px; --lf-safe-right: 70px; --lf-safe-bottom: 350px; --lf-safe-left: 70px; }
+
+/* Brand defaults. script.js overrides them from data.colors and data.fonts. */
+.lf-photo-overlay {
+  --lf-brand-primary: #17332f;
+  --lf-brand-secondary: #efe9de;
+  --lf-brand-accent: #f2b134;
+  --lf-font-heading: "LF Fraunces", Georgia, serif;
+  --lf-font-body: "LF Inter", Arial, sans-serif;
+}
+
+/* Shown only when the page is opened without data. Never part of a render: render.mjs always calls setCreative first. */
+.pov-empty { grid-column: 1 / -1; align-self: center; justify-self: center; max-width: 720px; font: 700 34px/1.3 var(--lf-font-body); text-align: center; color: #3b4743; }
+
+/* ===== DESIGN — identical to the engine module's styles.css ===== */
+/* ============================================================
+   T08 PHOTO OVERLAY
+   The photo leads, the headline is the biggest thing on the canvas, and there is one button.
+   Three text levels: headline, one support line (description and/or a short list), CTA.
+   Deliberately plain: flat color, hard corners, no cards, no shadows, no decorative gradients.
+   The one gradient is a dark scrim under the text on a full-bleed photo, so white text stays readable.
+   - A photo that may be cropped fills the canvas (cover) under the scrim.
+   - A photo that must stay whole sits on a flat field, and the text goes on a solid panel instead.
+   Colors, fonts and safe area come from engine tokens (--lf-*); the standalone package defines the same tokens.
+   Words are never broken to make text fit.
+   ============================================================ */
+
+.lf-photo-overlay {
+  --ink: #14171a;               /* dark text on the accent: schema checks contrast */
+  --h: 100px;                   /* headline */
+  --sup: 30px;                  /* support line and list */
+  --cta-h: 76px;
+  --cta-fs: 26px;
+  --brand-fs: 22px;
+  --tag-fs: 20px;
+  --gap: 20px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: var(--lf-safe-top) var(--lf-safe-right) var(--lf-safe-bottom) var(--lf-safe-left);
+  background: var(--lf-brand-secondary);
+  color: #ffffff;
+  font-family: var(--lf-font-body);
+}
+.lf-photo-overlay * { margin: 0; box-sizing: border-box; }
+.lf-photo-overlay .pov-svg { display: block; width: 100%; height: 100%; }
+
+/* ---- photo layer ---- */
+.lf-photo-overlay .pov-photo {
+  grid-area: 1 / 1 / 3 / 2; position: relative; min-height: 0; overflow: hidden;
+  margin: calc(-1 * var(--lf-safe-top)) calc(-1 * var(--lf-safe-right)) 0 calc(-1 * var(--lf-safe-left));
+}
+.lf-photo-overlay .pov-photo--cover { grid-area: 1 / 1 / 4 / 2; margin-bottom: calc(-1 * var(--lf-safe-bottom)); }
+.lf-photo-overlay .pov-figure { position: absolute; inset: 0; }
+.lf-photo-overlay .pov-photo--contain .pov-figure { inset: 9% 8% 3%; }
+.lf-photo-overlay .pov-img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.lf-photo-overlay .pov-img[data-image-fit="cover"] { object-fit: cover; }
+.lf-photo-overlay .pov-photo--cover::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgb(10 12 14 / 0.86) 0%, rgb(10 12 14 / 0.64) 34%, rgb(10 12 14 / 0) 66%);
+}
+
+/* ---- brand: a plain plate, so it reads on any photo ---- */
+.lf-photo-overlay .pov-top { grid-area: 1 / 1; position: relative; z-index: 1; justify-self: start; }
+.lf-photo-overlay .pov-brand {
+  display: inline-block; padding: 10px 18px; background: #ffffff; color: var(--ink);
+  font-family: var(--lf-font-heading); font-weight: 900; font-size: var(--brand-fs); line-height: 1.1; letter-spacing: -0.01em; text-transform: uppercase;
+}
+
+.lf-photo-overlay .pov-logo { display: block; width: auto; max-width: 100%; height: calc(var(--brand-fs) * 1.7); object-fit: contain; }
+
+/* ---- text block ---- */
+.lf-photo-overlay .pov-copy { grid-area: 3 / 1; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: var(--gap); min-width: 0; }
+.lf-photo-overlay .pov-copy--panel {
+  margin: 0 calc(-1 * var(--lf-safe-right)) calc(-1 * var(--lf-safe-bottom)) calc(-1 * var(--lf-safe-left));
+  padding: 44px var(--lf-safe-right) var(--lf-safe-bottom) var(--lf-safe-left);
+  background: var(--lf-brand-primary);
+}
+.lf-photo-overlay .pov-tag {
+  padding: 8px 14px; background: var(--lf-brand-accent); color: var(--ink);
+  font-size: calc(var(--tag-fs) * var(--lf-fit-tag, 1)); font-weight: 800; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.lf-photo-overlay .pov-headline {
+  font-family: var(--lf-font-heading); font-weight: 900; color: #ffffff;
+  font-size: calc(var(--h) * var(--lf-fit-headline, 1)); line-height: 1.02; letter-spacing: -0.035em; text-wrap: balance;
+}
+/* The marker block behind the key words: flat accent color, the way it is done by hand. */
+.lf-photo-overlay .pov-mark { padding: 0 0.12em; margin: 0 -0.04em; background: var(--lf-brand-accent); color: var(--ink); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.lf-photo-overlay .pov-support { max-width: 26em; font-size: calc(var(--sup) * var(--lf-fit-support, 1)); font-weight: 600; line-height: 1.3; color: rgb(255 255 255 / 0.92); }
+.lf-photo-overlay .pov-points { display: flex; flex-wrap: wrap; gap: 10px 32px; padding: 0; list-style: none; font-size: calc(var(--sup) * 0.92 * var(--lf-fit-support, 1)); font-weight: 700; line-height: 1.25; }
+.lf-photo-overlay .pov-points li { display: flex; align-items: center; gap: 10px; }
+.lf-photo-overlay .pov-points .pov-svg { flex: none; width: 1em; height: 1em; color: var(--lf-brand-accent); }
+.lf-photo-overlay .pov-cta {
+  display: flex; align-items: center; gap: 22px; max-width: 100%; height: var(--cta-h); margin-top: 6px; padding: 0 28px;
+  background: #ffffff; color: var(--ink);
+  font-size: calc(var(--cta-fs) * var(--lf-fit-cta, 1)); font-weight: 900; line-height: 1.1; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap;
+}
+.lf-photo-overlay .pov-cta-icon { flex: none; width: 1.15em; height: 1.15em; }
+
+/* ---- formats: same system, type scaled for the canvas (designed at phone size first) ---- */
+.lf-photo-overlay[data-format="portrait"] { --h: 116px; --sup: 34px; --cta-h: 88px; --cta-fs: 30px; --brand-fs: 25px; --tag-fs: 22px; --gap: 24px; }
+.lf-photo-overlay[data-format="vertical"] { --h: 128px; --sup: 38px; --cta-h: 100px; --cta-fs: 34px; --brand-fs: 28px; --tag-fs: 25px; --gap: 28px; }

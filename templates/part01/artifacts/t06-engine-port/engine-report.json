@@ -1,0 +1,98 @@
+{
+  "referenceFixtureOnly": true,
+  "claimsVerifiedForCampaign": false,
+  "contract": {
+    "pass": 36,
+    "fail": 0,
+    "warn": 3
+  },
+  "results": [
+    {
+      "format": "square",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "question-hook",
+        "templateVersion": "0.1.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "072921acb8830722204851f1ac90f3442bb99793871757fb481b58e0301f8466",
+        "fingerprint": "c8c2c780bfb91157",
+        "durationMs": 1416,
+        "stageMs": {
+          "validate": 1,
+          "assets": 26,
+          "fonts": 4,
+          "template": 2,
+          "content": 97,
+          "readiness": 12,
+          "layout": 6,
+          "screenshot": 386,
+          "encode": 66,
+          "storage": 31
+        },
+        "warnings": [
+          "product-photo: image upscaled 1.87x (source 502x499)"
+        ],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    },
+    {
+      "format": "portrait",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "question-hook",
+        "templateVersion": "0.1.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "072921acb8830722204851f1ac90f3442bb99793871757fb481b58e0301f8466",
+        "fingerprint": "271706ed69ac1e40",
+        "durationMs": 705,
+        "stageMs": {
+          "validate": 0,
+          "assets": 5,
+          "fonts": 0,
+          "template": 2,
+          "content": 106,
+          "readiness": 12,
+          "layout": 6,
+          "screenshot": 249,
+          "encode": 70,
+          "storage": 25
+        },
+        "warnings": [
+          "product-photo: image upscaled 1.87x (source 502x499)"
+        ],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    },
+    {
+      "format": "vertical",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "question-hook",
+        "templateVersion": "0.1.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "072921acb8830722204851f1ac90f3442bb99793871757fb481b58e0301f8466",
+        "fingerprint": "1c97460978613b96",
+        "durationMs": 705,
+        "stageMs": {
+          "validate": 1,
+          "assets": 2,
+          "fonts": 0,
+          "template": 2,
+          "content": 104,
+          "readiness": 8,
+          "layout": 5,
+          "screenshot": 283,
+          "encode": 98,
+          "storage": 47
+        },
+        "warnings": [
+          "product-photo: image upscaled 1.84x (source 502x499)"
+        ],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    }
+  ]
+}

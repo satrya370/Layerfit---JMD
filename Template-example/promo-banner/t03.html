@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5% Extra Korting &mdash; Promo Banner</title>
+
+  <!-- Font: Montserrat (judul) + Poppins (teks) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="t03.css">
+</head>
+<body>
+
+  <!-- ============ BANNER UTAMA ============ -->
+  <main class="banner">
+
+    <div class="banner__content">
+
+      <!-- ===== 1. HEADER TRUSTPILOT ===== -->
+      <header class="trustpilot">
+        <div class="trustpilot__logo">
+          <svg class="trustpilot__logo-star" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+          </svg>
+          <span>Trustpilot</span>
+        </div>
+
+        <!-- 5 bintang rating (gaya kotak hijau Trustpilot) -->
+        <div class="trustpilot__stars" role="img" aria-label="Beoordeling: 5 van 5 sterren">
+          <span class="star">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </span>
+          <span class="star">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </span>
+          <span class="star">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </span>
+          <span class="star">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </span>
+          <span class="star">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </span>
+        </div>
+      </header>
+
+      <!-- ===== 2. JUDUL UTAMA ===== -->
+      <h1 class="headline">5% EXTRA<br>KORTING</h1>
+
+      <!-- ===== 3. KODE PROMO ===== -->
+      <p class="code-line">GEBRUIK DE CODE: <strong class="code-line__code">EXTRA5</strong></p>
+
+      <!-- ===== 4. DAFTAR KEUNGGULAN ===== -->
+      <ul class="benefits">
+        <li class="benefit">
+          <svg class="benefit__icon" viewBox="0 0 26 26" aria-hidden="true">
+            <circle cx="13" cy="13" r="13" fill="#28A745"/>
+            <path d="M7.6 13.6l3.3 3.3 7.4-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Vandaag besteld, morgen in huis</span>
+        </li>
+        <li class="benefit">
+          <svg class="benefit__icon" viewBox="0 0 26 26" aria-hidden="true">
+            <circle cx="13" cy="13" r="13" fill="#28A745"/>
+            <path d="M7.6 13.6l3.3 3.3 7.4-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Betaal achteraf met <span class="klarna-badge">Klarna.</span></span>
+        </li>
+        <li class="benefit">
+          <svg class="benefit__icon" viewBox="0 0 26 26" aria-hidden="true">
+            <circle cx="13" cy="13" r="13" fill="#28A745"/>
+            <path d="M7.6 13.6l3.3 3.3 7.4-8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Gratis retourneren</span>
+        </li>
+      </ul>
+
+      <!-- ===== 5. FOTO PRODUK (lingkaran) ===== -->
+      <div class="products">
+        <img class="product" src="images/robot-vacuum.jpg" alt="Robotstofzuiger op houten vloer">
+        <img class="product" src="images/stick-vacuum.jpg" alt="Draadloze stofzuiger">
+      </div>
+
+    </div>
+
+    <!-- ===== 6. BANNER BAWAH ===== -->
+    <footer class="banner__footer">
+      <div class="banner__footer-seg banner__footer-seg--left">
+        <svg class="clock-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22 5.72l-4.6-3.86-1.29 1.53 4.6 3.86L22 5.72zM7.88 3.39L6.6 1.86 2 5.71l1.29 1.53 4.59-3.85zM12.5 8H11v6l4.75 2.85.75-1.23-4-2.37V8zM12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9c4.97 0 9-4.02 9-9s-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+        </svg>
+        <strong>Alleen vandaag geldig</strong>
+      </div>
+
+      <div class="banner__footer-divider" aria-hidden="true"></div>
+
+      <div class="banner__footer-seg banner__footer-seg--right">
+        <span>Betaal achteraf met</span>
+        <span class="klarna-badge klarna-badge--pill">Klarna.</span>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

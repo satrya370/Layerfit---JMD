@@ -1,0 +1,99 @@
+{
+  "sourceVersion": "layerfit_t07_lifestyle_benefit_v3",
+  "fixtureOnly": true,
+  "sourceAssetApprovedForCampaign": false,
+  "contract": {
+    "pass": 36,
+    "fail": 0,
+    "warn": 3
+  },
+  "results": [
+    {
+      "format": "square",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "everyday-editorial",
+        "templateVersion": "0.2.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "02b42517c6ff84ba88cf5b048364636769272308948e8f7ab60526b3ae345bb0",
+        "fingerprint": "682ee5140e56e5bd",
+        "durationMs": 2079,
+        "stageMs": {
+          "validate": 1,
+          "assets": 15,
+          "fonts": 7,
+          "template": 2,
+          "content": 83,
+          "readiness": 19,
+          "layout": 8,
+          "screenshot": 438,
+          "encode": 119,
+          "storage": 53
+        },
+        "warnings": [
+          "product-photo: image upscaled 1.60x (source 677x435)"
+        ],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    },
+    {
+      "format": "portrait",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "everyday-editorial",
+        "templateVersion": "0.2.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "02b42517c6ff84ba88cf5b048364636769272308948e8f7ab60526b3ae345bb0",
+        "fingerprint": "c996a4fb0a1d0c05",
+        "durationMs": 940,
+        "stageMs": {
+          "validate": 1,
+          "assets": 1,
+          "fonts": 0,
+          "template": 2,
+          "content": 104,
+          "readiness": 12,
+          "layout": 10,
+          "screenshot": 420,
+          "encode": 131,
+          "storage": 56
+        },
+        "warnings": [
+          "product-photo: image upscaled 1.72x (source 677x435)"
+        ],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    },
+    {
+      "format": "vertical",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "everyday-editorial",
+        "templateVersion": "0.2.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "02b42517c6ff84ba88cf5b048364636769272308948e8f7ab60526b3ae345bb0",
+        "fingerprint": "a4c09e984bc82f42",
+        "durationMs": 1357,
+        "stageMs": {
+          "validate": 0,
+          "assets": 3,
+          "fonts": 0,
+          "template": 3,
+          "content": 119,
+          "readiness": 19,
+          "layout": 10,
+          "screenshot": 741,
+          "encode": 149,
+          "storage": 62
+        },
+        "warnings": [
+          "product-photo: image upscaled 2.30x (source 677x435)"
+        ],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    }
+  ]
+}

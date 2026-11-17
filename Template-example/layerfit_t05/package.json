@@ -1,0 +1,7 @@
+{
+  "name": "layerfit-t05-split-composition",
+  "private": true,
+  "type": "module",
+  "scripts": {"render": "node render.mjs"},
+  "dependencies": {"puppeteer": "^24.0.0"}
+}

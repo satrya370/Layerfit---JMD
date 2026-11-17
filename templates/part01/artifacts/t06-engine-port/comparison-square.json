@@ -1,0 +1,7 @@
+{
+  "width": 1080,
+  "height": 1080,
+  "meanAbsoluteChannelError": 9.81141346593507,
+  "exactPixelMatch": false,
+  "note": "Pixel MAE is not a visual-similarity percentage; source uses system Arial while engine uses bundled Arimo."
+}

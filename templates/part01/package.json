@@ -1,0 +1,32 @@
+{
+  "name": "@layerfit/template-part01",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles/tailwind.css -o ./dist/template.css --minify",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "smoke": "tsx scripts/smoke-render.ts",
+    "smoke:dual-panel": "tsx scripts/smoke-dual-panel.ts",
+    "smoke:dark-offer": "tsx scripts/smoke-dark-offer-stack.ts"
+  },
+  "dependencies": {
+    "postcss": "8.5.33",
+    "puppeteer": "25.17.0",
+    "sharp": "0.35.5",
+    "zod": "4.6.6"
+  },
+  "devDependencies": {
+    "@fontsource/arimo": "5.2.8",
+    "@fontsource/dm-serif-display": "5.2.8",
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/montserrat": "5.3.0",
+    "@fontsource/poppins": "5.3.0",
+    "@fontsource/space-grotesk": "5.3.0",
+    "@types/node": "^22.19.0",
+    "tailwindcss": "3.4.17",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

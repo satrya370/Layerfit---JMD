@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LayerFit – Bold Comparison Ad Template</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="creative" class="creative" aria-label="Advertentievoorbeeld">
+    <div class="reviews" id="reviewBlock">
+      <div class="stars" aria-label="5 sterren">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <div class="reviews-copy"><strong id="reviewRating">4.8</strong> gebaseerd op <strong id="reviewCount">500+ reviews</strong></div>
+    </div>
+
+    <h1 class="headline" id="headline">
+      Robotstofzuigers zijn<br />
+      zo duur... <span class="accent">oh wacht.</span>
+    </h1>
+
+    <p class="subheadline" id="subheadline">Robotstofzuiger + Steelstofzuiger Combideal</p>
+
+    <div class="photo-frame">
+      <img id="productImage" src="assets/product-scene.jpg" alt="Steelstofzuiger en robotstofzuiger in gebruik" />
+    </div>
+
+    <div class="bottom-strip">
+      <div class="price-banner" id="priceBanner">
+        <strong id="priceLabel">Black Friday prijs:</strong>
+        <strong class="price" id="priceValue">€299</strong>
+      </div>
+      <img id="brandLogo" class="brand-logo" src="assets/brand-logo.png" alt="Logo brand" />
+    </div>
+  </main>
+
+  <script>
+    // LayerFit renderer can call setCreative(data) before capturing the page.
+    // Example: setCreative({headline:'Nieuw product... ', accent:'oh wacht.', imageUrl:'...', rating:null})
+    window.setCreative = function (data = {}) {
+      const put = (id, value) => { if (value !== undefined && value !== null) document.getElementById(id).textContent = String(value); };
+      if (data.headline !== undefined) {
+        const heading = document.getElementById('headline');
+        heading.replaceChildren(document.createTextNode(String(data.headline)));
+        if (data.accent) {
+          heading.append(document.createTextNode(' '));
+          const mark = document.createElement('span'); mark.className='accent'; mark.textContent=String(data.accent);
+          heading.append(mark);
+        }
+      }
+      put('subheadline', data.subheadline);
+      put('priceLabel', data.priceLabel);
+      put('priceValue', data.price);
+      put('reviewRating', data.rating);
+      put('reviewCount', data.reviewCount);
+      if (data.imageUrl) document.getElementById('productImage').src = data.imageUrl;
+      if (data.logoUrl) document.getElementById('brandLogo').src = data.logoUrl;
+      if (data.reviewEnabled === false || (!data.rating && !data.reviewCount && data.reviewEnabled !== true && data.hideUnverifiedClaims === true)) document.getElementById('reviewBlock').hidden = true;
+      if (data.priceEnabled === false || (!data.price && data.hideUnverifiedClaims === true)) document.getElementById('priceBanner').hidden = true;
+      if (data.logoEnabled === false) document.getElementById('brandLogo').hidden = true;
+      if (data.primaryColor) document.documentElement.style.setProperty('--accent', data.primaryColor);
+      if (data.backgroundColor) document.documentElement.style.setProperty('--bg', data.backgroundColor);
+    };
+  </script>
+</body>
+</html>

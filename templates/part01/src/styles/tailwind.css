@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; width: 100%; height: 100%; }
+}
+
+@layer components {
+  .lf-canvas {
+    width: 1080px; height: 1080px; overflow: hidden; position: relative;
+    display: grid; isolation: isolate; color: var(--ink); background: var(--paper);
+    font-family: var(--font-body);
+  }
+  .lf-canvas[data-format="portrait"] { height: 1350px; }
+  .lf-canvas[data-format="vertical"] { height: 1920px; }
+  .lf-headline { font-family: var(--font-heading); letter-spacing: -.045em; }
+  .lf-photo { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .lf-callout { color: white; background: var(--brand); border-radius: 9999px; }
+  .lf-safe { position: absolute; inset: var(--safe-top) 70px var(--safe-bottom); pointer-events: none; border: 0 solid transparent; }
+}
+
+/* Format-specific art direction. Canvas is rendered at its final dimensions, never scaled. */
+.lf-canvas[data-format="square"] {
+  padding: 62px 72px 60px;
+  grid-template-rows: 194px minmax(0, 1fr) 82px;
+  gap: 18px;
+}
+.lf-canvas[data-format="portrait"] {
+  padding: 74px 70px 72px;
+  grid-template-rows: 190px minmax(0, 1fr) 84px;
+  gap: 20px;
+}
+.lf-canvas[data-format="vertical"] {
+  padding: 250px 70px 350px;
+  grid-template-rows: 200px minmax(0, 1fr) 84px;
+  gap: 22px;
+}
+.lf-header { z-index: 2; display: flex; flex-direction: column; justify-content: center; }
+.lf-brand { font: 700 20px/1.1 var(--font-body); letter-spacing: .12em; text-transform: uppercase; color: var(--brand); margin-bottom: 16px; }
+.lf-headline { font-size: 68px; line-height: 1.04; font-weight: 600; overflow-wrap: anywhere; padding-bottom: 8px; }
+.lf-stage { min-height: 0; position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 255px; gap: 24px; align-items: stretch; }
+.lf-photo-frame { min-height: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 30px; padding: 22px; background: color-mix(in srgb, var(--brand) 6%, white); }
+.lf-benefits { z-index: 2; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+.lf-benefit { font: 600 23px/1.2 var(--font-body); padding: 15px 18px; overflow-wrap: anywhere; }
+.lf-connector { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; overflow: visible; pointer-events: none; }
+.lf-footer { z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.lf-cta { color: white; background: var(--ink); border-radius: 9999px; padding: 19px 28px; font: 700 22px/1 var(--font-body); max-width: 100%; overflow-wrap: anywhere; }
+.lf-footnote { color: color-mix(in srgb, var(--ink) 66%, white); font: 500 18px/1.25 var(--font-body); text-align: right; }
+.lf-canvas[data-format="portrait"] .lf-stage { grid-template-columns: minmax(0, 1fr) 245px; }
+.lf-canvas[data-format="portrait"] .lf-headline { font-size: 72px; }
+.lf-canvas[data-format="portrait"] .lf-benefit { font-size: 22px; }
+.lf-canvas[data-format="vertical"] .lf-header { justify-content: end; }
+.lf-canvas[data-format="vertical"] .lf-headline { font-size: 78px; }
+.lf-canvas[data-format="vertical"] .lf-stage { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; gap: 20px; }
+.lf-canvas[data-format="vertical"] .lf-photo-frame { min-height: 0; border-radius: 38px; padding: 28px; }
+.lf-canvas[data-format="vertical"] .lf-benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 14px; }
+.lf-canvas[data-format="vertical"] .lf-benefit { font-size: 24px; text-align: center; }
+.lf-canvas[data-format="vertical"] .lf-connector { display: none; }
+.lf-canvas[data-format="vertical"] .lf-footer { align-items: start; }
+
+/* T02 styles are scoped to the engine-owned canvas; canvas dimensions/overflow/tokens stay with engine. */
+.lf-dual-panel { isolation: isolate; background: var(--lf-brand-secondary); color: #202723; font-family: var(--lf-font-body); }
+.lf-dual-panel .lf-dual-panels { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 4px; min-height: 0; }
+.lf-dual-panel .lf-dual-panel-card { position: relative; min-width: 0; min-height: 0; overflow: hidden; background: var(--lf-brand-secondary); }
+.lf-dual-panel .lf-dual-photo { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lf-dual-panel .lf-dual-photo--cover { object-fit: cover; }
+.lf-dual-panel .lf-dual-photo--contain { object-fit: contain; padding: 34px; background: var(--lf-brand-secondary); }
+.lf-dual-panel .lf-dual-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 20, 17, .52) 0%, rgba(14, 20, 17, .06) 34%, rgba(14, 20, 17, .18) 52%, rgba(14, 20, 17, .78) 100%); pointer-events: none; }
+.lf-dual-panel .lf-dual-headline { position: absolute; z-index: 3; top: var(--lf-safe-top); left: var(--lf-safe-left); width: calc(50% - 105px); color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,.34); }
+.lf-dual-panel .lf-dual-brand { display: block; color: var(--lf-brand-accent); font: 700 18px/1.1 var(--lf-font-body); letter-spacing: .13em; text-transform: uppercase; margin-bottom: 16px; }
+.lf-dual-panel .lf-dual-headline h1 { max-width: 100%; margin: 0; padding-bottom: 6px; font: 600 calc(55px * var(--lf-fit-dual-headline, 1))/1.02 var(--lf-font-heading); letter-spacing: -.035em; overflow-wrap: anywhere; }
+.lf-dual-panel .lf-dual-panel-content { position: absolute; z-index: 2; left: var(--lf-safe-left); right: var(--lf-safe-right); bottom: calc(var(--lf-safe-bottom) + 94px); color: white; }
+.lf-dual-panel .lf-dual-panel--information .lf-dual-panel-content { color: #202723; }
+.lf-dual-panel .lf-dual-label { display: block; width: fit-content; max-width: 100%; margin: 0 0 14px; padding: 12px 18px; border-radius: 12px; color: #171a18; background: #fff; font: 800 calc(23px * var(--lf-fit-panel-label, 1))/1.15 var(--lf-font-body); text-align: center; overflow-wrap: anywhere; }
+.lf-dual-panel .lf-dual-panel--information .lf-dual-label { color: white; background: var(--lf-brand-primary); }
+.lf-dual-panel .lf-dual-facts { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.lf-dual-panel .lf-dual-fact { display: flex; align-items: flex-start; gap: 12px; padding-bottom: 4px; font: 600 calc(21px * var(--lf-fit-panel-copy, 1))/1.22 var(--lf-font-body); text-shadow: 0 1px 8px rgba(0,0,0,.38); overflow-wrap: anywhere; }
+.lf-dual-panel .lf-dual-panel--information .lf-dual-fact { text-shadow: none; }
+.lf-dual-panel .lf-dual-fact-mark { flex: 0 0 20px; color: var(--lf-brand-accent); font-size: 27px; line-height: .8; }
+.lf-dual-panel .lf-dual-footer { position: absolute; z-index: 4; left: var(--lf-safe-left); right: var(--lf-safe-right); bottom: var(--lf-safe-bottom); display: flex; align-items: center; justify-content: center; }
+.lf-dual-panel .lf-dual-cta { display: inline-flex; min-height: 60px; max-width: 85%; align-items: center; justify-content: center; padding: 16px 30px; border-radius: 9999px; color: white; background: var(--lf-brand-primary); font: 700 22px/1.15 var(--lf-font-body); text-align: center; overflow-wrap: anywhere; }
+.lf-dual-panel[data-format="portrait"] .lf-dual-headline h1 { font-size: calc(59px * var(--lf-fit-dual-headline, 1)); }
+.lf-dual-panel[data-format="portrait"] .lf-dual-panel-content { left: var(--lf-safe-left); right: var(--lf-safe-right); }
+.lf-dual-panel[data-format="portrait"] .lf-dual-fact { font-size: calc(20px * var(--lf-fit-panel-copy, 1)); }
+.lf-dual-panel[data-format="vertical"] .lf-dual-headline { top: var(--lf-safe-top); left: var(--lf-safe-left); right: var(--lf-safe-right); width: auto; color: #202723; text-shadow: none; }
+.lf-dual-panel[data-format="vertical"] .lf-dual-headline h1 { font-size: calc(50px * var(--lf-fit-dual-headline, 1)); }
+.lf-dual-panel[data-format="vertical"] .lf-dual-panels { inset: calc(var(--lf-safe-top) + 160px) var(--lf-safe-right) calc(var(--lf-safe-bottom) + 96px) var(--lf-safe-left); grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; gap: 14px; }
+.lf-dual-panel[data-format="vertical"] .lf-dual-panel-card { border-radius: 24px; }
+.lf-dual-panel[data-format="vertical"] .lf-dual-panel-content { left: 24px; right: 24px; bottom: 20px; padding-bottom: 6px; }
+.lf-dual-panel[data-format="vertical"] .lf-dual-panel-card.lf-dual-panel--information .lf-dual-panel-content { top: 50%; bottom: auto; transform: translateY(-50%); }
+.lf-dual-panel[data-format="vertical"] .lf-dual-label { font-size: calc(20px * var(--lf-fit-panel-label, 1)); margin-bottom: 8px; }
+.lf-dual-panel[data-format="vertical"] .lf-dual-facts { gap: 4px; }
+.lf-dual-panel[data-format="vertical"] .lf-dual-fact { font-size: calc(17px * var(--lf-fit-panel-copy, 1)); }
+.lf-dual-panel[data-format="vertical"] .lf-dual-footer { bottom: var(--lf-safe-bottom); }
+.lf-dual-panel[data-format="vertical"] .lf-dual-cta { min-height: 50px; font-size: 19px; }
+
+/* T03 Dark Offer Stack: factual offer/proof blocks are optional; no CDN or external assets. */
+.lf-dark-offer { isolation: isolate; background: #202326; color: #f8f6f0; font-family: var(--lf-font-body); }
+.lf-dark-offer .lf-dark-offer-body { position: absolute; inset: var(--lf-safe-top) var(--lf-safe-right) var(--lf-safe-bottom) var(--lf-safe-left); display: flex; flex-direction: column; min-height: 0; gap: 14px; }
+.lf-dark-offer .lf-offer-header { min-width: 0; flex: 0 0 auto; padding-bottom: 6px; }
+.lf-dark-offer .lf-offer-brand { display: block; color: var(--lf-brand-accent); font: 700 17px/1.1 var(--lf-font-body); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+.lf-dark-offer .lf-offer-headline { max-width: 100%; margin: 0; color: #fff; font: 800 calc(56px * var(--lf-fit-offer-headline, 1))/1.02 var(--lf-font-heading); letter-spacing: -.035em; overflow-wrap: anywhere; padding-bottom: 6px; }
+.lf-dark-offer .lf-offer-deal { width: fit-content; max-width: 100%; flex: 0 0 auto; padding: 10px 20px; border-radius: 14px; color: #202326; background: var(--lf-brand-accent); font: 800 calc(31px * var(--lf-fit-offer-copy, 1))/1.1 var(--lf-font-body); overflow-wrap: anywhere; }
+.lf-dark-offer .lf-offer-deal-kicker { display: block; }
+.lf-dark-offer .lf-offer-proof { width: fit-content; max-width: 100%; flex: 0 0 auto; margin: 0; padding: 8px 14px; border: 1px solid rgba(255,255,255,.28); border-radius: 9999px; color: #f4f2ea; font: 600 calc(18px * var(--lf-fit-offer-copy, 1))/1.2 var(--lf-font-body); overflow-wrap: anywhere; }
+.lf-dark-offer .lf-offer-benefits { display: grid; flex: 0 0 auto; align-content: start; gap: 9px; margin: 0; padding: 0; list-style: none; }
+.lf-dark-offer .lf-offer-benefit { display: flex; align-items: flex-start; gap: 12px; color: #f5f3ed; font: 600 calc(20px * var(--lf-fit-offer-copy, 1))/1.2 var(--lf-font-body); overflow-wrap: anywhere; padding-bottom: 4px; }
+.lf-dark-offer .lf-offer-mark { flex: 0 0 20px; color: var(--lf-brand-accent); font-size: 26px; line-height: .8; }
+.lf-dark-offer .lf-offer-photo-grid { display: grid; flex: 1 1 auto; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; justify-items: center; gap: 20px; min-height: 140px; }
+.lf-dark-offer .lf-offer-photo-grid--single { grid-template-columns: minmax(0, 1fr); }
+.lf-dark-offer .lf-offer-aperture { position: relative; display: flex; align-items: center; justify-content: center; width: min(100%, 360px); aspect-ratio: 1; overflow: hidden; border-radius: 50%; background: var(--lf-brand-secondary); }
+.lf-dark-offer .lf-offer-aperture--product { width: min(100%, 440px); aspect-ratio: 1.45; border-radius: 26px; padding: 12px; }
+.lf-dark-offer .lf-offer-photo { display: block; width: 100%; height: 100%; }
+.lf-dark-offer .lf-offer-photo--cover { object-fit: cover; border-radius: 50%; }
+.lf-dark-offer .lf-offer-photo--contain { object-fit: contain; }
+.lf-dark-offer .lf-offer-footer { display: flex; flex: 0 0 auto; align-items: center; justify-content: center; }
+.lf-dark-offer .lf-offer-cta { display: inline-flex; min-height: 54px; max-width: 90%; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 9999px; background: var(--lf-brand-primary); color: white; font: 700 20px/1.15 var(--lf-font-body); text-align: center; overflow-wrap: anywhere; }
+.lf-dark-offer[data-format="square"] .lf-offer-aperture { width: min(100%, 310px); }
+.lf-dark-offer[data-format="square"] .lf-offer-aperture--product { width: min(100%, 420px); }
+.lf-dark-offer[data-format="portrait"] .lf-dark-offer-body { gap: 17px; }
+.lf-dark-offer[data-format="portrait"] .lf-offer-headline { font-size: calc(63px * var(--lf-fit-offer-headline, 1)); }
+.lf-dark-offer[data-format="portrait"] .lf-offer-photo-grid { gap: 28px; }
+.lf-dark-offer[data-format="portrait"] .lf-offer-aperture { width: min(100%, 360px); }
+.lf-dark-offer[data-format="portrait"] .lf-offer-aperture--product { width: min(100%, 410px); }
+.lf-dark-offer[data-format="vertical"] { background: #202326; }
+.lf-dark-offer[data-format="vertical"] .lf-dark-offer-body { gap: 12px; }
+.lf-dark-offer[data-format="vertical"] .lf-offer-brand { font-size: 15px; margin-bottom: 7px; }
+.lf-dark-offer[data-format="vertical"] .lf-offer-headline { font-size: calc(45px * var(--lf-fit-offer-headline, 1)); }
+.lf-dark-offer[data-format="vertical"] .lf-offer-deal { font-size: calc(24px * var(--lf-fit-offer-copy, 1)); padding: 8px 14px; }
+.lf-dark-offer[data-format="vertical"] .lf-offer-proof { font-size: calc(15px * var(--lf-fit-offer-copy, 1)); }
+.lf-dark-offer[data-format="vertical"] .lf-offer-benefit { font-size: calc(17px * var(--lf-fit-offer-copy, 1)); gap: 8px; }
+.lf-dark-offer[data-format="vertical"] .lf-offer-mark { flex-basis: 16px; font-size: 20px; }
+.lf-dark-offer[data-format="vertical"] .lf-offer-photo-grid { gap: 14px; }
+.lf-dark-offer[data-format="vertical"] .lf-offer-aperture { width: min(100%, 260px); }
+.lf-dark-offer[data-format="vertical"] .lf-offer-aperture--product { width: min(100%, 320px); }
+.lf-dark-offer[data-format="vertical"] .lf-offer-cta { min-height: 46px; font-size: 17px; }
+
+@media (max-width: 700px) {
+  /* Dashboard preview only. Export viewport remains the explicit canvas dimensions above. */
+  .lf-preview { transform-origin: top left; }
+}

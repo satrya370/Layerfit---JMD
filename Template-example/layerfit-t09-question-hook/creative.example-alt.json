@@ -1,0 +1,26 @@
+{
+  "templateId": "t05",
+  "concept": "question-hook",
+  "format": "square",
+  "brand": "TONI HOMI",
+  "logoUrl": null,
+  "headline": "Verveeld door stof?",
+  "description": "Slimme robotstofzuigers die zelf schoonmaken. Jij ontspant.",
+  "cta": "Bekijk aanbod",
+  "imageUrl": "assets/robot-vacuum-demo.jpg",
+  "imageAlt": "Robotstofzuiger op houten vloer",
+  "imageMode": "cover",
+  "features": [
+    "Pakt lange haren",
+    "Geen gesjouw",
+    "Automatisch schoon"
+  ],
+  "colors": {
+    "bg": "#1B2A4A",
+    "surface": "#24365C",
+    "accent": "#FF6A5A",
+    "text": "#FFFFFF",
+    "muted": "#B9C4DC",
+    "onAccent": "#1B2A4A"
+  }
+}

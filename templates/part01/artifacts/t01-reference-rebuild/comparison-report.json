@@ -1,0 +1,25 @@
+{
+  "kind": "local reference reconstruction study, not production or brand-safe creative",
+  "reference": "C:\\Users\\Asus\\Layerfit-JMD\\Template-example\\Screenshot 2026-11-17 114011.png",
+  "output": "C:\\Users\\Asus\\Layerfit-JMD\\templates\\part01\\artifacts\\t01-reference-rebuild\\T01-reference-rebuild.png",
+  "width": 779,
+  "height": 951,
+  "photoSource": "middle photographic scene cropped from the supplied screenshot; baked annotation rectangles masked",
+  "reconstructedWithHtml": [
+    "headline",
+    "three benefit labels",
+    "three arrows",
+    "offer pill",
+    "site footer"
+  ],
+  "exactPixelMatch": false,
+  "meanAbsoluteChannelError": 6.107825602579453,
+  "differentPixels": 168521,
+  "pixelCount": 740829,
+  "limitations": [
+    "Original clean scene unavailable; masked image areas not recoverable.",
+    "DM Serif Display approximates reference heading; original font unidentified.",
+    "Reference copy and prices reproduced only for this user-requested fidelity study, not verified LayerFit claims.",
+    "No full screenshot background shortcut; this is not a completed reusable engine integration."
+  ]
+}

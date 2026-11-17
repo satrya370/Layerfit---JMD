@@ -1,0 +1,332 @@
+/* ============================================================
+   LAYERFIT TEMPLATE T05 — QUESTION HOOK
+   ------------------------------------------------------------
+   Meta Ads: square 1080x1080, portrait 1080x1350, story 1080x1920
+   Semua warna diambil dari CSS variables di .ad —
+   di-over oleh window.setCreative(data.colors).
+
+   Budget vertikal (dihitung agar tidak overflow):
+   - square : 52+46+34+200+10+380+24+108+24+46+70+60  ≈ 1054 / 1080
+   - portrait: 68+48+42+225+18+470+38+122+38+46+72+76 ≈ 1263 / 1350
+   - story  : konten berhenti ±1450 < safe zone 1580 (UI Meta)
+   ============================================================ */
+
+/* ---------- token default (demo SONIQ) ---------- */
+
+.ad {
+  --c-bg: #16181d;        /* latar iklan */
+  --c-surface: #1e2129;   /* latar pil fitur */
+  --c-accent: #c8f135;    /* aksen lime */
+  --c-text: #ffffff;      /* teks utama */
+  --c-muted: #a6acb8;     /* teks deskripsi */
+  --c-on-accent: #16181d; /* teks di atas aksen */
+
+  --font-head: 'Space Grotesk', 'Inter', Arial, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { background: #0b0c10; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-body, 'Inter', Arial, sans-serif);
+}
+
+[hidden] { display: none !important; }
+
+/* ============ KANVAS IKLAN ============ */
+
+.ad {
+  position: relative;
+  width: 1080px;
+  height: 1080px;                 /* square (default) */
+  background: var(--c-bg);
+  color: var(--c-text);
+  overflow: hidden;
+  font-family: var(--font-body);
+  flex-shrink: 0;
+}
+
+.ad[data-format="portrait"] { height: 1350px; }
+.ad[data-format="story"]    { height: 1920px; }
+
+.ad__inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 52px 64px 60px;        /* square */
+}
+
+.ad[data-format="portrait"] .ad__inner { padding: 68px 72px 76px; }
+
+/* story: hindari UI Meta — atas ±250px (profil & tombol tutup),
+   bawah ±340px (balasan); konten penting berhenti sebelum y=1580 */
+.ad[data-format="story"] .ad__inner { padding: 268px 80px 340px; }
+
+/* ============ LATAR DEKORATIF ============ */
+
+.ad__bg { position: absolute; inset: 0; z-index: 1; }
+
+.ad__glow {
+  position: absolute;
+  width: 720px;
+  height: 720px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.10;
+  background: var(--c-accent);
+}
+
+.ad__glow--tr { top: -260px; right: -220px; }
+.ad__glow--bl { bottom: -300px; left: -260px; opacity: 0.06; }
+
+/* tanda tanya raksasa outline — signature "question hook"
+   (di belakang area produk agar tidak bersaing dengan headline) */
+.ad__ghostq {
+  position: absolute;
+  top: 300px;
+  right: -70px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 620px;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2.5px color-mix(in srgb, var(--c-accent) 26%, transparent);
+  user-select: none;
+}
+
+.ad[data-format="portrait"] .ad__ghostq { font-size: 700px; top: 340px; right: -60px; }
+.ad[data-format="story"]    .ad__ghostq { font-size: 760px; top: 430px; right: -60px; }
+
+/* busur aksen di pojok bawah story — dekoratif murni,
+   berada DI DALAM zona UI (tidak ada konten penting) */
+.ad__corner {
+  display: none;
+  position: absolute;
+  bottom: -280px;
+  right: -280px;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--c-accent) 16%, transparent);
+}
+
+.ad[data-format="story"] .ad__corner { display: block; }
+
+/* ============ BARIS MEREK ============ */
+
+.brandbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  align-self: flex-start;
+}
+
+.brandbar__logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+.brandbar__name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--c-text);
+}
+
+/* ============ PERTANYAAN (HEADLINE) ============ */
+
+.question {
+  margin-top: 34px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  line-height: 1.04;
+  font-size: 96px;                 /* default: headline pendek */
+  color: var(--c-text);
+  text-wrap: balance;
+}
+
+.question__main,
+.question__accent { display: block; }
+
+.question__accent { color: var(--c-accent); }
+
+/* skala otomatis berdasarkan panjang headline (di-set script.js) */
+.ad[data-headline="lg"] .question { font-size: 80px; }
+.ad[data-headline="md"] .question { font-size: 66px; }
+
+.ad[data-format="portrait"] .question { font-size: 108px; margin-top: 42px; }
+.ad[data-format="portrait"][data-headline="lg"] .question { font-size: 90px; }
+.ad[data-format="portrait"][data-headline="md"] .question { font-size: 74px; }
+
+.ad[data-format="story"] .question { font-size: 108px; margin-top: 52px; }
+.ad[data-format="story"][data-headline="lg"] .question { font-size: 92px; }
+.ad[data-format="story"][data-headline="md"] .question { font-size: 78px; }
+
+/* ============ HERO PRODUK ============ */
+
+.hero {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  height: 380px;                  /* square */
+  display: grid;
+  place-items: center;
+}
+
+.ad[data-format="portrait"] .hero { height: 470px; margin-top: 18px; }
+.ad[data-format="story"]    .hero { height: 484px; margin-top: 34px; }
+
+/* ring aksen mengelilingi produk (mode transparan) */
+.hero__ring {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 10px solid var(--c-accent);
+  opacity: 0.9;
+}
+
+.ad[data-format="portrait"] .hero__ring { width: 500px; height: 500px; }
+.ad[data-format="story"]    .hero__ring { width: 510px; height: 510px; }
+
+/* produk */
+.hero__img {
+  position: relative;
+  width: 370px;
+  max-height: 112%;
+  object-fit: contain;
+  filter: drop-shadow(0 26px 42px rgba(0, 0, 0, 0.45));
+}
+
+.ad[data-format="portrait"] .hero__img { width: 450px; }
+.ad[data-format="story"]    .hero__img { width: 460px; }
+
+/* mode "cover": foto biasa (non-transparan) di-mask lingkaran
+   dengan bingkai aksen — ring disembunyikan agar tidak ganda */
+.ad[data-image-mode="cover"] .hero__ring { display: none; }
+
+.ad[data-image-mode="cover"] .hero__img {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 10px solid var(--c-accent);
+  filter: none;
+}
+
+.ad[data-format="portrait"][data-image-mode="cover"] .hero__img { width: 460px; height: 460px; }
+.ad[data-format="story"][data-image-mode="cover"]    .hero__img { width: 470px; height: 470px; }
+
+/* ============ DESKRIPSI ============ */
+
+.answer {
+  margin-top: 24px;
+  max-width: 640px;
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--c-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ad[data-format="portrait"] .answer { font-size: 27px; max-width: 700px; margin-top: 36px; }
+.ad[data-format="story"]    .answer { font-size: 29px; max-width: 760px; margin-top: 34px; }
+
+/* ============ PIL FITUR ============ */
+
+.features {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 100%;
+}
+
+.ad[data-format="story"] .features {
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--c-surface);
+  border: 1.5px solid color-mix(in srgb, var(--c-text) 14%, transparent);
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--c-text);
+  white-space: nowrap;
+}
+
+.ad[data-format="story"] .feature { font-size: 22px; padding: 15px 32px; }
+
+.feature__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: var(--c-accent);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============ CTA ============ */
+
+.cta {
+  margin-top: auto;               /* square & portrait: dorong ke bawah */
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--c-accent);
+  color: var(--c-on-accent);
+  border-radius: 999px;
+  padding: 22px 46px;
+  font-family: var(--font-body);
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--c-accent) 22%, transparent);
+}
+
+.ad[data-format="portrait"] .cta { font-size: 27px; padding: 24px 52px; }
+
+/* story: CTA tepat setelah fitur — selalu di atas safe zone */
+.ad[data-format="story"] .cta { margin-top: 36px; font-size: 29px; padding: 25px 56px; }
+
+.cta__arrow {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

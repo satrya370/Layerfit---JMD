@@ -1,0 +1,25 @@
+{
+  "kind": "actual Claude engine integration, uncommitted working tree; synthetic cases plus one case using the user-supplied reference example values (reference-derived, NOT verified LayerFit claims)",
+  "conformance": {
+    "pass": 40,
+    "fail": 0,
+    "warn": 3
+  },
+  "results": [
+    {
+      "name": "shirt-no-price-no-review",
+      "status": "success",
+      "violations": []
+    },
+    {
+      "name": "bottle-no-price-no-review",
+      "status": "success",
+      "violations": []
+    },
+    {
+      "name": "reference-example",
+      "status": "success",
+      "violations": []
+    }
+  ]
+}

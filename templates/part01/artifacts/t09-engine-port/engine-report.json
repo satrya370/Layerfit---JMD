@@ -1,0 +1,180 @@
+{
+  "fixtureOnly": true,
+  "claimsVerifiedForCampaign": false,
+  "giantGhostQuestionMarkRemoved": true,
+  "contract": {
+    "pass": 65,
+    "fail": 0,
+    "warn": 12
+  },
+  "results": [
+    {
+      "name": "soniq-reference-layout-only",
+      "format": "square",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "question-hook-t09",
+        "templateVersion": "0.1.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "a2a25e6f0b16a2df90d02300e945be7a44ce43acaa89a800a2a4da4ee671cd7d",
+        "fingerprint": "de1e9552c2efd598",
+        "durationMs": 2433,
+        "stageMs": {
+          "validate": 1,
+          "assets": 103,
+          "fonts": 24,
+          "template": 5,
+          "content": 252,
+          "readiness": 39,
+          "layout": 16,
+          "screenshot": 326,
+          "encode": 89,
+          "storage": 157
+        },
+        "warnings": [],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    },
+    {
+      "name": "soniq-reference-layout-only",
+      "format": "portrait",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "question-hook-t09",
+        "templateVersion": "0.1.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "a2a25e6f0b16a2df90d02300e945be7a44ce43acaa89a800a2a4da4ee671cd7d",
+        "fingerprint": "a045cdbb97cdd4f6",
+        "durationMs": 912,
+        "stageMs": {
+          "validate": 0,
+          "assets": 1,
+          "fonts": 0,
+          "template": 13,
+          "content": 279,
+          "readiness": 57,
+          "layout": 10,
+          "screenshot": 175,
+          "encode": 101,
+          "storage": 39
+        },
+        "warnings": [],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    },
+    {
+      "name": "soniq-reference-layout-only",
+      "format": "vertical",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "question-hook-t09",
+        "templateVersion": "0.1.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "a2a25e6f0b16a2df90d02300e945be7a44ce43acaa89a800a2a4da4ee671cd7d",
+        "fingerprint": "4506dde44a5992ce",
+        "durationMs": 920,
+        "stageMs": {
+          "validate": 0,
+          "assets": 2,
+          "fonts": 0,
+          "template": 4,
+          "content": 189,
+          "readiness": 24,
+          "layout": 6,
+          "screenshot": 262,
+          "encode": 132,
+          "storage": 70
+        },
+        "warnings": [],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    },
+    {
+      "name": "toni-reference-layout-only",
+      "format": "square",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "question-hook-t09",
+        "templateVersion": "0.1.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "a2a25e6f0b16a2df90d02300e945be7a44ce43acaa89a800a2a4da4ee671cd7d",
+        "fingerprint": "a21a5c49c1452be4",
+        "durationMs": 657,
+        "stageMs": {
+          "validate": 0,
+          "assets": 21,
+          "fonts": 0,
+          "template": 1,
+          "content": 101,
+          "readiness": 28,
+          "layout": 6,
+          "screenshot": 177,
+          "encode": 66,
+          "storage": 32
+        },
+        "warnings": [],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    },
+    {
+      "name": "toni-reference-layout-only",
+      "format": "portrait",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "question-hook-t09",
+        "templateVersion": "0.1.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "a2a25e6f0b16a2df90d02300e945be7a44ce43acaa89a800a2a4da4ee671cd7d",
+        "fingerprint": "a0244374aa2c9aa9",
+        "durationMs": 678,
+        "stageMs": {
+          "validate": 0,
+          "assets": 0,
+          "fonts": 0,
+          "template": 1,
+          "content": 81,
+          "readiness": 26,
+          "layout": 8,
+          "screenshot": 195,
+          "encode": 92,
+          "storage": 34
+        },
+        "warnings": [],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    },
+    {
+      "name": "toni-reference-layout-only",
+      "format": "vertical",
+      "status": "success",
+      "diagnostics": {
+        "templateId": "question-hook-t09",
+        "templateVersion": "0.1.0",
+        "browserVersion": "Chrome/157.0.8103.79",
+        "cssHash": "a2a25e6f0b16a2df90d02300e945be7a44ce43acaa89a800a2a4da4ee671cd7d",
+        "fingerprint": "043d97ff5af9a197",
+        "durationMs": 880,
+        "stageMs": {
+          "validate": 0,
+          "assets": 0,
+          "fonts": 0,
+          "template": 2,
+          "content": 84,
+          "readiness": 27,
+          "layout": 7,
+          "screenshot": 189,
+          "encode": 213,
+          "storage": 153
+        },
+        "warnings": [],
+        "fittingSteps": 0,
+        "violations": []
+      }
+    }
+  ]
+}

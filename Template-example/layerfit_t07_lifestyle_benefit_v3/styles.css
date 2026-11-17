@@ -1,0 +1,45 @@
+:root { color-scheme:light; } * { box-sizing:border-box; }
+html,body { margin:0; padding:0; background:#ddd9d2; }
+body { font-family:Arial,Helvetica,sans-serif; }
+.creative { --paper:#f4f0e9; --ink:#1f2724; --accent:#d44f36; --photo-position:50% 48%; --s:1; width:1080px; height:1080px; overflow:hidden; color:var(--ink); background:var(--paper); display:grid; grid-template-rows:96px 232px 525px 227px; position:relative; isolation:isolate; }
+.masthead { display:flex; justify-content:space-between; align-items:center; margin:0 52px; border-bottom:2px solid var(--ink); }
+.brand { min-height:46px; display:flex; align-items:center; }
+#brand-name { font-size:34px; font-weight:900; letter-spacing:-2px; }
+#brand-logo { max-width:270px; max-height:62px; object-fit:contain; }
+.edition { font-size:17px; font-weight:800; letter-spacing:.14em; }
+.opening { padding:24px 52px 14px; display:grid; grid-template-columns:1fr 285px; grid-template-rows:27px 1fr; gap:7px 30px; min-height:0; }
+.overline { grid-column:1/-1; font-size:17px; font-weight:800; letter-spacing:.16em; color:var(--accent); }
+h1 { grid-column:1; grid-row:2; margin:0; font-size:75px; letter-spacing:-.065em; line-height:.95; font-weight:900; overflow-wrap:normal; }
+.opening p { grid-column:2; grid-row:2; align-self:end; padding-bottom:10px; font-size:23px; line-height:1.25; margin:0; }
+.lifestyle { margin:0; overflow:hidden; position:relative; background:#c7c4c0; }
+.lifestyle img { width:100%; height:100%; display:block; object-fit:cover; object-position:var(--photo-position); }
+.lifestyle figcaption { position:absolute; bottom:22px; left:52px; background:var(--paper); color:var(--ink); font-size:16px; font-weight:800; letter-spacing:.08em; padding:14px 17px 12px; }
+.conversion { margin:0 52px; padding-top:27px; display:flex; flex-direction:column; justify-content:space-between; padding-bottom:28px; }
+.benefits { display:flex; flex-wrap:wrap; gap:22px 42px; align-items:center; }
+.benefit { display:flex; align-items:center; gap:12px; font-size:26px; font-weight:700; }
+.bullet { width:12px; height:12px; border-radius:50%; background:var(--accent); flex:none; }
+.footer-line { border-top:2px solid var(--ink); padding-top:18px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.product-label { font-size:16px; letter-spacing:.12em; font-weight:800; }
+.cta { display:flex; align-items:center; justify-content:space-between; gap:27px; padding:0 23px 0 26px; min-height:68px; background:var(--ink); color:var(--paper); font-weight:800; font-size:20px; white-space:nowrap; }
+.cta-arrow {font-size:32px; font-weight:400; line-height:1;}
+/* portrait: headline longer, photo higher; same visual grammar */
+.creative[data-format="portrait"] { height:1350px; grid-template-rows:103px 246px 750px 251px; }
+.creative[data-format="portrait"] .opening { padding-top:27px; }
+.creative[data-format="portrait"] h1 { font-size:83px; }
+.creative[data-format="portrait"] .opening p { font-size:24px; }
+.creative[data-format="portrait"] .conversion { padding-top:35px; padding-bottom:38px; }
+.creative[data-format="portrait"] .benefit { font-size:29px; }
+/* story: dedicated safe zones; deliberately not stretched square */
+.creative[data-format="story"] { height:1920px; grid-template-rows:238px 344px 1000px 338px; }
+.creative[data-format="story"] .masthead { align-items:flex-end; padding-bottom:24px; }
+.creative[data-format="story"] #brand-name { font-size:45px; }
+.creative[data-format="story"] .edition { font-size:20px; }
+.creative[data-format="story"] .opening { padding-top:43px; grid-template-columns:1fr; grid-template-rows:32px auto auto; gap:12px; }
+.creative[data-format="story"] h1 { font-size:100px; grid-column:1; grid-row:2; }
+.creative[data-format="story"] .opening p { grid-column:1; grid-row:3; font-size:26px; align-self:start; max-width:790px; padding:0; }
+.creative[data-format="story"] .lifestyle figcaption { bottom:30px; left:52px; font-size:20px; padding:18px 20px; }
+.creative[data-format="story"] .conversion { padding-top:35px; padding-bottom:210px; }
+.creative[data-format="story"] .benefits { gap:25px 38px; }
+.creative[data-format="story"] .benefit { font-size:32px; }
+.creative[data-format="story"] .footer-line { padding-top:20px; }
+.creative[data-format="story"] .cta { height:78px; font-size:21px; }

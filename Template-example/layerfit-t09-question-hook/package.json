@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "puppeteer-core": "^25.17.0"
+  },
+  "type": "module",
+  "name": "layerfit-t05-question-hook",
+  "version": "1.0.0",
+  "description": "LayerFit Meta Ads template t05 - Question Hook concept"
+}

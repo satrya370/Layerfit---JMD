@@ -1,0 +1,20 @@
+[
+  {
+    "format": "square",
+    "width": 1080,
+    "height": 1080,
+    "issues": []
+  },
+  {
+    "format": "portrait",
+    "width": 1080,
+    "height": 1350,
+    "issues": []
+  },
+  {
+    "format": "story",
+    "width": 1080,
+    "height": 1920,
+    "issues": []
+  }
+]

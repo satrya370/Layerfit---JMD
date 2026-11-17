@@ -1,0 +1,16 @@
+{
+  "format": "square",
+  "brand": "LAYERFIT",
+  "kicker": "PRODUCT IN BEELD",
+  "eyebrow": "VOOR IN HUIS",
+  "headline": "Schoonmaken.\nOp jouw manier.",
+  "description": "Bekijk de combinatie van een robotstofzuiger en een handstofzuiger.",
+  "features": ["Robotstofzuiger", "Handstofzuiger"],
+  "cta": "BEKIJK DE COMBINATIE",
+  "photoCaption": "DE COMBINATIE IN ACTIE",
+  "productLabel": "ONTDEK HET PRODUCT",
+  "imageUrl": "assets/demo-lifestyle.jpg",
+  "imageAlt": "Handstofzuiger bij een stoel, robotstofzuiger op de vloer",
+  "colors": {"paper":"#f4f0e9", "ink":"#1f2724", "accent":"#d44f36"},
+  "imagePosition": "50% 48%"
+}

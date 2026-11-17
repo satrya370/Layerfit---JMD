@@ -1,0 +1,16 @@
+{
+  "brand": "LAYERFIT",
+  "tagline": "YOUR EVERYDAY COLLECTION",
+  "headline": "Your Complete\nGlow Routine",
+  "description": "Discover the collection. Find your daily essentials.",
+  "ctaPrimary": "Build your routine",
+  "ctaBottom": "SHOP THE COLLECTION",
+  "destinationLabel": "EXPLORE THE RANGE",
+  "productName": "Synthetic collection — demonstration only",
+  "productImages": ["assets/product-0.png", "assets/product-1.png", "assets/product-2.png"],
+  "benefits": [],
+  "colors": {"primary":"#31151b","secondary":"#fbd7dd","accent":"#ef233c"},
+  "fontFamily": "inter",
+  "format": "portrait",
+  "locale": "en"
+}

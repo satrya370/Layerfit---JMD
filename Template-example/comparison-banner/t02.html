@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toni Homi &mdash; Snel schoon, weinig moeite</title>
+
+  <!-- Font: Montserrat (slogan & label) + Poppins (teks) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="t02.css">
+</head>
+<body>
+
+  <!-- ============ IKLAN PERBANDINGAN (SPLIT SCREEN) ============ -->
+  <main class="ad">
+
+    <!-- ===== PANEL KIRI : MEREK LAIN ===== -->
+    <section class="panel panel--competitor">
+
+      <img class="panel__photo"
+           src="images/rug-cleaner.jpg"
+           alt="Stofzuigerkop op hoogpolig tapijt">
+
+      <!-- gradasi gelap atas (agar slogan terbaca) & bawah (agar daftar terbaca) -->
+      <div class="panel__shade panel__shade--top" aria-hidden="true"></div>
+      <div class="panel__shade panel__shade--bottom" aria-hidden="true"></div>
+
+      <!-- slogan 3 baris: 2 baris ringan + nama merek tebal -->
+      <h1 class="slogan">
+        <span class="slogan__line">Snel schoon</span>
+        <span class="slogan__line">weinig moeite</span>
+        <span class="slogan__line slogan__line--brand">Toni Homi</span>
+      </h1>
+
+      <!-- label + daftar kekurangan -->
+      <div class="panel__bottom">
+        <span class="tag">Ander merk</span>
+
+        <ul class="points">
+          <li class="point point--con">
+            <svg class="point__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path class="point__glyph" d="M5 5l14 14M19 5L5 19"/>
+            </svg>
+            <span>Lastig met haren</span>
+          </li>
+          <li class="point point--con">
+            <svg class="point__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path class="point__glyph" d="M5 5l14 14M19 5L5 19"/>
+            </svg>
+            <span>Veel gesjouw</span>
+          </li>
+          <li class="point point--con">
+            <svg class="point__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path class="point__glyph" d="M5 5l14 14M19 5L5 19"/>
+            </svg>
+            <span>Altijd zelf doen</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- garis pembatas putih antar panel -->
+    <div class="ad__divider" aria-hidden="true"></div>
+
+    <!-- ===== PANEL KANAN : TONI HOMI ===== -->
+    <section class="panel panel--brand">
+
+      <img class="panel__photo panel__photo--brand"
+           src="images/sofa-cleaning.jpg"
+           alt="Vrouw die de beige bank stofzuigt met een draadloze stofzuiger">
+
+      <div class="panel__shade panel__shade--bottom" aria-hidden="true"></div>
+
+      <!-- logo merek: lingkaran hitam huruf T + cincin putih -->
+      <span class="brand-badge" role="img" aria-label="Toni Homi">T</span>
+
+      <!-- robotstofzuiger sebagai foto produk lingkaran -->
+      <figure class="robot-callout">
+        <img src="images/robot-vacuum.jpg" alt="Robotstofzuiger">
+      </figure>
+
+      <!-- label + daftar kelebihan -->
+      <div class="panel__bottom">
+        <span class="tag">Toni Homi</span>
+
+        <ul class="points">
+          <li class="point point--pro">
+            <svg class="point__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path class="point__glyph" d="M4.5 12.5l5 5L19.5 7"/>
+            </svg>
+            <span>Pakt lange haren</span>
+          </li>
+          <li class="point point--pro">
+            <svg class="point__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path class="point__glyph" d="M4.5 12.5l5 5L19.5 7"/>
+            </svg>
+            <span>Geen gesjouw</span>
+          </li>
+          <li class="point point--pro">
+            <svg class="point__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path class="point__glyph" d="M4.5 12.5l5 5L19.5 7"/>
+            </svg>
+            <span>Automatisch schoon</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

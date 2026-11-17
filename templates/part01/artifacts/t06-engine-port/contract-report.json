@@ -1,0 +1,284 @@
+{
+  "contractVersion": "0.2",
+  "template": {
+    "id": "question-hook",
+    "version": "0.1.0"
+  },
+  "passed": true,
+  "counts": {
+    "pass": 36,
+    "fail": 0,
+    "warn": 3
+  },
+  "checks": [
+    {
+      "id": "module.registry",
+      "status": "pass",
+      "detail": "registry accepts id, version, formats, rootClass and slot manifest"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "reference-example-layout-only"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "12 hostile or malformed variants rejected",
+      "case": "reference-example-layout-only"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "reference-example-layout-only",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "reference-example-layout-only",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "reference-example-layout-only",
+      "format": "vertical"
+    }
+  ]
+}

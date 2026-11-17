@@ -1,0 +1,50 @@
+{
+  "status": "success",
+  "taskId": "214d05aa-2955-4ae1-bd55-5fee45d6e12a",
+  "creativeId": "77111111-1111-4111-8111-111111111111",
+  "revision": 1,
+  "format": "vertical",
+  "artifacts": [
+    {
+      "encoding": "png",
+      "storageKey": "campaigns/77777777-7777-4777-8777-777777777777/creatives/77111111-1111-4111-8111-111111111111/r1/a4c09e984bc82f42/vertical.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 1156722,
+      "sha256": "6f9dde6ab8ea728b58ed6b5da93c76d1ee2f460f611c72fd53247193966a3690"
+    },
+    {
+      "encoding": "jpg",
+      "storageKey": "campaigns/77777777-7777-4777-8777-777777777777/creatives/77111111-1111-4111-8111-111111111111/r1/a4c09e984bc82f42/vertical.jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 350488,
+      "sha256": "7c09f580679bbb1edabecdad6e922689d8a44f950fbccf6bf2995909895424b4"
+    }
+  ],
+  "diagnostics": {
+    "templateId": "everyday-editorial",
+    "templateVersion": "0.2.0",
+    "browserVersion": "Chrome/157.0.8103.79",
+    "cssHash": "02b42517c6ff84ba88cf5b048364636769272308948e8f7ab60526b3ae345bb0",
+    "fingerprint": "a4c09e984bc82f42",
+    "durationMs": 1357,
+    "stageMs": {
+      "validate": 0,
+      "assets": 3,
+      "fonts": 0,
+      "template": 3,
+      "content": 119,
+      "readiness": 19,
+      "layout": 10,
+      "screenshot": 741,
+      "encode": 149,
+      "storage": 62
+    },
+    "warnings": [
+      "product-photo: image upscaled 2.30x (source 677x435)"
+    ],
+    "fittingSteps": 0,
+    "violations": []
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "status": "success",
+  "taskId": "45ce08b7-542d-42cb-9dc3-14677b127a41",
+  "creativeId": "f1111111-1111-4111-8111-111111111111",
+  "revision": 1,
+  "format": "square",
+  "artifacts": [
+    {
+      "encoding": "png",
+      "storageKey": "campaigns/66666666-6666-4666-8666-666666666666/creatives/f1111111-1111-4111-8111-111111111111/r1/c8c2c780bfb91157/square.png",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 371832,
+      "sha256": "f1effe00ced80683633627428629b174ff5fb3a6b7a89964d2c270127fc00471"
+    },
+    {
+      "encoding": "jpg",
+      "storageKey": "campaigns/66666666-6666-4666-8666-666666666666/creatives/f1111111-1111-4111-8111-111111111111/r1/c8c2c780bfb91157/square.jpg",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 267672,
+      "sha256": "7cfeba34268a1e39e3a35ba3e0b74dff7d397c7919cce49e345a3c23f7833ff4"
+    }
+  ],
+  "diagnostics": {
+    "templateId": "question-hook",
+    "templateVersion": "0.1.0",
+    "browserVersion": "Chrome/157.0.8103.79",
+    "cssHash": "072921acb8830722204851f1ac90f3442bb99793871757fb481b58e0301f8466",
+    "fingerprint": "c8c2c780bfb91157",
+    "durationMs": 1416,
+    "stageMs": {
+      "validate": 1,
+      "assets": 26,
+      "fonts": 4,
+      "template": 2,
+      "content": 97,
+      "readiness": 12,
+      "layout": 6,
+      "screenshot": 386,
+      "encode": 66,
+      "storage": 31
+    },
+    "warnings": [
+      "product-photo: image upscaled 1.87x (source 502x499)"
+    ],
+    "fittingSteps": 0,
+    "violations": []
+  }
+}

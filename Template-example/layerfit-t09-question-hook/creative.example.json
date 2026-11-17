@@ -1,0 +1,26 @@
+{
+  "templateId": "t05",
+  "concept": "question-hook",
+  "format": "square",
+  "brand": "SONIQ",
+  "logoUrl": "assets/soniq-logo.svg",
+  "headline": "Klaar met kabels?",
+  "description": "Ontmoet de SONIQ Air Pro — draadloos geluid, zonder gedoe, waar je ook bent.",
+  "cta": "Shop nu",
+  "imageUrl": "assets/headphone.png",
+  "imageAlt": "Zwarte draadloze over-ear koptelefoon",
+  "imageMode": "contain",
+  "features": [
+    "Actieve ruisonderdrukking",
+    "40 uur accuduur",
+    "IPX5 waterbestendig"
+  ],
+  "colors": {
+    "bg": "#16181D",
+    "surface": "#1E2129",
+    "accent": "#C8F135",
+    "text": "#FFFFFF",
+    "muted": "#A6ACB8",
+    "onAccent": "#16181D"
+  }
+}

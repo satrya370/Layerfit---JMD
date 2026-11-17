@@ -1,0 +1,16 @@
+{
+  "name": "layerfit-t08-bento-highlights",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "LayerFit T08 Bento Highlights: Meta Ads creative in HTML/CSS/JS, rendered with Puppeteer.",
+  "scripts": {
+    "render": "node render.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "25.17.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

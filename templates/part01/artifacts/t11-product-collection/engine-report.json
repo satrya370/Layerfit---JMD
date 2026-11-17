@@ -1,0 +1,479 @@
+{
+  "syntheticAssetsOnly": true,
+  "results": [
+    {
+      "case": "three-product-reference-composition",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "2d3d780a-a186-430d-979b-3c41ab9c0248",
+        "creativeId": "b0111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/3b9209edbf8b643d/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 458961,
+            "sha256": "d93be55fa70184430f250b423a5d4a2f46c9d2ae278b322c026ff314c7f5018f"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/3b9209edbf8b643d/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 160419,
+            "sha256": "f398410c189e73b61410342a13ca9cff6ef4fff07fd185028a44615261d825a3"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "product-collection-hero",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "03f98d0ca09237c01821306510c4d7307fc2ceed6ceefc06f812c6814b45ea8c",
+          "fingerprint": "3b9209edbf8b643d",
+          "durationMs": 3562,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 2,
+            "content": 166,
+            "readiness": 23,
+            "layout": 11,
+            "screenshot": 337,
+            "encode": 115,
+            "storage": 68
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "three-product-reference-composition",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "d7a8a94f-e04f-4c7c-aa9a-042c6e5f9fc4",
+        "creativeId": "b0111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/abe27974831fcc3e/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 558003,
+            "sha256": "8fece251be5d491a8c8956a28f6a059006fd36110b30c9375c8802e57f0e16f1"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/abe27974831fcc3e/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 194356,
+            "sha256": "effc36be2dbadf4169df144769c366882ae02a7dfe9af4e678a5d08a10dd0c49"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "product-collection-hero",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "03f98d0ca09237c01821306510c4d7307fc2ceed6ceefc06f812c6814b45ea8c",
+          "fingerprint": "abe27974831fcc3e",
+          "durationMs": 1090,
+          "stageMs": {
+            "validate": 1,
+            "assets": 1,
+            "fonts": 0,
+            "template": 1,
+            "content": 109,
+            "readiness": 25,
+            "layout": 8,
+            "screenshot": 459,
+            "encode": 142,
+            "storage": 58
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "three-product-reference-composition",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "5068dc52-671b-4ad9-8ac3-e2a0a17c5676",
+        "creativeId": "b0111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/5e2abc01b4855f31/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 684813,
+            "sha256": "ab53b04af4148d38d697d1e9c228fc1731c723ce4e0b57792a649c611054581e"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/5e2abc01b4855f31/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 223275,
+            "sha256": "89353d862ca0ca7ac3b9af87514101026a88a6c2e1495538f72f553594a17169"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "product-collection-hero",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "03f98d0ca09237c01821306510c4d7307fc2ceed6ceefc06f812c6814b45ea8c",
+          "fingerprint": "5e2abc01b4855f31",
+          "durationMs": 1791,
+          "stageMs": {
+            "validate": 1,
+            "assets": 2,
+            "fonts": 0,
+            "template": 3,
+            "content": 99,
+            "readiness": 23,
+            "layout": 9,
+            "screenshot": 494,
+            "encode": 522,
+            "storage": 337
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "one-product-shirt",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "fbbb5132-090c-4af8-b736-c505306881ba",
+        "creativeId": "b1111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/11111111-1111-4111-8111-111111111111/creatives/b1111111-1111-4111-8111-111111111111/r1/9d36b011d9080110/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 359225,
+            "sha256": "af947cc01624adcd12720cee4c32ba99906bd929a32858ee94014ab519df61a4"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/11111111-1111-4111-8111-111111111111/creatives/b1111111-1111-4111-8111-111111111111/r1/9d36b011d9080110/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 90953,
+            "sha256": "aadf08d35b0a6684ec6f8f14250269ea5260e4e961570a851efa903b27b235fb"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "product-collection-hero",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "03f98d0ca09237c01821306510c4d7307fc2ceed6ceefc06f812c6814b45ea8c",
+          "fingerprint": "9d36b011d9080110",
+          "durationMs": 3169,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 646,
+            "readiness": 153,
+            "layout": 48,
+            "screenshot": 454,
+            "encode": 268,
+            "storage": 229
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "one-product-shirt",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "bfdf9303-b0d2-4880-8bcd-b12f9dba54f2",
+        "creativeId": "b1111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/11111111-1111-4111-8111-111111111111/creatives/b1111111-1111-4111-8111-111111111111/r1/9856a0ebaf4010ed/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 426281,
+            "sha256": "f266ad1fef388e30f6afa4ec42b27e6f720fdd36fe07239741b09fb164784085"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/11111111-1111-4111-8111-111111111111/creatives/b1111111-1111-4111-8111-111111111111/r1/9856a0ebaf4010ed/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 107668,
+            "sha256": "bd376461e1fcf706fae9ac117c87486c3d8e883c23746b9c2f066d6249df1d2c"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "product-collection-hero",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "03f98d0ca09237c01821306510c4d7307fc2ceed6ceefc06f812c6814b45ea8c",
+          "fingerprint": "9856a0ebaf4010ed",
+          "durationMs": 1748,
+          "stageMs": {
+            "validate": 2,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 480,
+            "readiness": 75,
+            "layout": 30,
+            "screenshot": 389,
+            "encode": 179,
+            "storage": 154
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "one-product-shirt",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "dd17c146-f47b-419f-a64b-5514ea31691a",
+        "creativeId": "b1111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/11111111-1111-4111-8111-111111111111/creatives/b1111111-1111-4111-8111-111111111111/r1/80e95088f323e0fa/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 546764,
+            "sha256": "a063945a063159a27a2286825ac674d7b52c35aa70872e1288334db72b2fbeeb"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/11111111-1111-4111-8111-111111111111/creatives/b1111111-1111-4111-8111-111111111111/r1/80e95088f323e0fa/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 128290,
+            "sha256": "4b160575ae7328bc7c0fec813122d5e7acb89260300c0f8eaf4e4c1a51cd2972"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "product-collection-hero",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "03f98d0ca09237c01821306510c4d7307fc2ceed6ceefc06f812c6814b45ea8c",
+          "fingerprint": "80e95088f323e0fa",
+          "durationMs": 1295,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 2,
+            "content": 171,
+            "readiness": 39,
+            "layout": 12,
+            "screenshot": 448,
+            "encode": 144,
+            "storage": 100
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "two-distinct-products",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "02107fc3-a9a4-4bf6-a695-3812d0dd0e2e",
+        "creativeId": "b2111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b2111111-1111-4111-8111-111111111111/r1/7618c8f0cbfcdd2c/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 438506,
+            "sha256": "a4587e85d73df2a0f6f50553f607fdcb1db5614cd01bf64480b3d39dd294d932"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b2111111-1111-4111-8111-111111111111/r1/7618c8f0cbfcdd2c/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 121682,
+            "sha256": "f346bb0c2c43cd4518f287bd82ecc84a34d06b202b80ef24e3d5d101ab6cfcc8"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "product-collection-hero",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "03f98d0ca09237c01821306510c4d7307fc2ceed6ceefc06f812c6814b45ea8c",
+          "fingerprint": "7618c8f0cbfcdd2c",
+          "durationMs": 1213,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 2,
+            "content": 109,
+            "readiness": 33,
+            "layout": 10,
+            "screenshot": 335,
+            "encode": 128,
+            "storage": 226
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "two-distinct-products",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "7980e05e-18d2-40fc-b9a9-f537651591e2",
+        "creativeId": "b2111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b2111111-1111-4111-8111-111111111111/r1/152d3c1c1151616d/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 529768,
+            "sha256": "431bb8cdc770394cb4d398a3346ea9d0a44f2bfad0e3462c1b4b8e7fcb5443e4"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b2111111-1111-4111-8111-111111111111/r1/152d3c1c1151616d/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 151184,
+            "sha256": "592886d2c29c9572978b6b6ea38f139d52663ac9d658c86e417da8dc64cf7030"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "product-collection-hero",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "03f98d0ca09237c01821306510c4d7307fc2ceed6ceefc06f812c6814b45ea8c",
+          "fingerprint": "152d3c1c1151616d",
+          "durationMs": 1139,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 150,
+            "readiness": 38,
+            "layout": 35,
+            "screenshot": 387,
+            "encode": 92,
+            "storage": 35
+          },
+          "warnings": [
+            "product-main: image upscaled 1.22x (source 300x570)",
+            "product-left: image upscaled 1.06x (source 300x640)"
+          ],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "two-distinct-products",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "5e2c3418-ba44-4ba2-b0d5-df528d8631d4",
+        "creativeId": "b2111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b2111111-1111-4111-8111-111111111111/r1/1f65832d78e55515/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 646709,
+            "sha256": "5920ca3a9ba401b7ba5f23a693dcf3a336ed9efef0f22bafd05aebab762e2310"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b2111111-1111-4111-8111-111111111111/r1/1f65832d78e55515/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 172962,
+            "sha256": "8bc7763078ebf771b250bca9562f4f466879f689c79da0926343ac32a026556b"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "product-collection-hero",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "03f98d0ca09237c01821306510c4d7307fc2ceed6ceefc06f812c6814b45ea8c",
+          "fingerprint": "1f65832d78e55515",
+          "durationMs": 1306,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 132,
+            "readiness": 56,
+            "layout": 15,
+            "screenshot": 397,
+            "encode": 117,
+            "storage": 139
+          },
+          "warnings": [
+            "product-main: image upscaled 1.27x (source 300x570)",
+            "product-left: image upscaled 1.09x (source 300x640)"
+          ],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    }
+  ]
+}

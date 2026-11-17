@@ -1,0 +1,308 @@
+{
+  "contractVersion": "0.2",
+  "template": {
+    "id": "editorial-reframe",
+    "version": "0.2.0"
+  },
+  "passed": true,
+  "counts": {
+    "pass": 40,
+    "fail": 0,
+    "warn": 3
+  },
+  "checks": [
+    {
+      "id": "module.registry",
+      "status": "pass",
+      "detail": "registry accepts id, version, formats, rootClass and slot manifest"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "shirt-no-price-no-review"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "shirt-no-price-no-review"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "4 slot(s), unique and well-formed",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "shirt-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "bottle-no-price-no-review"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "bottle-no-price-no-review"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "4 slot(s), unique and well-formed",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "bottle-no-price-no-review",
+      "format": "square"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "reference-example"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "reference-example"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "6 slot(s), unique and well-formed",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "2 fit group(s) are read by the CSS",
+      "case": "reference-example",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "reference-example",
+      "format": "square"
+    }
+  ]
+}

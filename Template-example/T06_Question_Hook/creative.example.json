@@ -1,0 +1,18 @@
+{
+  "brand": "LAYERFIT",
+  "headline": "OP ZOEK NAAR\n[[IETS DAT PAST?]]",
+  "eyebrow": "EVEN EEN VRAAGJE",
+  "description": "Maak kennis met Product A. Bekijk het product en ontdek de details.",
+  "photoCaption": "MAAK KENNIS MET PRODUCT A",
+  "cta": "BEKIJK PRODUCT",
+  "footerNote": "ONTDEK MEER OVER HET PRODUCT",
+  "features": [],
+  "imageUrl": "./assets/demo-product.png",
+  "imageAlt": "Product A — voorbeeldfoto",
+  "colors": {
+    "paper": "#f5f0e7",
+    "ink": "#1c3129",
+    "accent": "#ef6744",
+    "photoBg": "#e9e7df"
+  }
+}

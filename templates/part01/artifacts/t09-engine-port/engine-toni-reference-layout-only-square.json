@@ -1,0 +1,48 @@
+{
+  "status": "success",
+  "taskId": "5546705d-2758-4e1e-a283-fb73bb0d1518",
+  "creativeId": "a9222222-2222-4222-8222-222222222222",
+  "revision": 1,
+  "format": "square",
+  "artifacts": [
+    {
+      "encoding": "png",
+      "storageKey": "campaigns/99999999-9999-4999-8999-999999999999/creatives/a9222222-2222-4222-8222-222222222222/r1/a21a5c49c1452be4/square.png",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 228222,
+      "sha256": "4022b521d3b3b1c75173216a42f18ac1115df9397ab3be2dd7b6734eaceeec16"
+    },
+    {
+      "encoding": "jpg",
+      "storageKey": "campaigns/99999999-9999-4999-8999-999999999999/creatives/a9222222-2222-4222-8222-222222222222/r1/a21a5c49c1452be4/square.jpg",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 135841,
+      "sha256": "d6832ff8db5926e8af9b5447326ceecfddd02aad51daa73a3749f72cafa47d7c"
+    }
+  ],
+  "diagnostics": {
+    "templateId": "question-hook-t09",
+    "templateVersion": "0.1.0",
+    "browserVersion": "Chrome/157.0.8103.79",
+    "cssHash": "a2a25e6f0b16a2df90d02300e945be7a44ce43acaa89a800a2a4da4ee671cd7d",
+    "fingerprint": "a21a5c49c1452be4",
+    "durationMs": 657,
+    "stageMs": {
+      "validate": 0,
+      "assets": 21,
+      "fonts": 0,
+      "template": 1,
+      "content": 101,
+      "readiness": 28,
+      "layout": 6,
+      "screenshot": 177,
+      "encode": 66,
+      "storage": 32
+    },
+    "warnings": [],
+    "fittingSteps": 0,
+    "violations": []
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LayerFit T05 &mdash; Question Hook</title>
+
+  <!-- Font: Space Grotesk (headline) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!--
+    ============================================================
+    LAYERFIT TEMPLATE T05 — QUESTION HOOK
+    ------------------------------------------------------------
+    Semua teks di bawah adalah konten fallback statis agar file
+    bisa dibuka langsung di browser. Pada produksi (render.mjs /
+    aplikasi LayerFit), konten SELALU diinjeksi via
+    window.setCreative(data) — lihat script.js.
+    ============================================================
+  -->
+  <main class="ad" id="ad"
+        data-format="square"
+        data-image-mode="contain"
+        data-headline="xl">
+
+    <!-- ===== LAPISAN DEKORATIF (bukan konten) ===== -->
+    <div class="ad__bg" aria-hidden="true">
+      <div class="ad__glow ad__glow--tr"></div>
+      <div class="ad__glow ad__glow--bl"></div>
+      <div class="ad__ghostq" id="ghostQ">?</div>
+      <div class="ad__corner"></div>
+    </div>
+
+    <!-- ===== KONTEN ===== -->
+    <div class="ad__inner">
+
+      <!-- baris merek: logo + nama -->
+      <header class="brandbar" id="brandbar">
+        <img class="brandbar__logo" id="brandLogo"
+             src="assets/soniq-logo.svg" alt="">
+        <span class="brandbar__name" id="brandName">SONIQ</span>
+      </header>
+
+      <!-- pertanyaan hook: kata terakhir otomatis jadi aksen lime -->
+      <h1 class="question" id="question">
+        <span class="question__main" id="qMain">Klaar met</span>
+        <span class="question__accent" id="qAccent">kabels?</span>
+      </h1>
+
+      <!-- produk sebagai jawaban: melayang di atas ring aksen -->
+      <figure class="hero" id="hero">
+        <div class="hero__ring" aria-hidden="true"></div>
+        <img class="hero__img" id="productImg"
+             src="assets/headphone.png"
+             alt="Zwarte draadloze over-ear koptelefoon">
+      </figure>
+
+      <!-- deskripsi singkat -->
+      <p class="answer" id="description">
+        Ontmoet de SONIQ Air Pro &mdash; draadloos geluid, zonder gedoe,
+        waar je ook bent.
+      </p>
+
+      <!-- keunggulan (maks. 3 pil) -->
+      <ul class="features" id="features">
+        <li class="feature">
+          <svg class="feature__icon" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M3 8.5l3.2 3.2L13 5"/>
+          </svg>
+          <span class="feature__text">Actieve ruisonderdrukking</span>
+        </li>
+        <li class="feature">
+          <svg class="feature__icon" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M3 8.5l3.2 3.2L13 5"/>
+          </svg>
+          <span class="feature__text">40 uur accuduur</span>
+        </li>
+        <li class="feature">
+          <svg class="feature__icon" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M3 8.5l3.2 3.2L13 5"/>
+          </svg>
+          <span class="feature__text">IPX5 waterbestendig</span>
+        </li>
+      </ul>
+
+      <!-- CTA -->
+      <a class="cta" id="cta" href="#" role="button">
+        <span class="cta__label" id="ctaLabel">Shop nu</span>
+        <svg class="cta__arrow" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </a>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

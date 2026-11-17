@@ -1,0 +1,45 @@
+{
+  "createdAt": "2026-11-17T08:32:09.830Z",
+  "browser": "Chrome/157.0.8103.79",
+  "results": [
+    {
+      "dataset": "t08",
+      "format": "square",
+      "status": "ok",
+      "file": "previews\\t08-square.png",
+      "bytes": 831854,
+      "width": 1080,
+      "height": 1080,
+      "steps": 0,
+      "scales": {},
+      "warnings": [],
+      "ms": 819
+    },
+    {
+      "dataset": "t08",
+      "format": "portrait",
+      "status": "ok",
+      "file": "previews\\t08-portrait.png",
+      "bytes": 936653,
+      "width": 1080,
+      "height": 1350,
+      "steps": 0,
+      "scales": {},
+      "warnings": [],
+      "ms": 780
+    },
+    {
+      "dataset": "t08",
+      "format": "story",
+      "status": "ok",
+      "file": "previews\\t08-story.png",
+      "bytes": 1123900,
+      "width": 1080,
+      "height": 1920,
+      "steps": 0,
+      "scales": {},
+      "warnings": [],
+      "ms": 939
+    }
+  ]
+}

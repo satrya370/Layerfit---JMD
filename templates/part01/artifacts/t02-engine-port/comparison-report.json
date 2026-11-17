@@ -1,0 +1,12 @@
+{
+  "width": 1080,
+  "height": 1080,
+  "meanAbsoluteChannelError": 0.4692724051211706,
+  "exactPixelMatch": false,
+  "notes": [
+    "Source DOM/CSS and engine use the same local Montserrat/Poppins font files.",
+    "Only preview page chrome is removed; square expanded from 960 to 1080 for both renders.",
+    "Engine normalizes photos; differences in decoded/re-encoded photography may remain.",
+    "Reference example only, NOT substantiated campaign claims."
+  ]
+}

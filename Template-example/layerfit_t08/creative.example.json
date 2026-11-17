@@ -1,0 +1,24 @@
+{
+  "_note": "DEMO data for a fictional product. These are not LayerFit product facts. Replace every value; unknown keys such as this one are ignored.",
+  "brand": "Terra",
+  "headline": "Gemaakt voor [[elke dag]]",
+  "description": "Eén product, zonder gedoe.",
+  "cta": "Bekijk nu",
+  "imageUrl": "assets/demo-photo.png",
+  "imageAlt": "Productfoto",
+  "allowCrop": true,
+  "features": [
+    "Herbruikbaar",
+    "Eenvoudig in gebruik"
+  ],
+  "colors": {
+    "primary": "#17332f",
+    "secondary": "#efe9de",
+    "accent": "#f2b134"
+  },
+  "fonts": {
+    "heading": "inter",
+    "body": "inter"
+  },
+  "format": "square"
+}
