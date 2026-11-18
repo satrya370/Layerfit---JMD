@@ -1,0 +1,70 @@
+/* ============================================================
+   T10 ATMOSPHERIC EDITORIAL
+   A magazine-style ad: the photo bleeds across the top, a calm paper-coloured band below carries a large serif
+   headline, a short line of benefits in small caps and one button.
+   Flat colour, hard edges, no gradients, no shadows, no cards.
+   Colours: secondary = the band (light), primary = the button (dark, white text), accent = small details (offer text,
+   benefit markers). Ink is fixed; the schema checks every pairing.
+   The photo has no text on it, so it may run into the safe margins; all text sits inside --lf-safe-*.
+   Words are never broken to make text fit.
+   ============================================================ */
+
+.lf-atmospheric-editorial {
+  --ink: #1b2220;
+  --photo-h: 540px;
+  --h: 92px;
+  --meta: 19px;
+  --benefit: 17px;
+  --cta-h: 66px;
+  --cta-fs: 21px;
+  --band-top: 40px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: var(--photo-h) minmax(0, 1fr);
+  background: var(--lf-brand-secondary);
+  color: var(--ink);
+  font-family: var(--lf-font-body);
+}
+.lf-atmospheric-editorial * { margin: 0; box-sizing: border-box; }
+.lf-atmospheric-editorial .ae-svg { display: block; width: 100%; height: 100%; }
+
+/* ---- photo: full bleed, no text on it ---- */
+.lf-atmospheric-editorial .ae-photo { position: relative; min-height: 0; overflow: hidden; }
+.lf-atmospheric-editorial .ae-figure { position: absolute; inset: 0; }
+.lf-atmospheric-editorial .ae-img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+
+/* ---- paper band ---- */
+.lf-atmospheric-editorial .ae-band {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 22px; min-height: 0;
+  padding: var(--band-top) var(--lf-safe-right) var(--lf-safe-bottom) var(--lf-safe-left);
+}
+.lf-atmospheric-editorial .ae-meta {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
+  padding-bottom: 16px; border-bottom: 1px solid rgb(27 34 32 / 0.2);
+  font-size: var(--meta); font-weight: 700; line-height: 1.2; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.lf-atmospheric-editorial .ae-offer { color: var(--lf-brand-accent); text-align: right; }
+.lf-atmospheric-editorial .ae-headline {
+  font-family: var(--lf-font-heading); font-weight: 400;
+  font-size: calc(var(--h) * var(--lf-fit-headline, 1)); line-height: 1.02; letter-spacing: -0.02em; text-wrap: balance;
+}
+.lf-atmospheric-editorial .ae-foot { display: flex; justify-content: space-between; align-items: center; gap: 28px; }
+.lf-atmospheric-editorial .ae-list {
+  display: flex; flex-direction: column; gap: 9px; min-width: 0; padding: 0; list-style: none;
+  font-size: calc(var(--benefit) * var(--lf-fit-support, 1)); font-weight: 700; line-height: 1.25; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.lf-atmospheric-editorial .ae-list li { display: flex; align-items: center; gap: 10px; }
+.lf-atmospheric-editorial .ae-list li::before { content: ""; flex: none; width: 7px; height: 7px; background: var(--lf-brand-accent); }
+.lf-atmospheric-editorial .ae-cta {
+  display: flex; flex: none; align-items: center; gap: 16px; height: var(--cta-h); padding: 0 28px;
+  background: var(--lf-brand-primary); color: #ffffff;
+  font-size: calc(var(--cta-fs) * var(--lf-fit-cta, 1)); font-weight: 700; line-height: 1.1; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;
+}
+.lf-atmospheric-editorial .ae-cta-icon { flex: none; width: 1.1em; height: 1.1em; }
+
+/* ---- formats: same system, more photo on taller canvases ---- */
+.lf-atmospheric-editorial[data-format="portrait"] { --photo-h: 720px; --h: 100px; --meta: 20px; --benefit: 18px; --cta-h: 72px; --cta-fs: 22px; --band-top: 44px; }
+/* Story: the band ends at the 350 px bottom zone (padding = safe bottom); the photo carries the top zone. */
+.lf-atmospheric-editorial[data-format="vertical"] { --photo-h: 980px; --h: 118px; --meta: 24px; --benefit: 23px; --cta-h: 92px; --cta-fs: 28px; --band-top: 52px; }
+.lf-atmospheric-editorial[data-format="vertical"] .ae-foot { align-items: flex-end; }

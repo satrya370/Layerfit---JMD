@@ -1,0 +1,100 @@
+/* ============================================================
+   T14 OUTLINE POSTER
+   Ported from the standalone T14 package (Template-example/LayerFit_T14_Conzuri_Outline_Ad).
+   The reference is drawn at 540 px and exported at 2x; these values are the same numbers at 1080 px canvas size.
+   Big outlined type stretched horizontally, a white filled headline, a product photo in the middle, dark background.
+   Colors: secondary = outline stroke, accent = offer tag text, primary = background, headline is white.
+   Words are never broken to make text fit.
+   ============================================================ */
+
+.lf-outline-poster {
+  position: relative;
+  color: #ffffff;
+  font-family: var(--lf-font-body);
+  background: radial-gradient(ellipse 1060px 1180px at 83% 33%, #3d3d3d 0%, #303030 46%, #191919 76%, var(--lf-brand-primary) 100%);
+}
+.lf-outline-poster * { margin: 0; box-sizing: border-box; }
+
+/* ---- offer tag (optional) ---- */
+.lf-outline-poster .og-offer {
+  position: absolute; z-index: 7; top: max(30px, var(--lf-safe-top)); left: 50%; transform: translateX(-50%);
+  padding: 10px 20px 8px; background: #050505; color: var(--lf-brand-accent);
+  font-size: 26px; font-weight: 800; line-height: 1.1; letter-spacing: 2.3px; white-space: nowrap;
+}
+
+/* ---- outlined top lines ---- */
+.lf-outline-poster .og-top {
+  position: absolute; z-index: 5; top: calc(var(--lf-safe-top) + 80px); left: 0; right: 0;
+  display: block;
+  --top-fs: 86px;
+  height: calc(var(--top-fs) * 3.4);
+  line-height: 1.01; letter-spacing: 2px; text-align: center;
+}
+.lf-outline-poster .og-top span {
+  display: block; line-height: 1; color: transparent; -webkit-text-stroke: 3.2px var(--lf-brand-secondary); paint-order: stroke fill;
+  width: max-content; margin: 0 auto; font-family: var(--lf-font-body); font-weight: 900; font-size: calc(var(--top-fs) * var(--lf-fit-top, 1)); transform-origin: center center;
+}
+.lf-outline-poster .og-top span:nth-child(1) { letter-spacing: 2px; transform: scaleX(1.16); }
+.lf-outline-poster .og-top span:nth-child(2) { letter-spacing: 3.6px; transform: scaleX(1.39); }
+.lf-outline-poster .og-top span:nth-child(3) { letter-spacing: 5.4px; transform: scaleX(1.20); }
+
+/* ---- product photo: kept whole (contain), placed over the headline's top edge ---- */
+.lf-outline-poster .og-scene { position: absolute; z-index: 2; top: 414px; left: 36px; width: 1008px; height: 730px; }
+.lf-outline-poster .og-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; filter: contrast(1.07); }
+
+/* ---- headline: white, stretched ---- */
+.lf-outline-poster .og-headline {
+  position: absolute; z-index: 6; top: 1132px; left: 38px; width: max-content;
+  --h-fs: 98px;
+  font-family: var(--lf-font-body); font-weight: 900; font-size: calc(var(--h-fs) * var(--lf-fit-headline, 1)); line-height: 1.02; letter-spacing: -4.6px; white-space: nowrap;
+  color: #ffffff; transform: scaleX(1.46); transform-origin: left center;
+}
+
+/* ---- outlined bottom lines ---- */
+.lf-outline-poster .og-bottom {
+  position: absolute; z-index: 6; top: 1230px; left: 40px; right: 20px;
+  font-family: var(--lf-font-body); font-weight: 900; line-height: 1.08; letter-spacing: -2.8px;
+}
+.lf-outline-poster .og-bottom {
+  --b-fs: 96px;
+}
+.lf-outline-poster .og-bottom span {
+  display: block; width: max-content; color: transparent; -webkit-text-stroke: 3.3px var(--lf-brand-secondary); paint-order: stroke fill;
+  font-size: calc(var(--b-fs) * var(--lf-fit-support, 1)); white-space: nowrap; transform-origin: left center;
+}
+.lf-outline-poster .og-bottom span:nth-child(1) { transform: scaleX(1.55); }
+.lf-outline-poster .og-bottom span:nth-child(2) { transform: scaleX(1.56); }
+.lf-outline-poster .og-bottom span:nth-child(3) { transform: scaleX(1.28); }
+
+/* ---- teaser line and brand ---- */
+.lf-outline-poster .og-teaser {
+  position: absolute; z-index: 7; bottom: 134px; left: 0; right: 0; text-align: center;
+  --c-fs: 26px;
+  font-weight: 900; font-size: calc(var(--c-fs) * var(--lf-fit-cta, 1)); letter-spacing: 0.4px; color: #ffffff; white-space: pre;
+}
+.lf-outline-poster .og-brand {
+  position: absolute; z-index: 7; bottom: 42px; left: 0; right: 0; text-align: center;
+  font-size: 24px; font-weight: 600; letter-spacing: 10px; white-space: pre; color: #ffffff;
+}
+
+/* ---- portrait 4:5 (reference 540 x 675) ---- */
+.lf-outline-poster[data-format="portrait"] .og-top { top: calc(var(--lf-safe-top) + 80px); line-height: 1; }
+.lf-outline-poster[data-format="portrait"] .og-top { --top-fs: 68px; }
+.lf-outline-poster[data-format="portrait"] .og-scene { top: 302px; left: 116px; width: 840px; height: 530px; }
+.lf-outline-poster[data-format="portrait"] .og-headline { top: 844px; --h-fs: 84px; letter-spacing: -3.2px; transform: scaleX(1.24); }
+.lf-outline-poster[data-format="portrait"] .og-bottom { top: 932px; }
+.lf-outline-poster[data-format="portrait"] .og-bottom { --b-fs: 80px; }
+.lf-outline-poster[data-format="portrait"] .og-bottom span { line-height: 1.02; transform: scaleX(1.2); }
+.lf-outline-poster[data-format="portrait"] .og-teaser { bottom: 78px; --c-fs: 22px; }
+.lf-outline-poster[data-format="portrait"] .og-brand { bottom: 20px; font-size: 20px; }
+
+/* ---- square (reference 540 x 540) ---- */
+.lf-outline-poster[data-format="square"] .og-top { top: calc(var(--lf-safe-top) + 80px); line-height: 1; }
+.lf-outline-poster[data-format="square"] .og-top { --top-fs: 58px; }
+.lf-outline-poster[data-format="square"] .og-scene { top: 260px; left: 116px; width: 860px; height: 500px; }
+.lf-outline-poster[data-format="square"] .og-headline { top: 742px; --h-fs: 78px; letter-spacing: -2.8px; transform: scaleX(1.22); }
+.lf-outline-poster[data-format="square"] .og-bottom { top: 818px; }
+.lf-outline-poster[data-format="square"] .og-bottom { --b-fs: 58px; }
+.lf-outline-poster[data-format="square"] .og-bottom span { line-height: 0.98; transform: scaleX(1.1); }
+.lf-outline-poster[data-format="square"] .og-teaser { bottom: 48px; --c-fs: 20px; }
+.lf-outline-poster[data-format="square"] .og-brand { bottom: 16px; font-size: 16px; letter-spacing: 6px; }

@@ -6,6 +6,9 @@ Date: 17 November 2026. Both templates are `TemplateModule`s that follow `docs/c
 |---|---|---|---|
 | T03 Dark Offer Stack | `dark-offer-stack@0.1.0` | `Template-example/promo-banner/` (`t03.html`, `t03.css`) | `src/templates/part01/dark-offer-stack/` |
 | T05 Split Composition | `split-composition@0.1.0` | `Template-example/layerfit_t05/` (`index.html`, `styles.css`, `script.js`) | `src/templates/part02/split-composition/` |
+| T16 Discount Offer | `discount-offer@0.1.0` | `Template-example/LayerFit_T16_Discount_Offer/` (`index.html`, `styles.css`, `script.js`, `render.mjs`) | `src/templates/part02/discount-offer/` |
+| T14 Outline Poster | `outline-poster@0.1.0` | `Template-example/LayerFit_T14_Conzuri_Outline_Ad/` (`index.html`, `styles.css`, `script.js`, `render.mjs`) | `src/templates/part02/outline-poster/` |
+| T10 Atmospheric Editorial | `atmospheric-editorial@0.1.0` | `Template-example/T10_Atmospheric_Editorial/` (`index.html`, `styles.css`, `script.js`, `render.py`) | `src/templates/part02/atmospheric-editorial/` |
 | T08 Photo Overlay | `photo-overlay@0.1.0` | Original design by the engine owner (see the T08 section at the end) | `src/templates/part02/photo-overlay/` |
 
 Each folder has `schema.ts` (config limits), `render.ts` (markup with `data-slot` etc.), `styles.css` (the design, editable without touching TypeScript) and `index.ts` (module). Fixtures: `fixtures/templates/<id>/cases.ts`. Tests: `tests/templates/`.
@@ -98,3 +101,52 @@ typecheck and lint pass; `npm.cmd test` with Chrome 89 of 89 pass (74 pass and 1
 - The preview uses the user's own product photo from `layerfit_t05/assets` (466 x 499, cropped, provenance unknown): a flagged deviation from the synthetic-assets rule, for design preview only. It is soft when upscaled to the canvas.
 - Story: the cover crop cuts the right-hand product partly; a photo with a centred subject works better.
 - Fonts are interim OFL fonts, not brand fonts; no brand approval, no Dutch ad verified, no performance claim, not registered in an application, no JMD run.
+
+## T10 Atmospheric Editorial (redesigned)
+
+The first port kept the reference's lime-to-blue gradient and side-by-side layout; the user rejected it as unattractive. Rebuilt as a magazine-style ad. The standalone folder `Template-example/T10_Atmospheric_Editorial/` is the user's own and was not changed; the engine module no longer matches it.
+
+- **Layout:** the photo bleeds across the top with no text on it (square 540 px, portrait 720 px, story 980 px high). A flat paper band below holds a meta line (brand, optional offer from a fact) over a hairline rule, a large serif headline (heading font token, Fraunces in the cases), up to three small-caps benefits in a column and one solid button.
+- **Colours:** secondary = band, primary = button (white text), accent = offer text and benefit markers. The schema checks ink on the band, white on the button and accent on the band (all at least 4.5). No gradients, shadows or cards.
+- **Not supported:** body text, accent marker, proof, callouts, comparison. The photo must allow cropping.
+- **Story:** the band's bottom padding is the 350 px safe zone, so the text block ends above it; the top zone is covered by the photo.
+
+Evidence (local, system Chrome): typecheck and lint pass; `npm.cmd test` 96 of 96 pass, including the contract kit (no failures or warnings) and the render matrix (synthetic scene, 2 cases × 3 formats). A design preview with the spa photo from the user's T10 folder was rendered through the engine to the ignored `artifacts/templates/atmospheric-editorial-preview/`; that photo is only 271 × 392 px and was cropped from a screenshot, so it is blurry at full width and is not usable for a real ad.
+
+## T14 Outline Poster (ported from the Conzuri reference)
+
+Stretched outlined type above and below the product, a white headline, a teaser line and a spaced brand mark, on a dark background. The reference is 2x in every format, so the engine CSS uses the same numbers at 1080 px.
+
+- **Mapping:** top lines are `copy.body` split on "|"; bottom lines are `copy.benefits` (each needs a fact); the teaser is `copy.cta`; the offer is an offer fact. The Meta feed mock-up in the reference (`feed-preview.html`, `feed-preview.css`) is not ported: it is platform UI, not creative.
+- **Known gaps (recorded as expected layout failures in the render test):** the reference places the outlined top lines and the teaser inside the platform top and bottom zones, and the headline and bottom lines reach the edges. The engine's safe-area rules reject that geometry. The test records these failures instead of hiding them.
+- **Fonts:** the reference uses Inter Display / Arial Black; the engine uses bundled Inter 900. Stretched widths therefore differ slightly.
+- **Brand and copy** come from the user's reference. Their rights were not verified, and the ad is not published anywhere.
+
+Evidence (local, system Chrome): typecheck and lint pass; `npm.cmd test` 103 of 103 pass. The contract kit reports no failures or warnings. The visual preview with the reference photo is an unvalidated screenshot of the module markup, in `artifacts/templates/outline-poster-preview/`.
+
+
+Did you mean this?
+  npm test # Test a package
+To see a list of supported npm commands, run:
+  npm help 103 of 103 pass. The contract kit reports no failures or warnings. The visual preview with the reference photo is an unvalidated screenshot of the module markup, in .
+
+## T16 Discount Offer (ported from the Prose reference)
+
+Outlined offer tag at the top, a large headline, the product on a soft glow, a supporting line and one button. The example copy and the product photo come from the user's reference (Prose), which the user supplied; rights not verified.
+
+- **Eligibility:** the offer tag is a verified fact (`offerFactId`), and the schema rejects a config without one. The reference's free-text discount and `mode`/`verifiedDiscount` flags are replaced by that fact, so the text on the tag is always the verified wording.
+- **Added CTA:** the reference had no button; `copy.cta` is now drawn as a pill button (requested).
+- **Not ported:** the reference's separate `freeGift` flag (folded into the offer fact text) and the Facebook UI.
+- **Layout:** the blocks flow in a column inside the safe area (tag, headline, product, supporting line, button), so long text wraps (balanced) and pushes the others instead of overlapping them. The product takes the remaining height and is in the headline fit group: when the text is long the headline shrinks before the product gets too small. Headline sizes were reduced (56 / 62 / 78 px in square / portrait / story, from 75 / 80 / 100). The story layout keeps everything out of the 250 px top and 350 px bottom zones.
+
+Evidence (local, system Chrome): typecheck and lint pass; `npm.cmd test` 110 of 110 pass. The `long` synthetic case sets the tag, headline, supporting line and button at or near their budgets. A preview with the reference photo and longer copy (`prose-long.png`, same image as `prose-short.png`) shows the text wrapping onto more lines in all three formats without touching the product or another block. Contract kit: no failures or warnings. Previews: `artifacts/templates/discount-offer-preview/`.
+
+## T17 Minimal Discount (reworked)
+
+Module `src/templates/part02/minimal-discount/` (id `minimal-discount`, v0.1.0, square/portrait/vertical). The standalone package `Template-example/LayerFit_T17_Minimal_Discount` (fixed positions, gold headline on beige, no CTA) is not changed and no longer matches the module. A first rework (centered stack, brand between hairlines, product on a disc) was rejected by the user as generic and too thin on copy; this is the second version.
+
+- **Layout:** a split ad. The product stands large on a solid colour panel that bleeds to the canvas edges: the right column in square and portrait, a band across the top (behind the brand) in story. The copy column is left-aligned: brand wordmark in the top-left corner, the verified offer as the largest text, a headline, an optional supporting paragraph, up to three benefits with ticks and a button with an arrow. Text wraps (balanced); fit groups `offer`, `headline`, `support`, `list`, `cta` shrink type when copy is long.
+- **Colors:** secondary = background, primary = ink and button fill, accent = product panel and benefit ticks. No gradients. Schema checks ink on background, ink on panel and white on button at 4.5:1, and that the panel differs from the background.
+- **Facts-only:** the offer text comes from `offerFactId` in the verified snapshot; a missing fact is rejected by the schema and fails closed in `render`. Benefits carry fact ids (shared contract).
+- **Budgets:** headline 44, supporting paragraph 110, benefit 30 (max 3), CTA 24, brand 20. The offer fact has no schema budget; keep it to a few words (it is the hero text).
+- **Evidence:** typecheck, lint and the T17 tests pass (contract kit with no warnings, 3 cases x 3 formats rendered through the real engine, including a `long` case near every budget). Preview with the package demo tumbler: `artifacts/templates/minimal-discount-preview/`, script `artifacts/preview-t17.ts`.
