@@ -26,6 +26,7 @@ export class RenderAssetResolver {
   async resolve(campaignId: string, config: TemplateConfig): Promise<ResolvedRenderAssets> {
     const photos = await Promise.all(config.assets.map(async (ref) => ({
       ...(await this.#resolveOne(campaignId, ref.assetId)), role: ref.role, allowCrop: ref.allowCrop,
+      ...(ref.kind ? { kind: ref.kind } : {}),
       ...(ref.focalPoint ? { focalPoint: ref.focalPoint } : {}),
     }) satisfies ResolvedAsset));
     const logoId = config.brand.logoAssetId;

@@ -1,0 +1,86 @@
+/* ============================================================
+   T17 MINIMAL DISCOUNT
+   Reworked from the standalone T17 package (Template-example/LayerFit_T17_Minimal_Discount).
+   Layout: a split ad. The product stands large on a solid colour panel that bleeds to the canvas edges (right column in
+   square and portrait, top band in story). The copy column is left-aligned: brand wordmark in the top-left corner, the
+   verified offer as the largest text, a headline, a supporting line, up to three checked benefits and a button with an
+   arrow. Every text wraps (balanced); the fitter shrinks type when the copy gets long.
+   Colors: secondary = background, primary = ink and button, accent = product panel and benefit ticks.
+   No gradients. Words are never broken to make text fit.
+   ============================================================ */
+
+.lf-minimal-discount {
+  --brand: 30px;
+  --offer: 88px;
+  --h: 34px;
+  --support: 22px;
+  --list: 22px;
+  --cta: 24px;
+  --gap: 22px;
+  --panel-w: 42%;
+  --col-gap: 48px;
+
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: minmax(0, 1fr) var(--panel-w); grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas: "brand photo" "copy photo"; column-gap: var(--col-gap);
+  padding: var(--lf-safe-top) var(--lf-safe-right) var(--lf-safe-bottom) var(--lf-safe-left);
+  background: var(--lf-brand-secondary);
+  color: var(--lf-brand-primary);
+  font-family: var(--lf-font-body);
+}
+.lf-minimal-discount * { margin: 0; box-sizing: border-box; }
+
+/* Brand: a plain wordmark in the top-left corner. */
+.lf-minimal-discount .md-brand {
+  grid-area: brand; position: relative; z-index: 2; justify-self: start; align-self: start; max-width: 100%;
+  font-family: var(--lf-font-heading); font-size: var(--brand); font-weight: 800; letter-spacing: -0.02em; line-height: 1;
+}
+
+/* Product panel: a solid block that runs from the photo cell to the canvas edges. */
+.lf-minimal-discount .md-photo { grid-area: photo; position: relative; min-height: 0; }
+.lf-minimal-discount .md-photo::before { content: ""; position: absolute; top: -2000px; right: -2000px; bottom: -2000px; left: 0; background: var(--lf-brand-accent); }
+.lf-minimal-discount .md-figure { position: absolute; inset: 0; margin: 0; z-index: 1; }
+.lf-minimal-discount .md-img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 28px 22px rgb(20 16 12 / 0.28)); }
+
+/* Copy column */
+.lf-minimal-discount .md-copy { grid-area: copy; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: var(--gap); min-width: 0; }
+.lf-minimal-discount .md-offer {
+  max-width: 100%;
+  font-family: var(--lf-font-heading); font-size: calc(var(--offer) * var(--lf-fit-offer, 1)); font-weight: 900;
+  letter-spacing: -0.045em; line-height: 0.92; text-transform: uppercase; text-wrap: balance;
+}
+.lf-minimal-discount .md-headline {
+  max-width: 100%;
+  font-family: var(--lf-font-heading); font-size: calc(var(--h) * var(--lf-fit-headline, 1)); font-weight: 700;
+  letter-spacing: -0.02em; line-height: 1.12; text-wrap: balance;
+}
+.lf-minimal-discount .md-support { max-width: 100%; font-size: calc(var(--support) * var(--lf-fit-support, 1)); font-weight: 400; line-height: 1.4; text-wrap: pretty; }
+
+.lf-minimal-discount .md-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.55em; font-size: calc(var(--list) * var(--lf-fit-list, 1)); }
+.lf-minimal-discount .md-list li { display: flex; align-items: flex-start; gap: 0.6em; font-weight: 600; line-height: 1.3; }
+.lf-minimal-discount .md-tick { flex: none; position: relative; width: 1.25em; height: 1.25em; margin-top: 0.02em; border-radius: 50%; background: var(--lf-brand-accent); }
+.lf-minimal-discount .md-tick::after {
+  content: ""; position: absolute; left: 0.43em; top: 0.24em; width: 0.32em; height: 0.6em;
+  border-right: 0.13em solid currentColor; border-bottom: 0.13em solid currentColor; transform: rotate(45deg);
+}
+
+.lf-minimal-discount .md-cta {
+  display: inline-flex; align-items: center; gap: 0.75em; max-width: 100%; margin-top: calc(var(--gap) * 0.4);
+  padding: 0.82em 1.5em; border-radius: 14px; background: var(--lf-brand-primary); color: #ffffff;
+  font-size: calc(var(--cta) * var(--lf-fit-cta, 1)); font-weight: 700; line-height: 1.2; letter-spacing: 0.01em;
+}
+.lf-minimal-discount .md-cta-label { text-wrap: balance; }
+.lf-minimal-discount .md-cta::after { content: ""; flex: none; width: 0.48em; height: 0.48em; border-top: 0.14em solid currentColor; border-right: 0.14em solid currentColor; transform: rotate(45deg); }
+
+/* 4:5 portrait: same split, more room for type. */
+.lf-minimal-discount[data-format="portrait"] { --brand: 32px; --offer: 100px; --h: 40px; --support: 25px; --list: 25px; --cta: 27px; --gap: 28px; --panel-w: 44%; }
+
+/* 9:16 story: the panel becomes a band across the top (behind the brand), the copy sits below it full width. The safe
+   padding keeps all text out of the 250 px top and 350 px bottom zones; only the panel colour reaches them. */
+.lf-minimal-discount[data-format="vertical"] {
+  --brand: 36px; --offer: 112px; --h: 44px; --support: 28px; --list: 28px; --cta: 30px; --gap: 22px; --photo-min: 400px;
+  grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(var(--photo-min), 1fr) auto;
+  grid-template-areas: "brand" "photo" "copy"; row-gap: 44px;
+}
+.lf-minimal-discount[data-format="vertical"] .md-photo::before { top: -2000px; right: -2000px; bottom: 0; left: -2000px; }
+.lf-minimal-discount[data-format="vertical"] .md-figure { inset: 2% 0 4% 0; }

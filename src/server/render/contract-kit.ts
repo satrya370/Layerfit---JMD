@@ -10,11 +10,13 @@
  */
 import { SafeHtml } from '../../shared/html.js';
 import {
-  CONTRACT_VERSION, FORMAT_PROFILES, type Format, type ResolvedAsset, type ResolvedFact, type TemplateConfig, type TemplateModule,
+  CONTRACT_VERSION, FORMAT_PROFILES, checkContentManifest, isCanonicalSlot,
+  type Format, type ResolvedAsset, type ResolvedFact, type TemplateConfig, type TemplateModule,
 } from '../../shared/render-contract.js';
 import { MemoryAssetSource, RenderAssetResolver, type AssetRecord } from '../assets/resolve-render-assets.js';
 import { validateTemplateCss } from './document.js';
 import { RenderError } from './errors.js';
+import { manifestCases } from './manifest-cases.js';
 import { TemplateRegistry } from './registry.js';
 
 export interface ContractCase {
@@ -59,7 +61,7 @@ const MUTATIONS: ReadonlyArray<{ id: string; apply: (config: Obj) => boolean }> 
   { id: 'markup in template id', apply: (c) => { if (typeof c.templateId !== 'string') return false; c.templateId = '<script>'; return true; } },
 ];
 
-interface Tag { name: string; attrs: Map<string, string>; closing: boolean }
+interface Tag { name: string; attrs: Map<string, string>; closing: boolean; selfClosing: boolean }
 
 const UNESCAPES: Record<string, string> = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&#96;': '`' };
 const unescapeHtml = (value: string) => value.replace(/&(amp|lt|gt|quot|#39|#96);/g, (m) => UNESCAPES[m] ?? m);
@@ -74,9 +76,32 @@ function tokenize(markup: string): Tag[] {
     for (const attr of (match[3] ?? '').matchAll(attrPattern)) {
       attrs.set(attr[1]!.toLowerCase(), unescapeHtml(attr[2] ?? attr[3] ?? attr[4] ?? ''));
     }
-    tags.push({ name: match[2]!.toLowerCase(), attrs, closing: match[1] === '/' });
+    // A trailing slash closes the tag only alone, after whitespace or after a closing quote: an unquoted value such as href=a/ stays an open tag.
+    tags.push({ name: match[2]!.toLowerCase(), attrs, closing: match[1] === '/', selfClosing: /(?:^|[\s"'])\/$/.test((match[3] ?? '').trimEnd()) });
   }
   return tags;
+}
+
+const VOID_TAGS = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr']);
+
+/** Whether an <img> with this src is the slot element itself or sits inside it. Follows open and closing tags, skipping void and self-closed elements. */
+export function imageInSlot(markup: string, slot: string, src: string): boolean {
+  const open: string[] = [];
+  let slotDepth = -1;
+  for (const tag of tokenize(markup)) {
+    if (tag.closing) {
+      const at = open.lastIndexOf(tag.name);
+      if (at !== -1) open.length = at;
+      if (slotDepth !== -1 && open.length <= slotDepth) slotDepth = -1;
+      continue;
+    }
+    const isSlot = tag.attrs.get('data-slot') === slot;
+    if (tag.name === 'img' && tag.attrs.get('src') === src && (isSlot || slotDepth !== -1)) return true;
+    if (VOID_TAGS.has(tag.name) || tag.selfClosing) continue;
+    open.push(tag.name);
+    if (isSlot && slotDepth === -1) slotDepth = open.length - 1;
+  }
+  return false;
 }
 
 const FORBIDDEN_TAGS = new Set(['script', 'link', 'iframe', 'frame', 'frameset', 'object', 'embed', 'base', 'meta', 'form', 'style', 'video', 'audio', 'source', 'track', 'applet']);
@@ -125,7 +150,32 @@ export async function checkTemplateContract(module: TemplateModule, cases: reado
   catch (error) { add('module.registry', 'fail', (error as Error).message); }
   if (cases.length === 0) add('cases.present', 'fail', 'no contract cases supplied; at least one valid case is required');
 
-  for (const testCase of cases) {
+  // A module that declares `content` is also run against cases derived from its manifest (max, min, no-logo, no-offer),
+  // built from the first supplied case the schema accepts. Modules without `content` keep their own slot names until they are
+  // migrated, so none of the vocabulary and manifest checks apply to them; Task 3.12 of slot_normalization_plan.md makes `content`
+  // required and removes this condition.
+  const content = module.content;
+  const baseCase = content ? cases.find((c) => module.configSchema.safeParse(c.config).success) : undefined;
+  const derived = baseCase ? manifestCases(module, baseCase) : [];
+  const allCases = [...cases, ...derived];
+  if (content) {
+    // Facts about the module itself are reported once, not once per case and format.
+    const manifestProblems = [
+      ...checkContentManifest(content),
+      ...((content.offer === 'required-or-hero' || content.offer === 'offer-only') && !module.slots.some((slot) => slot.name === 'offer' && slot.required)
+        ? [`the manifest says the offer is ${content.offer}, but the slot manifest does not require an offer slot`] : []),
+    ];
+    if (manifestProblems.length) add('content.manifest', 'fail', manifestProblems.join('; '));
+    else add('content.manifest', 'pass', 'the content manifest is within the shared schema limits and agrees with the slot manifest');
+    if (cases.length > 0) {
+      if (content.comparison) add('cases.derived', 'pass', 'comparison design: no cases are derived from the manifest, it is checked with its own cases');
+      else if (!baseCase) add('cases.derived', 'fail', 'no supplied case is accepted by the schema, so no cases could be derived from the manifest');
+      else if (derived.length === 0) add('cases.derived', 'fail', 'no cases could be derived from the manifest: the base case needs a brand and a first asset whose bytes are supplied');
+      else add('cases.derived', 'pass', `${derived.length} case(s) derived from the manifest: ${derived.map((c) => c.name.slice(c.name.lastIndexOf(':') + 1)).join(', ')}`);
+    }
+  }
+
+  for (const testCase of allCases) {
     const caseName = testCase.name;
     // 2. Schema accepts the case config and rejects every applicable generic mutation.
     const accepted = module.configSchema.safeParse(testCase.config);
@@ -235,6 +285,24 @@ export async function checkTemplateContract(module: TemplateModule, cases: reado
       if (undeclared.length) add('slots.undeclared', 'warn', `slots in the markup but not in the manifest: ${[...new Set(undeclared)].join(', ')}`, where);
       const notFlagged = applicable.filter((slot) => slot.required).filter((slot) => slotTags.find((tag) => tag.attrs.get('data-slot') === slot.name)?.attrs.get('data-required') !== 'true').map((slot) => slot.name);
       if (notFlagged.length) add('slots.required-flag', 'warn', `manifest-required slot(s) lack data-required="true": ${notFlagged.join(', ')}. The renderer still checks them through the manifest, but diagnostics are clearer with the flag`, where);
+
+      // Slot vocabulary and where the content goes (slot_normalization_plan.md). Only for modules that declare `content`.
+      if (content) {
+        const outside = [...new Set(names.filter((name) => !isCanonicalSlot(name)))];
+        if (outside.length) add('slots.canonical', 'fail', `slot name(s) outside the canonical vocabulary: ${outside.join(', ')}. Use the names in CANONICAL_SLOTS, or an x- prefix for a decorative wrapper that carries no content`, { ...where, slot: outside[0]! });
+        else add('slots.canonical', 'pass', 'every slot name is canonical', where);
+
+        const coreProblems = [
+          ...['brand', 'headline', 'cta', 'photo'].filter((name) => !names.includes(name)).map((name) => `no ${name} slot`),
+          ...(config.copy.body !== undefined && content.body.use !== 'none' && !names.includes('description') ? ['the case has a description and the manifest allows one, but there is no description slot'] : []),
+          ...(config.copy.benefits.length > 0 && content.benefits.max > 0 && !names.includes('benefit-1') ? ['the case has benefits and the manifest allows them, but there is no benefit-1 slot'] : []),
+        ];
+        if (coreProblems.length) add('slots.core', 'fail', coreProblems.join('; '), where);
+        else add('slots.core', 'pass', 'brand, headline, cta and photo are present, and supporting copy has a slot', where);
+
+        if (logo && !imageInSlot(body, 'brand', logo.src)) add('content.logo', 'fail', 'the case has a logo, but the brand slot does not contain the logo image', where);
+        else add('content.logo', 'pass', logo ? 'the brand slot shows the logo' : 'no logo in this case, the brand slot shows the name', where);
+      }
 
       const attributeProblems: string[] = [];
       for (const tag of tags) {

@@ -29,7 +29,7 @@ test('the engine fixture passes the contract kit with no failures and no warning
   assert.deepEqual(failing(report), [], formatViolationReport(report));
   assert.deepEqual(warning(report), [], formatViolationReport(report));
   assert.equal(report.passed, true);
-  assert.equal(report.contractVersion, '0.2');
+  assert.equal(report.contractVersion, '0.3');
   // Two cases × three formats are rendered; every format-level check ran for each.
   assert.equal(report.checks.filter((c) => c.id === 'render.output').length, 6);
   assert.ok(report.checks.some((c) => c.id === 'schema.strict' && /rejected/.test(c.detail)));

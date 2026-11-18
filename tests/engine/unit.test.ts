@@ -11,7 +11,7 @@ import { RenderError, toRenderError } from '../../src/server/render/errors.js';
 import { validateTemplateCss } from '../../src/server/render/document.js';
 import { FontLoader } from '../../src/server/render/fonts.js';
 import { FONT_REGISTRY } from '../../src/shared/fonts.js';
-import { normalizeImage } from '../../src/server/assets/normalize-image.js';
+import { normalizeImage, CUTOUT_ALPHA_MAX } from '../../src/server/assets/normalize-image.js';
 import { MemoryAssetSource, RenderAssetResolver } from '../../src/server/assets/resolve-render-assets.js';
 import { OutputStore } from '../../src/server/storage/output-store.js';
 import { renderBatch } from '../../src/server/render/batch.js';
@@ -123,6 +123,34 @@ test('image normalization: raster bytes only, SVG and text rejected, alpha kept 
   assert.equal((await normalizeImage(alpha)).mime, 'image/png');
 });
 
+test('image normalization: kind is detected from the pixels (scene vs cutout)', async () => {
+  const jpeg = await sharp({ create: { width: 40, height: 40, channels: 3, background: '#abcdef' } }).jpeg().toBuffer();
+  assert.equal((await normalizeImage(jpeg)).kind, 'scene');
+  const opaquePng = await sharp({ create: { width: 40, height: 40, channels: 3, background: '#abcdef' } }).png().toBuffer();
+  assert.equal((await normalizeImage(opaquePng)).kind, 'scene');
+  // PNG with an alpha channel but every pixel opaque is still a scene.
+  const opaqueAlpha = await sharp({ create: { width: 40, height: 40, channels: 4, background: '#abcdefff' } }).png().toBuffer();
+  assert.equal((await normalizeImage(opaqueAlpha)).kind, 'scene');
+  // Opaque square on a transparent border: 40x40 canvas, 28x28 opaque centre = 49% opaque, 51% transparent.
+  const centre = await sharp({ create: { width: 28, height: 28, channels: 4, background: '#cc3322ff' } }).png().toBuffer();
+  const cutout = await sharp({ create: { width: 40, height: 40, channels: 4, background: '#00000000' } })
+    .composite([{ input: centre, left: 6, top: 6 }]).png().toBuffer();
+  assert.equal((await normalizeImage(cutout)).kind, 'cutout');
+  // The thresholds themselves. Images are built from raw RGBA so the number of transparent pixels is exact
+  // (compositing a transparent layer over an opaque one changes nothing, so it cannot be used here).
+  const rgba = (width: number, height: number, alphaOf: (pixel: number) => number) => {
+    const raw = Buffer.alloc(width * height * 4);
+    for (let i = 0; i < width * height; i++) { raw[i * 4] = 204; raw[i * 4 + 1] = 51; raw[i * 4 + 2] = 34; raw[i * 4 + 3] = alphaOf(i); }
+    return sharp(raw, { raw: { width, height, channels: 4 } }).png().toBuffer();
+  };
+  // 40x40 = 1600 pixels, so 5% is exactly 80 transparent pixels.
+  const transparentPixels = (count: number) => rgba(40, 40, (pixel) => (pixel < count ? 0 : 255));
+  assert.equal((await normalizeImage(await transparentPixels(80))).kind, 'cutout', '80 of 1600 pixels is exactly 5%');
+  assert.equal((await normalizeImage(await transparentPixels(79))).kind, 'scene', '79 of 1600 pixels is just under 5%');
+  assert.equal((await normalizeImage(await rgba(40, 40, () => CUTOUT_ALPHA_MAX - 1))).kind, 'cutout', 'alpha just under the limit is transparent');
+  assert.equal((await normalizeImage(await rgba(40, 40, () => CUTOUT_ALPHA_MAX))).kind, 'scene', 'alpha at the limit is not transparent');
+});
+
 test('asset resolution: other campaign and missing asset give the same error', async () => {
   const { shirt } = await simulatedBriefs();
   const source = new MemoryAssetSource().put(shirt.assets[0]!);
@@ -133,6 +161,9 @@ test('asset resolution: other campaign and missing asset give the same error', a
   const resolved = await resolver.resolve(CAMPAIGN, config);
   assert.equal(resolved.photos[0]!.assetId, ASSET);
   assert.match(resolved.photos[0]!.src, /^data:image\/(png|jpeg);base64,/);
+  assert.equal('kind' in resolved.photos[0]!, false, 'no kind in the config means no kind on the resolved photo');
+  const withKind = await resolver.resolve(CAMPAIGN, { ...config, assets: config.assets.map((asset) => ({ ...asset, kind: 'cutout' as const })) });
+  assert.equal(withKind.photos[0]!.kind, 'cutout', 'the kind from the config is copied to the resolved photo');
 });
 
 test('output store: server-generated keys only, no traversal, publish is conflict-safe', async () => {
@@ -203,6 +234,22 @@ test('registry-backed validation catches unknown template and missing facts befo
   const missingFacts = await renderOutput(envelope({ ...shirt.snapshot, facts: [] }), engine);
   assert.equal(missingFacts.error?.code, 'FACT_MISSING');
   assert.equal(missingFacts.error?.stage, 'validate');
+
+  // Every fact id the config can reference is checked, including the content-model ones.
+  const config = shirt.snapshot.config as Record<string, unknown>;
+  const copy = config.copy as Record<string, unknown>;
+  const withoutOffer = { ...config };
+  delete withoutOffer.offerFactId;
+  const referencing: Array<[string, Record<string, unknown>]> = [
+    ['bodyFactIds', { ...config, copy: { ...copy, body: 'Licht en zacht', bodyFactIds: ['no-such-fact'] } }],
+    ['heroFactId', { ...withoutOffer, heroFactId: 'no-such-fact' }],
+    ['disclaimerFactId', { ...config, disclaimerFactId: 'no-such-fact' }],
+  ];
+  for (const [field, changed] of referencing) {
+    const result = await renderOutput(envelope({ ...shirt.snapshot, config: changed }), engine);
+    assert.equal(result.error?.code, 'FACT_MISSING', field);
+    assert.match(result.error?.message ?? '', /no-such-fact/, field);
+  }
 });
 
 // ---- Review pass 2: regression tests written before the fixes ----

@@ -8,13 +8,26 @@ import { RenderError } from '../render/errors.js';
 
 export const IMAGE_LIMITS = { maxBytes: 10 * 1024 * 1024, maxPixels: 25_000_000 } as const;
 
+/** A pixel counts as transparent below this alpha (0–255). An image is a cutout when at least this share of its pixels is transparent. */
+export const CUTOUT_ALPHA_MAX = 16;
+export const CUTOUT_MIN_SHARE = 0.05;
+
 export interface NormalizedImage {
   bytes: Buffer;
   mime: 'image/png' | 'image/jpeg';
   width: number;
   height: number;
+  /** `cutout` = transparent background (product without background); `scene` = a photo with its own background. Detected from the pixels. */
+  kind: 'cutout' | 'scene';
   sourceSha256: string;
   sha256: string;
+}
+
+async function detectKind(png: Buffer): Promise<'cutout' | 'scene'> {
+  const { data, info } = await sharp(png).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  let transparent = 0;
+  for (let i = 3; i < data.length; i += 4) if (data[i]! < CUTOUT_ALPHA_MAX) transparent++;
+  return transparent / (info.width * info.height) >= CUTOUT_MIN_SHARE ? 'cutout' : 'scene';
 }
 
 /** Decode actual bytes (not name/extension/MIME), apply EXIF orientation, strip metadata, re-encode. SVG/animated/corrupt input is rejected. */
@@ -34,6 +47,7 @@ export async function normalizeImage(bytes: Buffer, maxEdge = 2400): Promise<Nor
     const { data, info } = await (alpha ? pipeline.png() : pipeline.jpeg({ quality: 92 })).toBuffer({ resolveWithObject: true });
     return {
       bytes: data, mime: alpha ? 'image/png' : 'image/jpeg', width: info.width, height: info.height,
+      kind: alpha ? await detectKind(data) : 'scene',
       sourceSha256: createHash('sha256').update(bytes).digest('hex'), sha256: createHash('sha256').update(data).digest('hex'),
     };
   } catch (cause) {

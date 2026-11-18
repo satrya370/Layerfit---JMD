@@ -7,7 +7,7 @@ import { z } from 'zod';
 import type { SafeHtml } from './html.js';
 
 /** Version of docs/contracts/render-template-contract.md that this module implements. Bump together with the document. */
-export const CONTRACT_VERSION = '0.2';
+export const CONTRACT_VERSION = '0.3';
 
 export const PART01_TEMPLATE_IDS = ['annotated-hero', 'dual-panel', 'dark-offer-stack', 'editorial-reframe'] as const;
 export type Part01TemplateId = (typeof PART01_TEMPLATE_IDS)[number];
@@ -52,6 +52,9 @@ const pointSchema = z.object({ x: z.number().min(0).max(1), y: z.number().min(0)
 export const FONT_IDS = ['inter', 'fraunces', 'montserrat', 'poppins'] as const;
 export type FontId = (typeof FONT_IDS)[number];
 
+/** Limits of the shared config schema. A template's content manifest may be tighter than these, never looser (`checkContentManifest`). */
+export const CONFIG_LIMITS = { headline: 90, eyebrow: 48, body: 240, cta: 32, benefitText: 240, benefits: 4, photos: 8 } as const;
+
 /** Base config following template_part01_plan.md §4. Template modules may narrow it (budgets, templateId literal). */
 export const templateConfigSchema = z.object({
   schemaVersion: z.literal(1),
@@ -66,31 +69,50 @@ export const templateConfigSchema = z.object({
     fontBodyId: z.enum(FONT_IDS),
   }).strict(),
   copy: z.object({
-    headline: textField(90),
-    accentPhrase: textField(90).optional(),
-    body: textField(240).optional(),
-    cta: textField(32),
-    benefits: z.array(z.object({ text: textField(240), factIds: z.array(idSchema).min(1).max(5) }).strict()).max(4),
+    headline: textField(CONFIG_LIMITS.headline),
+    accentPhrase: textField(CONFIG_LIMITS.headline).optional(),
+    eyebrow: textField(CONFIG_LIMITS.eyebrow).optional(),
+    body: textField(CONFIG_LIMITS.body).optional(),
+    bodyFactIds: z.array(idSchema).min(1).max(5).optional(),
+    cta: textField(CONFIG_LIMITS.cta),
+    benefits: z.array(z.object({ text: textField(CONFIG_LIMITS.benefitText), factIds: z.array(idSchema).min(1).max(5) }).strict()).max(CONFIG_LIMITS.benefits),
   }).strict(),
   assets: z.array(z.object({
     assetId: idSchema,
     role: z.enum(['product', 'lifestyle', 'detail']),
+    kind: z.enum(['cutout', 'scene']).optional(),
     focalPoint: pointSchema.optional(),
     allowCrop: z.boolean(),
-  }).strict()).min(1).max(8),
+  }).strict()).min(1).max(CONFIG_LIMITS.photos),
   callouts: z.array(z.object({ benefitIndex: z.number().int().min(0).max(3), anchor: pointSchema }).strict()).max(3).optional(),
+  productName: textField(60).optional(),
   offerFactId: idSchema.optional(),
+  heroFactId: idSchema.optional(),
   proofFactId: idSchema.optional(),
+  disclaimerFactId: idSchema.optional(),
   comparisonEvidenceId: idSchema.optional(),
 }).strict().superRefine((config, ctx) => {
-  const { accentPhrase, headline } = config.copy;
+  const { accentPhrase, headline, body, bodyFactIds } = config.copy;
   if (accentPhrase && !headline.includes(accentPhrase)) ctx.addIssue({ code: 'custom', path: ['copy', 'accentPhrase'], message: 'accentPhrase must be a substring of headline' });
+  // "body requires bodyFactIds" is enforced from slot_normalization_plan.md Task 3.12.
+  if (body === undefined && bodyFactIds !== undefined) ctx.addIssue({ code: 'custom', path: ['copy', 'bodyFactIds'], message: 'bodyFactIds without a description' });
+  if (config.heroFactId !== undefined && config.offerFactId !== undefined) ctx.addIssue({ code: 'custom', path: ['heroFactId'], message: 'use a hero fact only when there is no offer' });
   for (const [i, callout] of (config.callouts ?? []).entries()) {
     if (callout.benefitIndex >= config.copy.benefits.length) ctx.addIssue({ code: 'custom', path: ['callouts', i, 'benefitIndex'], message: 'unknown benefit' });
   }
   if (new Set(config.assets.map((a) => a.assetId)).size !== config.assets.length) ctx.addIssue({ code: 'custom', path: ['assets'], message: 'duplicate assetId' });
 });
 export type TemplateConfig = z.infer<typeof templateConfigSchema>;
+
+/** Slot names every template may use (slot_normalization_plan.md §3). Decorative wrappers use the `x-` prefix and carry no config text. */
+export const CANONICAL_SLOTS = [
+  'brand', 'brand-name', 'product-name', 'eyebrow', 'headline', 'description', 'cta', 'offer', 'proof', 'disclaimer',
+  'photo', 'photo-2', 'photo-3', 'benefits', 'benefit-1', 'benefit-2', 'benefit-3',
+] as const;
+
+export function isCanonicalSlot(name: string): boolean {
+  return (CANONICAL_SLOTS as readonly string[]).includes(name) || /^x-[a-z][a-z0-9-]{0,61}$/.test(name);
+}
 
 /** Verified fact as resolved by the campaign/domain service before enqueue. Renderer checks presence, not truth. */
 export const resolvedFactSchema = z.object({ id: idSchema, text: textField(240), verified: z.literal(true) }).strict();
@@ -129,6 +151,8 @@ export interface ResolvedAsset {
   height: number;
   sha256: string;
   src: string;
+  /** Cutout (transparent background) or scene (photo with background). Copied from the config asset; absent for logos and older configs. */
+  kind?: 'cutout' | 'scene';
   focalPoint?: { x: number; y: number };
   allowCrop: boolean;
 }
@@ -155,6 +179,45 @@ export interface TemplateRenderOutput {
 
 export interface SlotManifestEntry { name: string; required: boolean; formats?: readonly Format[] }
 
+/**
+ * What content a template can take (slot_normalization_plan.md §4 Task 1.2). Numbers come from the template's own budgets.
+ * Supporting copy may be a description, benefit phrases or one highlight line: a template needs at least one of them.
+ */
+export interface ContentManifest {
+  headline: { max: number };
+  eyebrow: { use: 'optional' | 'none'; max?: number };
+  body: { use: 'optional' | 'none'; max?: number };
+  cta: { max: number };
+  benefits: { min: number; max: number; chars?: number };
+  photos: { min: number; max: number; kind: 'cutout' | 'scene' | 'any' };
+  offer: 'required-or-hero' | 'optional-or-hero' | 'offer-only';
+  proof: 'optional' | 'none';
+  disclaimer: 'optional' | 'none';
+  /** Comparison designs are chosen only when the user asks for one and supplies the comparison inputs. */
+  comparison?: 'opt-in';
+}
+
+/** Problems with a manifest itself, as readable strings; empty when the manifest is consistent. */
+export function checkContentManifest(manifest: ContentManifest): string[] {
+  const problems: string[] = [];
+  if (manifest.body.use === 'none' && manifest.benefits.max === 0) problems.push('template has no place for supporting copy');
+  // A budget the shared schema cannot accept would make every config at that budget fail, whatever the template does.
+  const budget = (what: string, value: number | undefined, limit: number) => {
+    if (value !== undefined && (value < 1 || value > limit)) problems.push(`${what} budget ${value} must be between 1 and the shared schema limit ${limit}`);
+  };
+  budget('headline', manifest.headline.max, CONFIG_LIMITS.headline);
+  budget('eyebrow', manifest.eyebrow.use === 'optional' ? manifest.eyebrow.max : undefined, CONFIG_LIMITS.eyebrow);
+  budget('description', manifest.body.use === 'optional' ? manifest.body.max : undefined, CONFIG_LIMITS.body);
+  budget('cta', manifest.cta.max, CONFIG_LIMITS.cta);
+  budget('benefit text', manifest.benefits.chars, CONFIG_LIMITS.benefitText);
+  if (manifest.benefits.max > CONFIG_LIMITS.benefits) problems.push(`benefits max ${manifest.benefits.max} is above the shared schema limit ${CONFIG_LIMITS.benefits}`);
+  if (manifest.benefits.min > manifest.benefits.max) problems.push(`benefits min ${manifest.benefits.min} is above benefits max ${manifest.benefits.max}`);
+  if (manifest.photos.min < 1) problems.push('a template needs at least one photo');
+  if (manifest.photos.max > CONFIG_LIMITS.photos) problems.push(`photos max ${manifest.photos.max} is above the shared schema limit ${CONFIG_LIMITS.photos}`);
+  if (manifest.photos.min > manifest.photos.max) problems.push(`photos min ${manifest.photos.min} is above photos max ${manifest.photos.max}`);
+  return problems;
+}
+
 export interface TemplateModule<C extends TemplateConfig = TemplateConfig> {
   id: string;
   version: string; // semver; bump when output can change for the same config
@@ -163,6 +226,8 @@ export interface TemplateModule<C extends TemplateConfig = TemplateConfig> {
   rootClass: string;
   /** Manifest used by contract tests and diagnostics. */
   slots: readonly SlotManifestEntry[];
+  /** Content the template can take. Optional while templates are migrated; required once all declare it. */
+  content?: ContentManifest;
   configSchema: z.ZodType<C>;
   render(input: TemplateRenderInput<C>): TemplateRenderOutput;
 }
