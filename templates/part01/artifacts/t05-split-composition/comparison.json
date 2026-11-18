@@ -1,0 +1,26 @@
+{
+  "note": "MAE is not a visual-similarity percentage. Sources differ deliberately: engine drops scaffold text, uses bundled Arimo (400-700 + synthesis for 900) instead of system Arial, normalizes image bytes, and keeps all content inside the engine safe box.",
+  "comparisons": [
+    {
+      "format": "square",
+      "meanAbsoluteChannelError": 23.141994170096023,
+      "exactPixelMatch": false,
+      "sourceSize": "1080x1080",
+      "engineSize": "1080x1080"
+    },
+    {
+      "format": "portrait",
+      "meanAbsoluteChannelError": 19.079888203017834,
+      "exactPixelMatch": false,
+      "sourceSize": "1080x1350",
+      "engineSize": "1080x1350"
+    },
+    {
+      "format": "vertical",
+      "meanAbsoluteChannelError": 38.00618007330247,
+      "exactPixelMatch": false,
+      "sourceSize": "1080x1920",
+      "engineSize": "1080x1920"
+    }
+  ]
+}

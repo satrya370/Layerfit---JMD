@@ -1,0 +1,14 @@
+{
+  "format": "square",
+  "eyebrow": "NEW FROM MOUNTAIN",
+  "headline": "Know exactly what\nyou’re getting into.",
+  "description": "Our new grading system triple-checks every route using first ascent reports, local consensus, and verified tick data.",
+  "heroImageUrl": "assets/reference-hero.jpg",
+  "imageAlt": "Mountain landscape with smartphone product interface",
+  "colors": {
+    "panel": "#eca16f",
+    "ink": "#1b1b1b",
+    "badgeBg": "#0e0e0e",
+    "badgeInk": "#eea47b"
+  }
+}

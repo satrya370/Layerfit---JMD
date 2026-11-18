@@ -1,0 +1,26 @@
+{
+  "note": "MAE is not a visual-similarity percentage. Deliberate differences: bundled Fraunces/Arimo stand-ins for URW Bookman/Arial, panel padding inside the engine safe box (source used 24-52px bottom clearance), normalized image bytes.",
+  "comparisons": [
+    {
+      "format": "square",
+      "meanAbsoluteChannelError": 7.011051668952904,
+      "exactPixelMatch": false,
+      "sourceSize": "1080x1080",
+      "engineSize": "1080x1080"
+    },
+    {
+      "format": "portrait",
+      "meanAbsoluteChannelError": 6.166750800182899,
+      "exactPixelMatch": false,
+      "sourceSize": "1080x1350",
+      "engineSize": "1080x1350"
+    },
+    {
+      "format": "vertical",
+      "meanAbsoluteChannelError": 13.067923578960905,
+      "exactPixelMatch": false,
+      "sourceSize": "1080x1920",
+      "engineSize": "1080x1920"
+    }
+  ]
+}

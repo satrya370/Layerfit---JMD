@@ -1,0 +1,316 @@
+{
+  "results": [
+    {
+      "case": "reference-source-state",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "d04cfa1d-fc1c-4be3-b3c0-14e5e92348d9",
+        "creativeId": "c886bdff-7832-466a-8815-7cdd5bbff077",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/c0555555-5555-4555-8555-555555555555/creatives/c886bdff-7832-466a-8815-7cdd5bbff077/r1/f0310c512142400e/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 278065,
+            "sha256": "70d0f52f92ce45a8cd2c44717c125ef0c3ff8a61770fefb31fb0f80552f03620"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/c0555555-5555-4555-8555-555555555555/creatives/c886bdff-7832-466a-8815-7cdd5bbff077/r1/f0310c512142400e/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 132995,
+            "sha256": "c5e9828a5e3151ded40d9530780d3264bf0370d4c2fbdee08ac16e202db7833b"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "split-composition",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "1e440dec25f97f9d02502a1e99d71b69abfd7d75bc8f86aa93efd056885f9d54",
+          "fingerprint": "f0310c512142400e",
+          "durationMs": 2351,
+          "stageMs": {
+            "validate": 0,
+            "assets": 1,
+            "fonts": 0,
+            "template": 1,
+            "content": 143,
+            "readiness": 17,
+            "layout": 7,
+            "screenshot": 322,
+            "encode": 86,
+            "storage": 30
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "reference-source-state",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "abbfdea4-8a67-41b1-9a32-33ebe97e2d40",
+        "creativeId": "1b17da4b-d1d7-40f8-b8c9-ee9f753feff6",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/c0555555-5555-4555-8555-555555555555/creatives/1b17da4b-d1d7-40f8-b8c9-ee9f753feff6/r1/196d5a85cd0446a9/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 259965,
+            "sha256": "a0d587a6422406a321969e1ee0d1cb7aa700f2959a0e90a9b2d64fb982b83ac2"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/c0555555-5555-4555-8555-555555555555/creatives/1b17da4b-d1d7-40f8-b8c9-ee9f753feff6/r1/196d5a85cd0446a9/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 136821,
+            "sha256": "d4e26a8c1f291526c4dc39a8615548d3e766613e77e447bd0e9e25122bf5cfb9"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "split-composition",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "1e440dec25f97f9d02502a1e99d71b69abfd7d75bc8f86aa93efd056885f9d54",
+          "fingerprint": "196d5a85cd0446a9",
+          "durationMs": 618,
+          "stageMs": {
+            "validate": 0,
+            "assets": 1,
+            "fonts": 0,
+            "template": 1,
+            "content": 120,
+            "readiness": 16,
+            "layout": 5,
+            "screenshot": 184,
+            "encode": 73,
+            "storage": 33
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "reference-source-state",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "492f70cb-6e92-4bab-be79-c11d6eb3050c",
+        "creativeId": "aa85dc06-26df-4a7c-8a07-6e6fb96c4dde",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/c0555555-5555-4555-8555-555555555555/creatives/aa85dc06-26df-4a7c-8a07-6e6fb96c4dde/r1/3031e77f66207bdf/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 355082,
+            "sha256": "86f610ed9cadcf3a77d408303d914c5d5af1b7585754deedebc3e226364e08ff"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/c0555555-5555-4555-8555-555555555555/creatives/aa85dc06-26df-4a7c-8a07-6e6fb96c4dde/r1/3031e77f66207bdf/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 174476,
+            "sha256": "6a1ce56a686b8c8d85f4a38958342e894e0683d35f6f23d41e71870ad7e43c08"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "split-composition",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "1e440dec25f97f9d02502a1e99d71b69abfd7d75bc8f86aa93efd056885f9d54",
+          "fingerprint": "3031e77f66207bdf",
+          "durationMs": 737,
+          "stageMs": {
+            "validate": 0,
+            "assets": 1,
+            "fonts": 0,
+            "template": 1,
+            "content": 124,
+            "readiness": 16,
+            "layout": 8,
+            "screenshot": 262,
+            "encode": 128,
+            "storage": 28
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "populated-fixture-state",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "34b11374-9012-40f0-bee1-f3248d70b5e4",
+        "creativeId": "08157114-237c-49ff-82e0-bbe8c55daabc",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/c0566666-6666-4666-8666-666666666666/creatives/08157114-237c-49ff-82e0-bbe8c55daabc/r1/e5f5efc351043ee9/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 113359,
+            "sha256": "951de843bf7cf4064bb87472975bfa96f9b0aa8fbf7cce7076622787bb62860c"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/c0566666-6666-4666-8666-666666666666/creatives/08157114-237c-49ff-82e0-bbe8c55daabc/r1/e5f5efc351043ee9/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 128270,
+            "sha256": "521fd8ec75357e9a35bea7c407c54875a8d44fabc4e0cb1225d1377616076c73"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "split-composition",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "1e440dec25f97f9d02502a1e99d71b69abfd7d75bc8f86aa93efd056885f9d54",
+          "fingerprint": "e5f5efc351043ee9",
+          "durationMs": 595,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 94,
+            "readiness": 14,
+            "layout": 6,
+            "screenshot": 162,
+            "encode": 76,
+            "storage": 23
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "populated-fixture-state",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "14756b14-42c8-40b3-8ea1-0894e2704dce",
+        "creativeId": "5aa0d014-b8d7-4453-87e1-32c2c2460c39",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/c0566666-6666-4666-8666-666666666666/creatives/5aa0d014-b8d7-4453-87e1-32c2c2460c39/r1/a8e6adce26363469/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 114356,
+            "sha256": "c6df0038a89947b36a61e07e71e77be4ff08edd2a75acaff86772b50d2a4c01f"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/c0566666-6666-4666-8666-666666666666/creatives/5aa0d014-b8d7-4453-87e1-32c2c2460c39/r1/a8e6adce26363469/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 137911,
+            "sha256": "a46e77d5828185911ca6438eaa2fb6f5043cca4f19a1d50b007807382cf61221"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "split-composition",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "1e440dec25f97f9d02502a1e99d71b69abfd7d75bc8f86aa93efd056885f9d54",
+          "fingerprint": "a8e6adce26363469",
+          "durationMs": 547,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 0,
+            "content": 77,
+            "readiness": 15,
+            "layout": 7,
+            "screenshot": 144,
+            "encode": 82,
+            "storage": 25
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "populated-fixture-state",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "2d14ddb5-704a-454d-88c4-685935dcb3e9",
+        "creativeId": "3df9d71a-6d7c-4259-88da-1a241c916c04",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/c0566666-6666-4666-8666-666666666666/creatives/3df9d71a-6d7c-4259-88da-1a241c916c04/r1/e146a4023f305209/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 138348,
+            "sha256": "92bc63e19b67027524b925b2cfb72149269bb081f2d608d351e008097730b485"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/c0566666-6666-4666-8666-666666666666/creatives/3df9d71a-6d7c-4259-88da-1a241c916c04/r1/e146a4023f305209/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 160819,
+            "sha256": "720fcc4280f6251ccfff9f719d056a46f048ca75788efde1c207bcb36c07bb59"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "split-composition",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "1e440dec25f97f9d02502a1e99d71b69abfd7d75bc8f86aa93efd056885f9d54",
+          "fingerprint": "e146a4023f305209",
+          "durationMs": 583,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 50,
+            "readiness": 16,
+            "layout": 5,
+            "screenshot": 178,
+            "encode": 101,
+            "storage": 23
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    }
+  ]
+}
