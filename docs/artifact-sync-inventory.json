@@ -1,0 +1,140 @@
+﻿{
+    "scope":  "All local template/render artifacts present at sync; excludes dependencies, secrets and engine source mutation leftovers",
+    "previousMainCommit":  "8b4e960",
+    "newFiles":  783,
+    "newPart01Artifacts":  169,
+    "copiedEngineArtifacts":  614,
+    "sourceEngineWorktree":  "Layerfit-JMD-engine/artifacts",
+    "directories":  [
+                        {
+                            "directory":  "templates/part01/artifacts/t01-reference-rebuild",
+                            "files":  6,
+                            "bytes":  2597054
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t02-engine-port",
+                            "files":  12,
+                            "bytes":  13344133
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t03-dark-offer-stack",
+                            "files":  37,
+                            "bytes":  5104190
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t04-engine-port",
+                            "files":  49,
+                            "bytes":  10083597
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t05-split-composition",
+                            "files":  65,
+                            "bytes":  12803930
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t06-engine-port",
+                            "files":  57,
+                            "bytes":  22342568
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t07-engine-port",
+                            "files":  41,
+                            "bytes":  28962138
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t08-photo-overlay",
+                            "files":  4,
+                            "bytes":  1391967
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t09-engine-port",
+                            "files":  54,
+                            "bytes":  10789994
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t10-copy-revision",
+                            "files":  11,
+                            "bytes":  3261696
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t11-semaglutide-banner",
+                            "files":  49,
+                            "bytes":  15889320
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t12-reference-cta",
+                            "files":  23,
+                            "bytes":  9650703
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t13-editorial-sale-promo",
+                            "files":  40,
+                            "bytes":  4553839
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t13-t18-layout-review",
+                            "files":  1,
+                            "bytes":  10224
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t14-outline-poster",
+                            "files":  3,
+                            "bytes":  1100372
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t15-lifestyle-benefit-editorial",
+                            "files":  21,
+                            "bytes":  2979723
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t16-discount-offer",
+                            "files":  9,
+                            "bytes":  4910272
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t17-minimal-discount",
+                            "files":  5,
+                            "bytes":  1761755
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t18-mediterranean-fashion-poster",
+                            "files":  108,
+                            "bytes":  31937774
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t19-after-dark-editorial",
+                            "files":  25,
+                            "bytes":  3754323
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t19-source-fidelity",
+                            "files":  54,
+                            "bytes":  19714763
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/t20-circular-product-benefits",
+                            "files":  56,
+                            "bytes":  15266749
+                        },
+                        {
+                            "directory":  "templates/part01/artifacts/template-part01",
+                            "files":  42,
+                            "bytes":  2757939
+                        },
+                        {
+                            "directory":  "artifacts/engine-smoke",
+                            "files":  38,
+                            "bytes":  2841789
+                        },
+                        {
+                            "directory":  "artifacts/templates",
+                            "files":  509,
+                            "bytes":  72324804
+                        },
+                        {
+                            "directory":  "artifacts/verify-scratch",
+                            "files":  59,
+                            "bytes":  9442964
+                        }
+                    ]
+}

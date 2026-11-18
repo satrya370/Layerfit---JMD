@@ -1,0 +1,161 @@
+{
+  "syntheticAssetsOnly": true,
+  "results": [
+    {
+      "case": "reference-layout-synthetic-photo",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "dcb26113-d124-4289-90a2-49d14d7735e9",
+        "creativeId": "37abe5ce-9222-4d65-aa2b-da0e19eca58d",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1511111-1111-4111-8111-111111111111/creatives/37abe5ce-9222-4d65-aa2b-da0e19eca58d/r1/84c916985105fc35/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 77598,
+            "sha256": "5a67881fdd35340c525db8991cc24dbb11f02530dddbb82329c3102187252934"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1511111-1111-4111-8111-111111111111/creatives/37abe5ce-9222-4d65-aa2b-da0e19eca58d/r1/84c916985105fc35/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 125485,
+            "sha256": "10bfd71d8b71d0d02a4152d48ae517896827b85273126d37612c529b95c290b8"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "lifestyle-benefit-editorial",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "a27219da3a4a5c4b3126e068580a80bd3e387a4d2967659b6583d90619a78e19",
+          "fingerprint": "84c916985105fc35",
+          "durationMs": 1824,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 70,
+            "readiness": 15,
+            "layout": 6,
+            "screenshot": 239,
+            "encode": 76,
+            "storage": 25
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "reference-layout-synthetic-photo",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "3aa648b8-5a71-4c3c-bf82-bf19751dafe1",
+        "creativeId": "067c788c-4266-4d75-af99-25a44ddb2589",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1511111-1111-4111-8111-111111111111/creatives/067c788c-4266-4d75-af99-25a44ddb2589/r1/ff83fc3e791d7abc/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 82301,
+            "sha256": "bd86107871ca98585d1a3995e6d113a0fcb24bf225701c0e5bd90ed84e585bcb"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1511111-1111-4111-8111-111111111111/creatives/067c788c-4266-4d75-af99-25a44ddb2589/r1/ff83fc3e791d7abc/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 134518,
+            "sha256": "c75e5e8a2854f7aed3aff91106639d4ad0d266b1ab93e399061864532f6533a2"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "lifestyle-benefit-editorial",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "a27219da3a4a5c4b3126e068580a80bd3e387a4d2967659b6583d90619a78e19",
+          "fingerprint": "ff83fc3e791d7abc",
+          "durationMs": 428,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 55,
+            "readiness": 15,
+            "layout": 7,
+            "screenshot": 112,
+            "encode": 79,
+            "storage": 20
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "reference-layout-synthetic-photo",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "6b0fb865-ade5-4b6b-ae01-f01f354c387b",
+        "creativeId": "ad18131f-2768-481f-8c7f-3c8335048161",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1511111-1111-4111-8111-111111111111/creatives/ad18131f-2768-481f-8c7f-3c8335048161/r1/98e1b7adb49dc4a5/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 95646,
+            "sha256": "4bd5cde784bd0b83665a514569adb3e0a1d9d6bfc5c1f3174fa057ab7d3fa86e"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1511111-1111-4111-8111-111111111111/creatives/ad18131f-2768-481f-8c7f-3c8335048161/r1/98e1b7adb49dc4a5/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 144721,
+            "sha256": "f405cede4fe71749fabc2467944a320683fa55752b8c2cbf43804522376502fd"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "lifestyle-benefit-editorial",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "a27219da3a4a5c4b3126e068580a80bd3e387a4d2967659b6583d90619a78e19",
+          "fingerprint": "98e1b7adb49dc4a5",
+          "durationMs": 495,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 55,
+            "readiness": 14,
+            "layout": 6,
+            "screenshot": 133,
+            "encode": 91,
+            "storage": 19
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    }
+  ]
+}

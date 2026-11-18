@@ -1,0 +1,125 @@
+{
+  "scope": "Standalone preview; not engine gate. Source crop is fixture-only; verified flag is test data.",
+  "results": [
+    {
+      "format": "square",
+      "status": "success",
+      "dimensions": "1080x1080",
+      "bounds": [
+        {
+          "id": "headline",
+          "x": 42.109375,
+          "y": 390.59375,
+          "right": 554.015625,
+          "bottom": 696.1875,
+          "overflow": false
+        },
+        {
+          "id": "description",
+          "x": 42.109375,
+          "y": 710.984375,
+          "right": 447.109375,
+          "bottom": 775.765625,
+          "overflow": false
+        },
+        {
+          "id": "cta",
+          "x": 42.109375,
+          "y": 797.765625,
+          "right": 162.15625,
+          "bottom": 834.15625,
+          "overflow": false
+        },
+        {
+          "id": "features",
+          "x": 42.109375,
+          "y": 973.25,
+          "right": 1034.640625,
+          "bottom": 1023.84375,
+          "overflow": false
+        }
+      ],
+      "bindingTests": "passed"
+    },
+    {
+      "format": "portrait",
+      "status": "success",
+      "dimensions": "1080x1350",
+      "bounds": [
+        {
+          "id": "headline",
+          "x": 42.109375,
+          "y": 517.5,
+          "right": 560.5,
+          "bottom": 847.28125,
+          "overflow": false
+        },
+        {
+          "id": "description",
+          "x": 42.109375,
+          "y": 864.671875,
+          "right": 447.109375,
+          "bottom": 969.953125,
+          "overflow": false
+        },
+        {
+          "id": "cta",
+          "x": 42.109375,
+          "y": 995.953125,
+          "right": 172.578125,
+          "bottom": 1034.75,
+          "overflow": false
+        },
+        {
+          "id": "features",
+          "x": 42.109375,
+          "y": 1204.90625,
+          "right": 1034.640625,
+          "bottom": 1255.5,
+          "overflow": false
+        }
+      ],
+      "bindingTests": "passed"
+    },
+    {
+      "format": "story",
+      "status": "success",
+      "dimensions": "1080x1920",
+      "bounds": [
+        {
+          "id": "headline",
+          "x": 60.46875,
+          "y": 710.796875,
+          "right": 654.46875,
+          "bottom": 1042.390625,
+          "overflow": false
+        },
+        {
+          "id": "description",
+          "x": 60.46875,
+          "y": 1062.1875,
+          "right": 360.46875,
+          "bottom": 1171.5,
+          "overflow": false
+        },
+        {
+          "id": "cta",
+          "x": 60.46875,
+          "y": 1199.5,
+          "right": 196.140625,
+          "bottom": 1240.5,
+          "overflow": false
+        },
+        {
+          "id": "features",
+          "x": 60.46875,
+          "y": 1622.125,
+          "right": 1019.53125,
+          "bottom": 1670.40625,
+          "overflow": false
+        }
+      ],
+      "bindingTests": "passed"
+    }
+  ]
+}

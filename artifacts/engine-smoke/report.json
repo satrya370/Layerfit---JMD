@@ -1,0 +1,305 @@
+{
+  "kind": "engine foundation smoke; synthetic assets only; no AI; not application E2E",
+  "template": {
+    "id": "fixture-hero",
+    "version": "0.1.0",
+    "note": "engine test fixture, not a LayerFit ad concept"
+  },
+  "placements": 6,
+  "encodedFiles": 12,
+  "expectedNegativeCases": 3,
+  "negativeCodes": [
+    "NETWORK_BLOCKED",
+    "ASSET_INVALID",
+    "SAFE_AREA_VIOLATION"
+  ],
+  "durationMs": 6773,
+  "environment": {
+    "node": "v22.18.0",
+    "browser": "Chrome/157.0.8103.79",
+    "chromeExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+  },
+  "decoded": [
+    {
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "square",
+      "encoding": "png",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 54173
+    },
+    {
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "square",
+      "encoding": "jpg",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 79771
+    },
+    {
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "portrait",
+      "encoding": "png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 60641
+    },
+    {
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "portrait",
+      "encoding": "jpg",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 89145
+    },
+    {
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "vertical",
+      "encoding": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 69136
+    },
+    {
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "vertical",
+      "encoding": "jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 96688
+    },
+    {
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "square",
+      "encoding": "png",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 49129
+    },
+    {
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "square",
+      "encoding": "jpg",
+      "width": 1080,
+      "height": 1080,
+      "bytes": 88153
+    },
+    {
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "portrait",
+      "encoding": "png",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 53061
+    },
+    {
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "portrait",
+      "encoding": "jpg",
+      "width": 1080,
+      "height": 1350,
+      "bytes": 95487
+    },
+    {
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "vertical",
+      "encoding": "png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 58548
+    },
+    {
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "vertical",
+      "encoding": "jpg",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 103828
+    }
+  ],
+  "results": [
+    {
+      "taskId": "00000001-0000-4000-8000-000000000000",
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "square",
+      "status": "success",
+      "stageMs": {
+        "validate": 3,
+        "assets": 12,
+        "fonts": 15,
+        "template": 2,
+        "content": 160,
+        "readiness": 65,
+        "layout": 7,
+        "screenshot": 135,
+        "encode": 79,
+        "storage": 24
+      },
+      "warnings": [],
+      "fittingSteps": 0
+    },
+    {
+      "taskId": "00000002-0000-4000-8000-000000000000",
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "portrait",
+      "status": "success",
+      "stageMs": {
+        "validate": 0,
+        "assets": 0,
+        "fonts": 0,
+        "template": 0,
+        "content": 143,
+        "readiness": 33,
+        "layout": 8,
+        "screenshot": 144,
+        "encode": 94,
+        "storage": 19
+      },
+      "warnings": [],
+      "fittingSteps": 0
+    },
+    {
+      "taskId": "00000003-0000-4000-8000-000000000000",
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "vertical",
+      "status": "success",
+      "stageMs": {
+        "validate": 0,
+        "assets": 0,
+        "fonts": 0,
+        "template": 1,
+        "content": 90,
+        "readiness": 31,
+        "layout": 11,
+        "screenshot": 184,
+        "encode": 182,
+        "storage": 147
+      },
+      "warnings": [],
+      "fittingSteps": 0
+    },
+    {
+      "taskId": "00000004-0000-4000-8000-000000000000",
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "square",
+      "status": "success",
+      "stageMs": {
+        "validate": 2,
+        "assets": 45,
+        "fonts": 0,
+        "template": 5,
+        "content": 115,
+        "readiness": 39,
+        "layout": 10,
+        "screenshot": 102,
+        "encode": 92,
+        "storage": 48
+      },
+      "warnings": [],
+      "fittingSteps": 0
+    },
+    {
+      "taskId": "00000005-0000-4000-8000-000000000000",
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "portrait",
+      "status": "success",
+      "stageMs": {
+        "validate": 1,
+        "assets": 0,
+        "fonts": 0,
+        "template": 1,
+        "content": 69,
+        "readiness": 22,
+        "layout": 9,
+        "screenshot": 143,
+        "encode": 75,
+        "storage": 25
+      },
+      "warnings": [],
+      "fittingSteps": 0
+    },
+    {
+      "taskId": "00000006-0000-4000-8000-000000000000",
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "vertical",
+      "status": "success",
+      "stageMs": {
+        "validate": 0,
+        "assets": 0,
+        "fonts": 0,
+        "template": 0,
+        "content": 75,
+        "readiness": 17,
+        "layout": 7,
+        "screenshot": 142,
+        "encode": 90,
+        "storage": 18
+      },
+      "warnings": [],
+      "fittingSteps": 0
+    },
+    {
+      "taskId": "00000101-0000-4000-8000-000000000000",
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "square",
+      "status": "failed",
+      "error": {
+        "code": "NETWORK_BLOCKED",
+        "stage": "readiness",
+        "retryable": false,
+        "message": "External image blocked in slot: hostile"
+      },
+      "stageMs": {
+        "validate": 0,
+        "assets": 0,
+        "fonts": 0,
+        "template": 0,
+        "content": 91,
+        "readiness": 20
+      },
+      "warnings": [],
+      "fittingSteps": 0
+    },
+    {
+      "taskId": "00000102-0000-4000-8000-000000000000",
+      "creativeId": "b2222222-2222-4222-8222-222222222222",
+      "format": "square",
+      "status": "failed",
+      "error": {
+        "code": "ASSET_INVALID",
+        "stage": "assets",
+        "retryable": false,
+        "message": "Image could not be decoded"
+      },
+      "stageMs": {
+        "validate": 0,
+        "assets": 4
+      },
+      "warnings": [],
+      "fittingSteps": 0
+    },
+    {
+      "taskId": "00000103-0000-4000-8000-000000000000",
+      "creativeId": "a1111111-1111-4111-8111-111111111111",
+      "format": "vertical",
+      "status": "failed",
+      "error": {
+        "code": "SAFE_AREA_VIOLATION",
+        "stage": "layout",
+        "retryable": false,
+        "message": "SAFE_AREA_VIOLATION stray: slot 0,0–120,120 outside safe box"
+      },
+      "stageMs": {
+        "validate": 1,
+        "assets": 0,
+        "fonts": 0,
+        "template": 0,
+        "content": 98,
+        "readiness": 36,
+        "layout": 7
+      },
+      "warnings": [],
+      "fittingSteps": 0
+    }
+  ]
+}

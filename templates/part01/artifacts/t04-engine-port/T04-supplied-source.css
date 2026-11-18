@@ -1,0 +1,37 @@
+:root {
+  --bg: #eae6e7;
+  --ink: #333132;
+  --accent: #cf403a;
+  --review-green: #58b38d;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: #d8d8d8; font-family: Arial, Helvetica, sans-serif; }
+.creative {
+  width: 1080px;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  margin: 0 auto;
+}
+.reviews { position: absolute; top: 47px; left: 0; width: 100%; text-align: center; }
+.stars { display:flex; justify-content: center; gap: 2px; margin-bottom: 9px; }
+.star { color: white; background: var(--review-green); font-size: 31px; line-height: 32px; width: 32px; height: 32px; display: inline-flex; align-items:center; justify-content:center; font-weight: 700; }
+.reviews-copy { font-size: 23px; letter-spacing: -.45px; }
+.reviews-copy strong { font-weight: 800; }
+.headline { position: absolute; top: 138px; left: 45px; right: 45px; font-size: 86px; line-height: 0.96; letter-spacing: -3.6px; font-weight: 850; text-align: center; margin: 0; }
+.headline .accent { color: var(--accent); white-space: nowrap; }
+.subheadline { position: absolute; top: 349px; left: 50px; right: 50px; text-align: center; font-style: italic; font-size: 35px; letter-spacing: -.8px; margin: 0; white-space: nowrap; }
+.photo-frame { position:absolute; left: 158px; top: 442px; width: 766px; height: 494px; overflow:hidden; }
+.photo-frame img { display:block; width:100%; height:100%; object-fit:cover; }
+.bottom-strip { position:absolute; bottom: 28px; left: 45px; right: 45px; display:flex; align-items:end; justify-content:space-between; }
+.price-banner { display:flex; align-items: baseline; gap: 12px; background:#252525; color: #fff; padding: 4px 18px 6px; font-size: 40px; line-height:1.1; letter-spacing: -.85px; }
+.price-banner .price { color: var(--accent); font-size: 36px; }
+.brand-logo { width:78px; height:78px; object-fit:contain; }
+[hidden] { display:none !important; }
+/* Preview-only scaling on small browser windows. Export uses the original 1080px canvas. */
+@media screen and (max-width: 1080px) {
+  body { overflow-x: auto; }
+}

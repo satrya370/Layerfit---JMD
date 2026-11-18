@@ -1,0 +1,166 @@
+{
+  "results": [
+    {
+      "case": "reference-source-state",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "c72791a7-9544-4382-8484-b3983d06d0a2",
+        "creativeId": "11a1d327-4d13-4859-ac2a-7853e2cd771a",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/c1277777-7777-4777-8777-777777777777/creatives/11a1d327-4d13-4859-ac2a-7853e2cd771a/r1/55b20740cb1f12c9/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 676549,
+            "sha256": "e20257034c670eb77c00aedb36f61675d9613f86ea4546bce3993e5976657673"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/c1277777-7777-4777-8777-777777777777/creatives/11a1d327-4d13-4859-ac2a-7853e2cd771a/r1/55b20740cb1f12c9/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 234982,
+            "sha256": "b68fd779ddf4a0924c6fbedbd23bb1c60dee5964c53f4a0da8cb8b8dae84fa76"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "immersive-editorial",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "6a137b4dbaff8748e0cbf7fb48288cf7ddc76b9868ce4415a085c95592797cc3",
+          "fingerprint": "55b20740cb1f12c9",
+          "durationMs": 1508,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 98,
+            "readiness": 18,
+            "layout": 5,
+            "screenshot": 368,
+            "encode": 108,
+            "storage": 29
+          },
+          "warnings": [
+            "scene: image upscaled 1.80x (source 600x397)"
+          ],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "reference-source-state",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "c5cfbe42-1a1c-47ee-a9f2-c86bd7653267",
+        "creativeId": "b990497d-6a85-466d-b101-1c86139aa41c",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/c1277777-7777-4777-8777-777777777777/creatives/b990497d-6a85-466d-b101-1c86139aa41c/r1/1a2b843e8ed2a6d7/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 729992,
+            "sha256": "1ba5eb6f2d2788e094c21062c879a5b24165decd64c9367b8e181591fe3fb947"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/c1277777-7777-4777-8777-777777777777/creatives/b990497d-6a85-466d-b101-1c86139aa41c/r1/1a2b843e8ed2a6d7/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 261074,
+            "sha256": "7fcbff3d77926ce7360bb8e29e93f1329e2bfdfdeb788817dfdc4dc45374a798"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "immersive-editorial",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "6a137b4dbaff8748e0cbf7fb48288cf7ddc76b9868ce4415a085c95592797cc3",
+          "fingerprint": "1a2b843e8ed2a6d7",
+          "durationMs": 796,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 63,
+            "readiness": 18,
+            "layout": 8,
+            "screenshot": 397,
+            "encode": 123,
+            "storage": 30
+          },
+          "warnings": [
+            "scene: image upscaled 2.07x (source 600x397)"
+          ],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "reference-source-state",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "dbbfa5d6-4868-4873-b42a-3b969c65bbdb",
+        "creativeId": "87df6e3a-2a7f-4528-bc7a-f9801f7ca5d0",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/c1277777-7777-4777-8777-777777777777/creatives/87df6e3a-2a7f-4528-bc7a-f9801f7ca5d0/r1/d85b7cff8daf18dc/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 802430,
+            "sha256": "753810c0a171330ca9ee42ca47f6d40b25f4f7f8664b3c0807ad89b17e0f3fa7"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/c1277777-7777-4777-8777-777777777777/creatives/87df6e3a-2a7f-4528-bc7a-f9801f7ca5d0/r1/d85b7cff8daf18dc/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 303271,
+            "sha256": "40b0d4a04cff3dbf3c68c01cee7657d57d976696c869184dcb4982ba8825ea53"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "immersive-editorial",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "6a137b4dbaff8748e0cbf7fb48288cf7ddc76b9868ce4415a085c95592797cc3",
+          "fingerprint": "d85b7cff8daf18dc",
+          "durationMs": 1345,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 2,
+            "content": 257,
+            "readiness": 49,
+            "layout": 24,
+            "screenshot": 623,
+            "encode": 143,
+            "storage": 31
+          },
+          "warnings": [
+            "scene: image upscaled 2.76x (source 600x397)"
+          ],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    }
+  ]
+}

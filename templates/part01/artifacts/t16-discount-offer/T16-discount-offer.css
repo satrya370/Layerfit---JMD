@@ -1,0 +1,63 @@
+/* ============================================================
+   T16 DISCOUNT OFFER
+   Ported from the standalone T16 package (Template-example/LayerFit_T16_Discount_Offer).
+   Layout: an outlined offer tag at the top, a headline, the product on a soft glow, then a supporting line and one
+   call-to-action button. The blocks flow in a column inside the safe area: the product takes the height that is left, and
+   every text wraps (balanced) instead of running into the product or another block.
+   Colors: secondary = paper background, primary = ink (headline, supporting text, button fill), accent = glow.
+   Words are never broken to make text fit.
+   ============================================================ */
+
+.lf-discount-offer {
+  --h: 56px;
+  --support: 32px;
+  --cta: 28px;
+  --tag: 22px;
+  --gap: 26px;
+  --photo-min: 260px;
+
+  display: flex; flex-direction: column; align-items: center; gap: var(--gap);
+  padding: var(--lf-safe-top) var(--lf-safe-right) var(--lf-safe-bottom) var(--lf-safe-left);
+  background: var(--lf-brand-secondary);
+  color: var(--lf-brand-primary);
+  font-family: var(--lf-font-body);
+}
+.lf-discount-offer * { margin: 0; box-sizing: border-box; }
+
+.lf-discount-offer .do-tag {
+  flex: none; max-width: 100%; padding: 14px 34px; border: 2px solid #89808a; border-radius: 40px;
+  font-size: calc(var(--tag) * var(--lf-fit-tag, 1)); font-weight: 600; letter-spacing: 0.12em; line-height: 1.25; text-align: center; text-transform: uppercase; text-wrap: balance;
+}
+
+.lf-discount-offer .do-headline {
+  flex: none; width: 100%;
+  font-family: var(--lf-font-heading); font-size: calc(var(--h) * var(--lf-fit-headline, 1)); font-weight: 800;
+  letter-spacing: -0.04em; line-height: 1.06; text-align: center; text-wrap: balance;
+}
+
+/* The product takes the remaining height. It is in the headline fit group, so when the text is long the headline shrinks
+   before the product gets smaller than --photo-min. */
+.lf-discount-offer .do-photo { position: relative; flex: 1 1 0; width: 100%; min-height: var(--photo-min); }
+.lf-discount-offer .do-photo::before {
+  content: ""; position: absolute; inset: 10% 4%;
+  background: radial-gradient(ellipse at 50% 45%, var(--lf-brand-accent), rgb(216 239 247 / 0.45) 57%, transparent 75%);
+  filter: blur(22px);
+}
+.lf-discount-offer .do-figure { position: absolute; inset: 0; margin: 0; z-index: 1; }
+.lf-discount-offer .do-img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 19px 12px rgb(38 31 34 / 0.12)); }
+
+.lf-discount-offer .do-bottom { flex: none; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 22px; text-align: center; }
+.lf-discount-offer .do-support { max-width: 100%; font-size: calc(var(--support) * var(--lf-fit-support, 1)); font-weight: 500; line-height: 1.28; letter-spacing: -0.01em; text-wrap: balance; }
+.lf-discount-offer .do-cta {
+  max-width: 100%; padding: 22px 54px; border-radius: 44px;
+  background: var(--lf-brand-primary); color: #ffffff;
+  font-size: calc(var(--cta) * var(--lf-fit-cta, 1)); font-weight: 700; line-height: 1.2; letter-spacing: 0.03em; text-wrap: balance;
+}
+
+/* 4:5 portrait */
+.lf-discount-offer[data-format="portrait"] { --h: 62px; --support: 36px; --cta: 32px; --tag: 24px; --gap: 32px; --photo-min: 320px; }
+.lf-discount-offer[data-format="portrait"] .do-cta { padding: 24px 60px; }
+
+/* 9:16 story: the safe padding keeps everything out of the 250 px top and 350 px bottom zones. */
+.lf-discount-offer[data-format="vertical"] { --h: 78px; --support: 44px; --cta: 38px; --tag: 26px; --gap: 40px; --photo-min: 420px; }
+.lf-discount-offer[data-format="vertical"] .do-cta { padding: 28px 66px; }
