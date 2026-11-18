@@ -2,11 +2,8 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import type { ContractCase } from '../../../../Layerfit-JMD-engine/src/server/render/contract-kit.js';
 import { immersiveEditorialSchema } from '../src/immersive-editorial.js';
-import { collectionAssets } from './product-collection-cases.js';
 
 const referenceCampaign = 'c1277777-7777-4777-8777-777777777777';
-const minimalCampaign = 'c1288888-8888-4888-8888-888888888888';
-const compactCampaign = 'c1299999-9999-4999-9999-999999999999';
 
 /**
  * The hero photo is the user-supplied composite crop shipped with Template-example/LayerFit_T12
@@ -19,10 +16,6 @@ async function referenceHero() {
 }
 
 export async function contractCases(): Promise<ContractCase[]> {
-  const syntheticAssets = await collectionAssets();
-  const syntheticBottle = syntheticAssets[0]!;
-  const syntheticTube = syntheticAssets[1]!;
-
   const referenceConfig = {
     schemaVersion: 1 as const,
     templateId: 'immersive-editorial',
@@ -60,36 +53,6 @@ export async function contractCases(): Promise<ContractCase[]> {
     ],
   };
 
-  const minimalConfig = {
-    schemaVersion: 1 as const,
-    templateId: 'immersive-editorial',
-    brand: { name: 'STUDIO DEMO', primary: '#eca16f', secondary: '#0e0e0e', accent: '#eea47b', fontHeadingId: 'fraunces', fontBodyId: 'inter' },
-    copy: { headline: 'Meet the new standard.', cta: 'LEARN MORE', benefits: [] },
-    assets: [{ assetId: 't12-synthetic-product', role: 'product', allowCrop: false }],
-    t12: { headlineLines: ['Meet the new standard.'], imageAlt: 'Synthetic demo product' },
-  };
-  const minimal: ContractCase = {
-    name: 'minimal-optional-hidden',
-    campaignId: minimalCampaign,
-    config: immersiveEditorialSchema.parse(minimalConfig),
-    assets: [{ campaignId: minimalCampaign, assetId: 't12-synthetic-product', bytes: syntheticBottle }],
-    facts: [],
-  };
-
-  const compactConfig = {
-    ...minimalConfig,
-    brand: { ...minimalConfig.brand, name: 'TRAIL CO' },
-    copy: { headline: 'A much longer editorial headline goes right here now to trigger compact sizing.', cta: 'LEARN MORE', benefits: [] },
-    assets: [{ assetId: 't12-synthetic-second', role: 'lifestyle', allowCrop: true }],
-    t12: { eyebrow: 'TRAIL REPORTS', headlineLines: ['A much longer editorial headline goes right here now to', 'trigger compact sizing.'], imageAlt: 'Synthetic trail scene' },
-  };
-  const compact: ContractCase = {
-    name: 'compact-long-headline',
-    campaignId: compactCampaign,
-    config: immersiveEditorialSchema.parse(compactConfig),
-    assets: [{ campaignId: compactCampaign, assetId: 't12-synthetic-second', bytes: syntheticTube }],
-    facts: [],
-  };
-
-  return [reference, minimal, compact];
+  // User-selected reference composition only; no minimal or compact preview variants.
+  return [reference];
 }

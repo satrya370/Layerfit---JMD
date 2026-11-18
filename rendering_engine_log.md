@@ -315,3 +315,36 @@ Contract kit: no failures or warnings (4 cases x 3 formats, 13 reject variants).
 **Limits.** The preview photo is the user's own (`layerfit_t05/assets/demo-product.png`, cropped to 466 x 499, provenance unknown): a flagged deviation from the synthetic-assets rule for design preview only; it is soft when upscaled. Story crop cuts the right-hand product. Interim OFL fonts. Tested on one image by request, so long copy and other aspect ratios of photos are covered only by the engine's synthetic cases. Chromium-only CSS is not used beyond `text-wrap: balance`.
 
 Not claimed: approved brand design; any Dutch ad verified; better performance than other formats; production-readiness.
+
+## 2026-11-18 — Slot normalization, Phases 1 and 2 (shared contract, contract kit, manifest cases)
+
+**Scope.** Phases 1 and 2 of `slot_normalization_plan.md` (main repo), in the engine worktree `C:\Users\Asus\Layerfit-JMD-engine`, **uncommitted** on top of baseline `bdae3e8` (T10/T14/T16/T17 modules). Done as plan, work, independent review, revise. No template module was changed; no template declares `content` yet, so none is held to the new checks.
+
+**Phase 1 (done).**
+- `src/shared/render-contract.ts`: contract version 0.3; new optional config fields `productName`, `heroFactId`, `disclaimerFactId`, `copy.eyebrow`, `copy.bodyFactIds`, `assets[].kind` (cutout or scene); rules "bodyFactIds without a body" and "hero fact next to an offer" are rejected ("body requires bodyFactIds" is deliberately not on yet, see Task 3.12); `CANONICAL_SLOTS` and `isCanonicalSlot`; `ContentManifest` and `checkContentManifest`; optional `content` on `TemplateModule`; `CONFIG_LIMITS` (the schema limits, now one constant used by the schema and by the manifest check).
+- `render-output.ts` checks the new fact ids; `resolve-render-assets.ts` copies `kind`; `normalize-image.ts` detects cutout or scene from the pixels (at least 5% of pixels with alpha below 16 is a cutout).
+- `src/templates/shared/fill.ts`: `factText`, `offerOrHeroText`, `brandMark`, `headlineWithAccent`, copied (not moved) from split-composition; templates still use their own copies until Phase 3.
+
+**Phase 2 (done, with the verification gap below).**
+- `contract-kit.ts`, only for modules that declare `content`: per case and format `slots.canonical`, `slots.core`, `content.logo`; once per module `content.manifest` and `cases.derived`. The kit also runs the cases derived from the manifest. Exported `imageInSlot`.
+- `manifest-cases.ts`: `max`, `min`, `no-logo`, `no-offer` (not for offer-only templates) derived from the first schema-accepted case; derived logo is its own PNG so a photo in the brand slot is not mistaken for the logo.
+- Interpretations beyond the plan text, reviewed and accepted by the independent reviewer: checks gated on `content`; offer-only also needs a required offer slot; logo must be the logo's own image; three cases for offer-only; no derived cases for comparison designs.
+
+**Evidence (18 Nov, no browser).**
+
+```text
+npm.cmd run typecheck      PASS
+npm.cmd run lint           PASS
+npm.cmd test               155 tests, 136 pass, 0 fail, 19 skipped (browser tests need CHROMIUM_EXECUTABLE_PATH)
+baseline before Phase 1    117 tests, 98 pass
+```
+
+Independent review: Phase 1 had no blockers and 5 test-coverage findings; Phase 2 had no blockers and 6 should-fix findings (dropped base-config fields, silent empty derivation, manifest budgets above schema limits, module-level checks repeated per case, no `imageInSlot` edge-case tests, an ambiguous assertion). All were addressed, including the revisions below.
+
+**Mutation checks.** Phase 1: 15 mutations of the new rules, all caught (one escaped first and led to an explicit vocabulary test). Phase 2, first round: 36 mutations, 5 escaped; they exposed a real kit weakness (derived logo and photo used the same bytes), fixed, then all 36 were caught.
+
+**Gap, stated plainly.** After the review revisions (module-level checks, `CONFIG_LIMITS`, config cloning, `imageInSlot` export and tests) a second mutation round of 55 mutations was started but **stopped by the system for low memory before finishing, and its results were never read**. The revised code is therefore verified by the test suite above and by the first-round mutations of the code as it was, not by a completed second round. The revisions were also not re-reviewed by the independent reviewer. The interrupted run left one file mutated; it was found, restored from its backup, and the full suite re-run clean.
+
+**Open.** Complete the second mutation round in small batches; commit decision; Phase 3 migrates templates one by one (Task 3.1 onward) and removes their private helper copies.
+
+Not claimed: any template migrated or conforming to the vocabulary; Phase 3; production-readiness.

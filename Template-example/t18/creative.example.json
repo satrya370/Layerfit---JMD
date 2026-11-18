@@ -1,0 +1,25 @@
+{
+  "templateId": "t19",
+  "concept": "resort-linen",
+  "format": "square",
+  "brand": "ELIA",
+  "headline": ["LINNEN,", "ZON & LATE", "ZOMERS"],
+  "accentLine": "Winterzon Editie",
+  "badgeLines": ["LIMITED", "EDITIE"],
+  "address": "VANAF € 24,95",
+  "eventDate": "T/M ZO 29 NOV.",
+  "eventTime": "-30% ONLINE",
+  "cta": "SHOP DE COLLECTIE",
+  "imageUrl": "assets/hero.jpg",
+  "imageAlt": "Vrouw in witte linnen zomerjurk met stro tas voor een Mediterraanse muur",
+  "imageMode": "cover",
+  "texture": true,
+  "colors": {
+    "bg": "#F4EEE1",
+    "ink": "#27231B",
+    "mid": "#5F6B3A",
+    "accent": "#B3401F",
+    "gold": "#BC8A2E",
+    "onAccent": "#F6EFE0"
+  }
+}

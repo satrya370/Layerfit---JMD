@@ -1,0 +1,18 @@
+{
+  "brand": "Example Brand",
+  "discountPercent": 50,
+  "freeGift": true,
+  "headline": "New year exclusive",
+  "description": "On selected products. Terms apply.",
+  "productImages": [
+    "assets/demo-products.png"
+  ],
+  "verifiedDiscount": true,
+  "format": "square",
+  "colors": {
+    "paper": "#faf5f1",
+    "ink": "#21182b",
+    "accent": "#d8eff7",
+    "stroke": "#89808a"
+  }
+}

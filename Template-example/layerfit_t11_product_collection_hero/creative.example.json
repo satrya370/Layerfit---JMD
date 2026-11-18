@@ -1,16 +1,18 @@
 {
-  "brand": "LAYERFIT",
-  "tagline": "YOUR EVERYDAY COLLECTION",
-  "headline": "Your Complete\nGlow Routine",
-  "description": "Discover the collection. Find your daily essentials.",
-  "ctaPrimary": "Build your routine",
-  "ctaBottom": "SHOP THE COLLECTION",
-  "destinationLabel": "EXPLORE THE RANGE",
-  "productName": "Synthetic collection — demonstration only",
-  "productImages": ["assets/product-0.png", "assets/product-1.png", "assets/product-2.png"],
-  "benefits": [],
-  "colors": {"primary":"#31151b","secondary":"#fbd7dd","accent":"#ef233c"},
-  "fontFamily": "inter",
-  "format": "portrait",
+  "brand": "SAMPLE BRAND",
+  "headlineFactId": "t11-headline-fixture",
+  "headlineLines": ["Is Semaglutide", "Right for You?"],
+  "accentPhrase": "Semaglutide",
+  "subheadFactId": "t11-subhead-fixture",
+  "disclaimerFactId": "t11-disclaimer-fixture",
+  "ctaBottom": "LEARN MORE",
+  "imageUrl": "assets/vial-demo.png",
+  "imageAlt": "Synthetic demo vial, not a real medication product",
+  "facts": [
+    {"id":"t11-headline-fixture","text":"Is Semaglutide Right for You?","verified":true},
+    {"id":"t11-subhead-fixture","text":"Find out who should and should not take this medication.","verified":true},
+    {"id":"t11-disclaimer-fixture","text":"Prescription required. Compounded drugs are not FDA-approved and are not reviewed by the FDA for safety or effectiveness. Results are not guaranteed and vary by individual. Review official safety information with a licensed clinician.","verified":true}
+  ],
+  "format": "square",
   "locale": "en"
 }

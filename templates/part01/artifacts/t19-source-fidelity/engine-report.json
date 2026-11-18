@@ -1,0 +1,317 @@
+{
+  "scope": "Source-fidelity comparison, original unsafe insets preserved; reference photo fixture-only",
+  "results": [
+    {
+      "case": "source-reference-photo-fixture",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "d41e368f-ace6-461d-9e1f-da5c26b0e1fd",
+        "creativeId": "c6ecc93e-b97f-4e92-a255-ebb4a08611d1",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/c6ecc93e-b97f-4e92-a255-ebb4a08611d1/r1/6a8396e4b3c51a78/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 649506,
+            "sha256": "0b432c64641164f6ce8eb3eddc57aca0d3a62fc5c1e851c8968ca84014e507b3"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/c6ecc93e-b97f-4e92-a255-ebb4a08611d1/r1/6a8396e4b3c51a78/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 235661,
+            "sha256": "e0c7b789224c3bb41d68eb8eb7759589e9fc5cbfdd9d0a957a67ca1f2322ffe9"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "after-dark-editorial",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "91a72b109eda2c280a321c52d1df47a6701cf9e6292fd0a15b9d63cff2edb5b6",
+          "fingerprint": "6a8396e4b3c51a78",
+          "durationMs": 2014,
+          "stageMs": {
+            "validate": 1,
+            "assets": 1,
+            "fonts": 0,
+            "template": 1,
+            "content": 72,
+            "readiness": 18,
+            "layout": 7,
+            "screenshot": 431,
+            "encode": 68,
+            "storage": 27
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "source-reference-photo-fixture",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "ef549b33-2d16-4e7c-a252-9d10e10e9bc3",
+        "creativeId": "c666917a-ce78-4d55-82be-cfe4c426ad9d",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/c666917a-ce78-4d55-82be-cfe4c426ad9d/r1/f41687d3bbd124d6/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 779388,
+            "sha256": "d7165ace45d15c14fac225483b127ffdd966344990e828159bad36e9b650c89c"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/c666917a-ce78-4d55-82be-cfe4c426ad9d/r1/f41687d3bbd124d6/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 280437,
+            "sha256": "7762941309594631faea4bcdd73ad1199fff8fab8ee6286a394d7ad220a985b6"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "after-dark-editorial",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "91a72b109eda2c280a321c52d1df47a6701cf9e6292fd0a15b9d63cff2edb5b6",
+          "fingerprint": "f41687d3bbd124d6",
+          "durationMs": 665,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 91,
+            "readiness": 10,
+            "layout": 6,
+            "screenshot": 289,
+            "encode": 83,
+            "storage": 21
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "source-reference-photo-fixture",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "ccf5a86e-3ad9-40d0-bb71-a9f233278a73",
+        "creativeId": "e482b82b-0b25-4576-80c5-efac651e960c",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/e482b82b-0b25-4576-80c5-efac651e960c/r1/b25723df82e2a285/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 984704,
+            "sha256": "36c9d25834b113520f7ad7ef7ac3ef790864ec5e071bce2b2cf3afe86cd225f6"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/e482b82b-0b25-4576-80c5-efac651e960c/r1/b25723df82e2a285/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 344487,
+            "sha256": "2ef23df9ab64a9d7cf57a585ee694aedc5e10caeba20af7e79137cf1816d39c5"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "after-dark-editorial",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "91a72b109eda2c280a321c52d1df47a6701cf9e6292fd0a15b9d63cff2edb5b6",
+          "fingerprint": "b25723df82e2a285",
+          "durationMs": 1213,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 415,
+            "readiness": 9,
+            "layout": 6,
+            "screenshot": 336,
+            "encode": 91,
+            "storage": 205
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "90ff3188-a642-4537-bd07-55f652672000",
+        "creativeId": "f7fffe73-1b90-4d4f-8af2-3643bf58e878",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/f7fffe73-1b90-4d4f-8af2-3643bf58e878/r1/f150621ab772d9cf/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 122074,
+            "sha256": "15a80d01510efa7cd085a42ead67ee5d49c531e2abe2e7b07af6158a2efc3585"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/f7fffe73-1b90-4d4f-8af2-3643bf58e878/r1/f150621ab772d9cf/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 155963,
+            "sha256": "8b1ed820ba5989d4a184f946745960038f6fdeec1c36d191084713280b6256ba"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "after-dark-editorial",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "91a72b109eda2c280a321c52d1df47a6701cf9e6292fd0a15b9d63cff2edb5b6",
+          "fingerprint": "f150621ab772d9cf",
+          "durationMs": 439,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 74,
+            "readiness": 14,
+            "layout": 7,
+            "screenshot": 127,
+            "encode": 46,
+            "storage": 15
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "95a13823-7a36-4799-823f-64127768c659",
+        "creativeId": "16db90aa-bd65-494b-a591-4a316a4c1674",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/16db90aa-bd65-494b-a591-4a316a4c1674/r1/082897ebef1bec77/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 141778,
+            "sha256": "d96da04678e75815daef12a32770143b49a4109966faee15305c1475c09d9d40"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/16db90aa-bd65-494b-a591-4a316a4c1674/r1/082897ebef1bec77/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 186740,
+            "sha256": "bf95228b722db755c8e2fac3208b172816a534a5eeb090b5a9028179a5561e2f"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "after-dark-editorial",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "91a72b109eda2c280a321c52d1df47a6701cf9e6292fd0a15b9d63cff2edb5b6",
+          "fingerprint": "082897ebef1bec77",
+          "durationMs": 426,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 0,
+            "content": 60,
+            "readiness": 8,
+            "layout": 5,
+            "screenshot": 130,
+            "encode": 64,
+            "storage": 16
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "a2b49d44-83d8-4603-b845-5471eba956f1",
+        "creativeId": "686381d9-8619-4bce-9034-a6166734fd23",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/686381d9-8619-4bce-9034-a6166734fd23/r1/84a14ec7068b9d13/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 166611,
+            "sha256": "e1533bc1e36ce976c2d58d426d413583a38b24e8bee261e3c194b66e31256d3f"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1911111-1111-4111-8111-111111111111/creatives/686381d9-8619-4bce-9034-a6166734fd23/r1/84a14ec7068b9d13/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 224771,
+            "sha256": "ea523655a2e6f91600b092b8ba0680608409c13253ca99b1ecfee843b2f8b6db"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "after-dark-editorial",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "91a72b109eda2c280a321c52d1df47a6701cf9e6292fd0a15b9d63cff2edb5b6",
+          "fingerprint": "84a14ec7068b9d13",
+          "durationMs": 483,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 0,
+            "content": 50,
+            "readiness": 11,
+            "layout": 6,
+            "screenshot": 153,
+            "encode": 78,
+            "storage": 15
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    }
+  ]
+}

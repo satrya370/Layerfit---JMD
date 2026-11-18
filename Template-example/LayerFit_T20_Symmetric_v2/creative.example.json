@@ -1,0 +1,21 @@
+{
+  "brand": "Waxli",
+  "topline": "Soft Hair Removal Wax",
+  "imageUrl": "assets/waxli-demo-cutout.png",
+  "imageAlt": "Waxli product photograph",
+  "benefits": [
+    { "title": "Removes hair", "subtitle": "From roots" },
+    { "title": "Slows down", "subtitle": "Hair regrowth" },
+    { "title": "Soothes skin", "subtitle": "After waxing" },
+    { "title": "Helps reduce", "subtitle": "Ingrown bumps" },
+    { "title": "Leaves skin soft", "subtitle": "And smooth" }
+  ],
+  "colors": {
+    "bg": "#e65b62",
+    "bg2": "#fa7b71",
+    "title": "#fff7eb",
+    "sub": "#532738",
+    "ring": "#ffddcc",
+    "accent": "#fff1bc"
+  }
+}

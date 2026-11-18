@@ -1,0 +1,45 @@
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+.creative{--paper:#F8F0E3;--ink:#3A2229;--accent:#E26C47;--highlight:#E9BE77;--dark:#4C2634;position:relative;width:100vw;height:100vh;background:var(--paper);color:var(--ink);overflow:hidden}
+.top-meta{position:absolute;top:42px;left:65px;right:65px;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:18px;letter-spacing:2.3px;z-index:4}
+.top-meta span:last-child{font-size:14px;letter-spacing:2px;font-weight:650}
+.opening{position:absolute;top:112px;left:65px;right:65px;display:flex;align-items:center;gap:18px;font-size:19px;font-weight:800;letter-spacing:2.2px;z-index:3}
+.edition{color:var(--accent)}.tiny-rule{flex:1;height:2px;background:var(--ink);opacity:.24}.issue{font-size:14px;font-weight:750}
+.heading{position:absolute;left:57px;top:159px;right:55px;z-index:3}
+h1{margin:0;font-family:Impact,'Arial Narrow',Arial,sans-serif;font-stretch:condensed;font-weight:900;letter-spacing:-1px;font-size:127px;line-height:.89;max-width:980px;text-transform:uppercase}
+h1 em{font-family:Georgia,'Times New Roman',serif;font-weight:800;font-style:italic;letter-spacing:-6px;color:var(--accent);font-size:.80em;display:inline-block;white-space:nowrap}
+.heading p{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:26px;line-height:1.1;margin:20px 0 0}
+.photo-panel{position:absolute;left:48px;right:48px;top:550px;height:521px;overflow:hidden;border-radius:10px;background:#715b51;z-index:2}
+.photo-panel img{width:100%;height:100%;object-fit:cover;object-position:center 44%;display:block}
+.photo-panel:after{content:"";pointer-events:none;position:absolute;inset:55% 0 0;background:linear-gradient(transparent,rgba(25,10,11,.38))}
+.photo-caption{position:absolute;bottom:23px;left:29px;right:28px;z-index:2;color:#FFF8E8;display:flex;justify-content:space-between;align-items:center;font-size:17px;letter-spacing:2.1px;font-weight:800}.photo-caption span:last-child{font-size:27px}
+.sticker{position:absolute;z-index:5;right:19px;top:486px;width:184px;height:184px;background:var(--highlight);border-radius:50%;border:3px solid var(--dark);display:flex;align-items:center;justify-content:center;text-align:center;transform:rotate(13deg);box-shadow:5px 7px 0 var(--dark);font-family:Impact,'Arial Black',sans-serif;font-weight:900;font-size:32px;line-height:.91;letter-spacing:1px}
+.event-info{position:absolute;top:1090px;left:0;right:0;bottom:0;background:var(--dark);color:var(--paper);padding:45px 60px 48px;display:flex;justify-content:space-between;align-items:flex-end;gap:22px}
+.date-block,.location-block{display:flex;flex-direction:column;gap:10px}.date-block{width:36%;align-self:flex-end;padding-bottom:3px}.location-block{width:58%;align-items:flex-end;text-align:right}
+.overline{font-size:15px;letter-spacing:3px;font-weight:800;color:var(--highlight)}#eventDate{font-size:29px;font-weight:900;letter-spacing:-1.2px}#eventTime{font-size:22px;font-weight:600}#venue{font-family:Impact,'Arial Black',sans-serif;font-size:93px;line-height:.85;letter-spacing:1px}#address{font-size:23px;letter-spacing:1.2px;font-weight:700}
+.bottom-rule{position:absolute;bottom:14px;left:60px;right:60px;height:1px;background:rgba(255,255,255,.22);z-index:3}
+/* Square: photo-first composition with compact text */
+.creative[data-format="square"] .top-meta{top:31px;left:55px;right:55px;font-size:16px}
+.creative[data-format="square"] .opening{top:83px;left:55px;right:55px;font-size:16px}
+.creative[data-format="square"] .heading{top:130px;left:48px;right:45px}
+.creative[data-format="square"] h1{font-size:103px;line-height:.87;letter-spacing:-1px}
+.creative[data-format="square"] h1 em{letter-spacing:-5px;font-size:.80em}
+.creative[data-format="square"] .heading p{font-size:21px;margin-top:9px}
+.creative[data-format="square"] .photo-panel{top:450px;height:405px;left:38px;right:38px}
+.creative[data-format="square"] .sticker{top:396px;right:14px;width:148px;height:148px;font-size:26px;box-shadow:4px 5px 0 var(--dark)}
+.creative[data-format="square"] .event-info{top:867px;padding:22px 46px 38px;align-items:center}
+.creative[data-format="square"] .date-block,.creative[data-format="square"] .location-block{gap:7px}
+.creative[data-format="square"] #eventDate{font-size:22px}.creative[data-format="square"] #eventTime{font-size:16px}.creative[data-format="square"] #venue{font-size:68px}.creative[data-format="square"] #address{font-size:18px}.creative[data-format="square"] .overline{font-size:12px}
+.creative[data-format="square"] .bottom-rule{bottom:13px;left:46px;right:46px}
+/* Story safe-area top and bottom */
+.creative[data-format="story"] .top-meta{top:138px;left:74px;right:74px;font-size:23px}
+.creative[data-format="story"] .top-meta span:last-child{font-size:18px}
+.creative[data-format="story"] .opening{top:218px;left:74px;right:74px;font-size:22px}
+.creative[data-format="story"] .heading{top:282px;left:68px;right:65px}
+.creative[data-format="story"] h1{font-size:145px;line-height:.91}
+.creative[data-format="story"] h1 em{letter-spacing:-7px;font-size:.79em}
+.creative[data-format="story"] .heading p{font-size:32px;margin-top:23px}
+.creative[data-format="story"] .photo-panel{left:52px;right:52px;top:780px;height:700px}
+.creative[data-format="story"] .sticker{right:26px;top:700px;width:210px;height:210px;font-size:37px}
+.creative[data-format="story"] .event-info{top:1500px;bottom:0;padding:63px 75px 175px;align-items:center}
+.creative[data-format="story"] #venue{font-size:104px}.creative[data-format="story"] #eventDate{font-size:29px}.creative[data-format="story"] #eventTime{font-size:22px}
+.creative[data-format="story"] .bottom-rule{bottom:127px;left:75px;right:75px}

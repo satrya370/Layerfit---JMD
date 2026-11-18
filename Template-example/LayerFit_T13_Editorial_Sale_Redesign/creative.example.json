@@ -1,0 +1,21 @@
+{
+  "brand": "LAYERFIT",
+  "campaignLabel": "DE SELECTIE / PRODUCT A",
+  "eyebrow": "EEN SPECIALE AANBIEDING",
+  "discountPercent": 30,
+  "discountWord": "KORTING",
+  "headline": "Een mooie deal.",
+  "description": "Ontdek Product A met comfortabel materiaal en een minimalistisch ontwerp.",
+  "cta": "BEKIJK DE ACTIE",
+  "imageUrl": "assets/demo-product.jpg",
+  "finePrint": "Actievoorwaarden zijn van toepassing.",
+  "verifiedPromotion": false,
+  "demoMode": true,
+  "colors": {
+    "paper": "#f2eee7",
+    "ink": "#252b27",
+    "accent": "#b64b36",
+    "muted": "#5a605a",
+    "photoBg": "#d8d4ca"
+  }
+}

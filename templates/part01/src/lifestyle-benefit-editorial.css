@@ -1,0 +1,79 @@
+/* T15/T21 Lifestyle Benefit Editorial. Source hierarchy retained; tall formats reflow into rows. */
+.lf-lifestyle-benefit-editorial {
+  --t15-paper:#f6f3ea;
+  position:relative; width:100%; height:100%; overflow:hidden;
+  color:var(--lf-brand-primary); background:var(--lf-brand-secondary); font-family:var(--lf-font-body);
+}
+.lf-lifestyle-benefit-editorial * { box-sizing:border-box; margin:0; padding:0; }
+.lf-lifestyle-benefit-editorial .t15-brand {
+  position:absolute; z-index:3; top:var(--lf-safe-top); left:var(--lf-safe-left);
+  max-width:32%; font-size:25px; line-height:1.2; font-weight:900; letter-spacing:.08em;
+}
+.lf-lifestyle-benefit-editorial .t15-logo { display:block; max-width:220px; max-height:52px; object-fit:contain; object-position:left center; }
+.lf-lifestyle-benefit-editorial .t15-eyebrow {
+  position:absolute; z-index:3; top:var(--lf-safe-top); right:var(--lf-safe-right); max-width:48%;
+  font-size:18px; line-height:1.3; font-weight:700; letter-spacing:.13em; text-align:right;
+}
+.lf-lifestyle-benefit-editorial .t15-headline {
+  position:absolute; z-index:2; top:12%; left:var(--lf-safe-left); right:var(--lf-safe-right);
+  font-family:var(--lf-font-heading); font-size:calc(98px * var(--lf-fit-t15-headline,1));
+  line-height:.94; letter-spacing:-.065em; font-weight:900; white-space:pre-line;
+}
+.lf-lifestyle-benefit-editorial .t15-photo {
+  position:absolute; overflow:hidden; background:var(--t15-paper);
+}
+.lf-lifestyle-benefit-editorial .t15-photo img { display:block; width:100%; height:100%; object-fit:cover; object-position:45% 50%; }
+.lf-lifestyle-benefit-editorial .t15-note {
+  position:absolute; display:flex; align-items:center; justify-content:center; overflow:hidden;
+  background:var(--lf-brand-accent); color:var(--lf-brand-primary);
+}
+.lf-lifestyle-benefit-editorial .t15-note span {
+  transform:rotate(-90deg); white-space:nowrap; font-size:20px; line-height:1.15;
+  font-weight:900; letter-spacing:.13em;
+}
+.lf-lifestyle-benefit-editorial .t15-copy {
+  position:absolute; z-index:3; display:grid; grid-template-columns:1fr 1fr;
+  column-gap:32px; align-items:end;
+}
+.lf-lifestyle-benefit-editorial .t15-description {
+  grid-column:1; font-size:25px; line-height:1.28; letter-spacing:-.02em;
+}
+.lf-lifestyle-benefit-editorial .t15-benefits {
+  grid-column:2; grid-row:1; display:flex; flex-direction:column; gap:9px;
+}
+.lf-lifestyle-benefit-editorial .t15-benefit { font-size:19px; line-height:1.25; font-weight:700; }
+.lf-lifestyle-benefit-editorial .t15-benefit::before { content:'— '; color:var(--lf-brand-primary); }
+.lf-lifestyle-benefit-editorial .t15-cta {
+  grid-column:1 / 3; grid-row:2; margin-top:22px; padding-top:16px;
+  border-top:3px solid var(--lf-brand-primary); font-size:23px; line-height:1.2;
+  font-weight:900; letter-spacing:.035em;
+}
+
+/* Square retains the asymmetric photo + lime side-note composition. */
+.lf-lifestyle-benefit-editorial[data-format="square"] .t15-photo { left:var(--lf-safe-left); top:31.5%; width:62.2%; height:46.3%; }
+.lf-lifestyle-benefit-editorial[data-format="square"] .t15-note { left:69.4%; right:var(--lf-safe-right); top:31.5%; bottom:22.2%; }
+.lf-lifestyle-benefit-editorial[data-format="square"] .t15-copy { left:var(--lf-safe-left); right:var(--lf-safe-right); bottom:6.2%; }
+
+/* Portrait: larger picture, calmer title and a balanced lower text row. */
+.lf-lifestyle-benefit-editorial[data-format="portrait"] .t15-headline { top:12%; font-size:calc(106px * var(--lf-fit-t15-headline,1)); }
+.lf-lifestyle-benefit-editorial[data-format="portrait"] .t15-photo { left:var(--lf-safe-left); top:30%; width:72%; height:43%; }
+.lf-lifestyle-benefit-editorial[data-format="portrait"] .t15-note { left:79.5%; right:var(--lf-safe-right); top:30%; bottom:27%; }
+.lf-lifestyle-benefit-editorial[data-format="portrait"] .t15-note span { font-size:15px; letter-spacing:.07em; }
+.lf-lifestyle-benefit-editorial[data-format="portrait"] .t15-copy { left:var(--lf-safe-left); right:var(--lf-safe-right); bottom:6%; column-gap:28px; }
+.lf-lifestyle-benefit-editorial[data-format="portrait"] .t15-description { font-size:calc(25px * var(--lf-fit-t15-copy,1)); }
+.lf-lifestyle-benefit-editorial[data-format="portrait"] .t15-benefit { font-size:calc(19px * var(--lf-fit-t15-copy,1)); }
+
+/* Vertical: sequence the text, image and CTA rather than overlaying copy on the photo. */
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-brand,
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-eyebrow { top:calc(var(--lf-safe-top) + 8px); }
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-headline { top:17%; font-size:calc(100px * var(--lf-fit-t15-headline,1)); }
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-photo { left:var(--lf-safe-left); right:var(--lf-safe-right); top:32%; width:auto; height:33%; }
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-note { display:none; }
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-copy {
+  left:var(--lf-safe-left); right:var(--lf-safe-right); top:68%; bottom:auto;
+  display:flex; flex-direction:column; align-items:stretch; gap:18px;
+}
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-description { font-size:calc(30px * var(--lf-fit-t15-copy,1)); line-height:1.3; }
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-benefits { gap:8px; }
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-benefit { font-size:calc(25px * var(--lf-fit-t15-copy,1)); }
+.lf-lifestyle-benefit-editorial[data-format="vertical"] .t15-cta { margin-top:0; padding-top:14px; font-size:calc(27px * var(--lf-fit-t15-copy,1)); }

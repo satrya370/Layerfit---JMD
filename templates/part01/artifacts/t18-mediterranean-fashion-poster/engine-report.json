@@ -1,0 +1,317 @@
+{
+  "syntheticAssetsOnly": true,
+  "results": [
+    {
+      "case": "linen-promo-synthetic-demo",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "aff32578-c581-4c2c-a53a-928df9c682b3",
+        "creativeId": "d8ab3549-971a-43e6-94dc-0b7aa1f71bde",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/d8ab3549-971a-43e6-94dc-0b7aa1f71bde/r1/e833cd814d4f35b3/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 327498,
+            "sha256": "7bddcc09ec18d0c54d625731b532d8b1f481083a565a9523adf2510657780198"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/d8ab3549-971a-43e6-94dc-0b7aa1f71bde/r1/e833cd814d4f35b3/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 146873,
+            "sha256": "28ff145f25c1509aad89047df006cbbc4447474e52fbb518ff241c227c4b5e51"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "mediterranean-fashion-poster",
+          "templateVersion": "0.2.1",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "21714e0094cb379228a71a994529afeded7212c4bebc23fa15be70075afc9224",
+          "fingerprint": "e833cd814d4f35b3",
+          "durationMs": 1549,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 111,
+            "readiness": 25,
+            "layout": 9,
+            "screenshot": 338,
+            "encode": 88,
+            "storage": 30
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "linen-promo-synthetic-demo",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "19cb6ec2-7f25-41b1-b360-d8aba7e27df2",
+        "creativeId": "d03a9898-83a0-47d9-a1ac-1f4ec20122f1",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/d03a9898-83a0-47d9-a1ac-1f4ec20122f1/r1/69fbc6c7d6d9fa2e/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 391084,
+            "sha256": "a3c9ed46c83388d0eef52cef7e3665c6a4d16b962f44ff13867bff6e5fe8fcf8"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/d03a9898-83a0-47d9-a1ac-1f4ec20122f1/r1/69fbc6c7d6d9fa2e/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 157414,
+            "sha256": "031d5d6a8ca96714b05638f61a38770dc971b5689fde8351b71e247a78f25029"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "mediterranean-fashion-poster",
+          "templateVersion": "0.2.1",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "21714e0094cb379228a71a994529afeded7212c4bebc23fa15be70075afc9224",
+          "fingerprint": "69fbc6c7d6d9fa2e",
+          "durationMs": 1198,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 215,
+            "readiness": 32,
+            "layout": 18,
+            "screenshot": 462,
+            "encode": 209,
+            "storage": 76
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "linen-promo-synthetic-demo",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "92668d45-f149-408b-9a31-3ad951441438",
+        "creativeId": "d243847a-278a-4325-8b15-fbd60b9e9bd0",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/d243847a-278a-4325-8b15-fbd60b9e9bd0/r1/7a0a75b741388456/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 516005,
+            "sha256": "5d54b90bc62cf913dbb67bd788d74cf23fe5fdf0e0559e84d6b3f96b5b7167fd"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/d243847a-278a-4325-8b15-fbd60b9e9bd0/r1/7a0a75b741388456/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 196824,
+            "sha256": "e2b22731aef759907692c89e4b6bec60a37176dc7e96f31e4c551770c8b16305"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "mediterranean-fashion-poster",
+          "templateVersion": "0.2.1",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "21714e0094cb379228a71a994529afeded7212c4bebc23fa15be70075afc9224",
+          "fingerprint": "7a0a75b741388456",
+          "durationMs": 1286,
+          "stageMs": {
+            "validate": 2,
+            "assets": 0,
+            "fonts": 0,
+            "template": 3,
+            "content": 315,
+            "readiness": 71,
+            "layout": 23,
+            "screenshot": 363,
+            "encode": 158,
+            "storage": 43
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "denim-promo-synthetic-demo",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "20b08197-3969-41b8-a5fe-4eebec276b27",
+        "creativeId": "d3233a5e-73d7-4bc4-98e2-73a4e45838ac",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/d3233a5e-73d7-4bc4-98e2-73a4e45838ac/r1/7a9581810020b7c2/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 328052,
+            "sha256": "29d0b6965c2037cc9c04c15c7370c7c284034df12459d6eae6b87d80d89041bf"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/d3233a5e-73d7-4bc4-98e2-73a4e45838ac/r1/7a9581810020b7c2/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 153173,
+            "sha256": "fa8632baa566995277d8656797ac4f6939c1e9ee3fe4afdf5fb38551678e7775"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "mediterranean-fashion-poster",
+          "templateVersion": "0.2.1",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "21714e0094cb379228a71a994529afeded7212c4bebc23fa15be70075afc9224",
+          "fingerprint": "7a9581810020b7c2",
+          "durationMs": 1003,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 2,
+            "content": 133,
+            "readiness": 35,
+            "layout": 12,
+            "screenshot": 266,
+            "encode": 81,
+            "storage": 48
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "denim-promo-synthetic-demo",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "dbf20575-a0cc-42c6-b907-4d0752b5debd",
+        "creativeId": "75b28438-e758-4afe-812c-f4a022321ba2",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/75b28438-e758-4afe-812c-f4a022321ba2/r1/707c18d8e00ef3f1/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 387060,
+            "sha256": "4eefdde17c3d6927c281c14b836a315415a89cb23734e7802547dbc1e95e9778"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/75b28438-e758-4afe-812c-f4a022321ba2/r1/707c18d8e00ef3f1/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 161112,
+            "sha256": "f6fe2a4a0d1dc62d0c974bf1e68486bbf39f630707d628051a6d80c59e0aca14"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "mediterranean-fashion-poster",
+          "templateVersion": "0.2.1",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "21714e0094cb379228a71a994529afeded7212c4bebc23fa15be70075afc9224",
+          "fingerprint": "707c18d8e00ef3f1",
+          "durationMs": 887,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 2,
+            "content": 135,
+            "readiness": 31,
+            "layout": 8,
+            "screenshot": 298,
+            "encode": 113,
+            "storage": 27
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "denim-promo-synthetic-demo",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "1be7179c-2f84-4baa-97ad-c44aef0f42a0",
+        "creativeId": "09ce5780-caff-4448-bf6f-4234e21a00ba",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/09ce5780-caff-4448-bf6f-4234e21a00ba/r1/f5ca1c9f1d4b2a43/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 513493,
+            "sha256": "1c59db9688dfbbc951b4f2ddd34e6a019560b318341fbba3ca2128b82731debe"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1811111-1111-4111-8111-111111111111/creatives/09ce5780-caff-4448-bf6f-4234e21a00ba/r1/f5ca1c9f1d4b2a43/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 207276,
+            "sha256": "2423c865a1f3ec9b841a4bfaafeff6ee4916bccb0833502c9a43afe4c9161ffe"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "mediterranean-fashion-poster",
+          "templateVersion": "0.2.1",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "21714e0094cb379228a71a994529afeded7212c4bebc23fa15be70075afc9224",
+          "fingerprint": "f5ca1c9f1d4b2a43",
+          "durationMs": 933,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 109,
+            "readiness": 30,
+            "layout": 10,
+            "screenshot": 384,
+            "encode": 135,
+            "storage": 31
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    }
+  ]
+}

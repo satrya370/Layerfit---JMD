@@ -1,0 +1,21 @@
+{
+  "brand": "KYKLOS / AFTER DARK",
+  "series": "FOOD · DRINKS · PEOPLE",
+  "edition": "ONE NIGHT ONLY",
+  "headline": "SOUVLAKI,\nWINE &\n*LATE NIGHTS.*",
+  "subheadline": "A good night starts at the table.",
+  "photoLabel": "THE TABLE IS SET.",
+  "badgeText": "SAVE\nTHE\nDATE",
+  "eventDate": "THU / APR 18",
+  "eventTime": "7:30 PM — LATE",
+  "venue": "KYKLOS",
+  "address": "38 MAIN ST.",
+  "imageUrl": "assets/food-demo.jpg",
+  "colors": {
+    "paper": "#F8F0E3",
+    "ink": "#3A2229",
+    "accent": "#E26C47",
+    "highlight": "#E9BE77",
+    "dark": "#4C2634"
+  }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="880" viewBox="0 0 620 880" fill="none">
+<defs>
+ <linearGradient id="body" x1="112" y1="302" x2="511" y2="507" gradientUnits="userSpaceOnUse"><stop stop-color="#4E5051"/><stop offset=".24" stop-color="#222425"/><stop offset=".59" stop-color="#111213"/><stop offset=".88" stop-color="#383A3B"/><stop offset="1" stop-color="#121313"/></linearGradient>
+ <linearGradient id="lid" x1="116" y1="140" x2="496" y2="225" gradientUnits="userSpaceOnUse"><stop stop-color="#BEC0C0"/><stop offset=".12" stop-color="#5A5D5D"/><stop offset=".45" stop-color="#C3C4C3"/><stop offset=".74" stop-color="#545859"/><stop offset="1" stop-color="#A2A4A3"/></linearGradient>
+ <linearGradient id="bottom" x1="140" y1="812" x2="483" y2="827" gradientUnits="userSpaceOnUse"><stop stop-color="#333535"/><stop offset=".55" stop-color="#141515"/><stop offset="1" stop-color="#343636"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<ellipse cx="309" cy="843" rx="198" ry="20" fill="#3C322A" opacity=".18" filter="url(#shadow)"/>
+<path d="M112 218 Q310 234 510 218 L465 747 Q453 807 424 827 Q309 849 189 826 Q164 805 153 751Z" fill="url(#body)"/>
+<path d="M129 239 Q153 515 183 786" stroke="white" stroke-opacity=".12" stroke-width="16" stroke-linecap="round"/>
+<path d="M482 239 Q469 523 435 778" stroke="black" stroke-opacity=".25" stroke-width="16" stroke-linecap="round"/>
+<path d="M153 749 Q175 807 202 824 Q304 844 419 825 Q451 803 467 749" fill="url(#bottom)"/>
+<ellipse cx="310" cy="219" rx="201" ry="39" fill="#2C2E2F"/>
+<path d="M113 187 Q304 133 506 186 L506 213 Q305 269 113 214Z" fill="url(#lid)"/>
+<ellipse cx="309" cy="179" rx="198" ry="39" fill="#5B5E5E"/>
+<ellipse cx="309" cy="178" rx="184" ry="26" fill="#202122" stroke="#B8BABB" stroke-width="8"/>
+<path d="M260 173 Q310 159 360 174" stroke="#8F9394" stroke-width="7" stroke-linecap="round"/>
+<rect x="219" y="381" width="181" height="80" rx="8" fill="none" stroke="#D7D8D6" stroke-width="6"/>
+<text x="309" y="432" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="800" fill="#E2E3DF" letter-spacing="2">DEMO</text>
+</svg>

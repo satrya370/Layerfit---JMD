@@ -1,0 +1,19 @@
+{
+  "brand": "LAYERFIT",
+  "eyebrow": "MADE FOR EVERYDAY",
+  "headline": "JOUW DAG.\nJOUW STIJL.",
+  "note": "PRODUCT A / 01",
+  "description": "Comfortabel materiaal, gecombineerd met een minimalistisch ontwerp.",
+  "benefits": [
+    "Comfortabel materiaal",
+    "Minimalistisch ontwerp"
+  ],
+  "cta": "ONTDEK PRODUCT A ↗",
+  "imageUrl": "assets/demo-bag.jpg",
+  "colors": {
+    "bg": "#e6e3d8",
+    "ink": "#22352a",
+    "accent": "#d8eb6b",
+    "paper": "#f6f3ea"
+  }
+}

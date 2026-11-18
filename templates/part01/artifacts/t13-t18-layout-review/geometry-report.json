@@ -1,0 +1,449 @@
+{
+  "scope": "Local HTML geometry regression; engine render gate reported separately",
+  "results": [
+    {
+      "template": "t13",
+      "variant": "reference",
+      "format": "portrait",
+      "status": "passed",
+      "geometry": {
+        "masthead": {
+          "left": 70,
+          "right": 1010,
+          "top": 70,
+          "bottom": 96.25,
+          "width": 940,
+          "height": 26.25,
+          "cx": 540
+        },
+        "offer": {
+          "left": 70,
+          "right": 524,
+          "top": 128.25,
+          "bottom": 957.796875,
+          "width": 454,
+          "height": 829.546875,
+          "cx": 297
+        },
+        "photo": {
+          "left": 556,
+          "right": 1010,
+          "top": 128.25,
+          "bottom": 957.796875,
+          "width": 454,
+          "height": 829.546875,
+          "cx": 783
+        },
+        "message": {
+          "left": 70,
+          "right": 1010,
+          "top": 989.796875,
+          "bottom": 1210,
+          "width": 940,
+          "height": 220.203125,
+          "cx": 540
+        },
+        "headline": {
+          "left": 343.71875,
+          "right": 736.265625,
+          "top": 989.796875,
+          "bottom": 1052.515625,
+          "width": 392.546875,
+          "height": 62.71875,
+          "cx": 539.9921875
+        },
+        "description": {
+          "left": 170,
+          "right": 910,
+          "top": 1072.515625,
+          "bottom": 1148.109375,
+          "width": 740,
+          "height": 75.59375,
+          "cx": 540
+        },
+        "cta": {
+          "left": 414.515625,
+          "right": 665.484375,
+          "top": 1168.109375,
+          "bottom": 1210,
+          "width": 250.96875,
+          "height": 41.890625,
+          "cx": 540
+        },
+        "terms": {
+          "left": 70,
+          "right": 1010,
+          "top": 1242,
+          "bottom": 1280,
+          "width": 940,
+          "height": 38,
+          "cx": 540
+        }
+      }
+    },
+    {
+      "template": "t13",
+      "variant": "reference",
+      "format": "vertical",
+      "status": "passed",
+      "geometry": {
+        "masthead": {
+          "left": 70,
+          "right": 1010,
+          "top": 250,
+          "bottom": 276.25,
+          "width": 940,
+          "height": 26.25,
+          "cx": 540
+        },
+        "offer": {
+          "left": 70,
+          "right": 524,
+          "top": 308.25,
+          "bottom": 1247.796875,
+          "width": 454,
+          "height": 939.546875,
+          "cx": 297
+        },
+        "photo": {
+          "left": 556,
+          "right": 1010,
+          "top": 308.25,
+          "bottom": 1247.796875,
+          "width": 454,
+          "height": 939.546875,
+          "cx": 783
+        },
+        "message": {
+          "left": 70,
+          "right": 1010,
+          "top": 1279.796875,
+          "bottom": 1500,
+          "width": 940,
+          "height": 220.203125,
+          "cx": 540
+        },
+        "headline": {
+          "left": 343.71875,
+          "right": 736.265625,
+          "top": 1279.796875,
+          "bottom": 1342.515625,
+          "width": 392.546875,
+          "height": 62.71875,
+          "cx": 539.9921875
+        },
+        "description": {
+          "left": 170,
+          "right": 910,
+          "top": 1362.515625,
+          "bottom": 1438.109375,
+          "width": 740,
+          "height": 75.59375,
+          "cx": 540
+        },
+        "cta": {
+          "left": 414.515625,
+          "right": 665.484375,
+          "top": 1458.109375,
+          "bottom": 1500,
+          "width": 250.96875,
+          "height": 41.890625,
+          "cx": 540
+        },
+        "terms": {
+          "left": 70,
+          "right": 1010,
+          "top": 1532,
+          "bottom": 1570,
+          "width": 940,
+          "height": 38,
+          "cx": 540
+        }
+      }
+    },
+    {
+      "template": "t18",
+      "variant": "linen",
+      "format": "portrait",
+      "status": "passed",
+      "geometry": {
+        "head": {
+          "left": 70,
+          "right": 1010,
+          "top": 123.25,
+          "bottom": 450.40625,
+          "width": 940,
+          "height": 327.15625,
+          "cx": 540
+        },
+        "photo": {
+          "left": 240,
+          "right": 840,
+          "top": 488.40625,
+          "bottom": 918.40625,
+          "width": 600,
+          "height": 430,
+          "cx": 540
+        },
+        "info": {
+          "left": 140,
+          "right": 940,
+          "top": 948.40625,
+          "bottom": 1126.75,
+          "width": 800,
+          "height": 178.34375,
+          "cx": 540
+        },
+        "brand": {
+          "left": 140,
+          "right": 940,
+          "top": 998.796875,
+          "bottom": 1070.0625,
+          "width": 800,
+          "height": 71.265625,
+          "cx": 540
+        },
+        "date": {
+          "left": 140,
+          "right": 528,
+          "top": 1084.0625,
+          "bottom": 1126.75,
+          "width": 388,
+          "height": 42.6875,
+          "cx": 334
+        },
+        "benefit": {
+          "left": 552,
+          "right": 940,
+          "top": 1084.0625,
+          "bottom": 1126.75,
+          "width": 388,
+          "height": 42.6875,
+          "cx": 746
+        },
+        "cta": {
+          "left": 0,
+          "right": 1080,
+          "top": 1200,
+          "bottom": 1280,
+          "width": 1080,
+          "height": 80,
+          "cx": 540
+        }
+      }
+    },
+    {
+      "template": "t18",
+      "variant": "linen",
+      "format": "vertical",
+      "status": "passed",
+      "geometry": {
+        "head": {
+          "left": 70,
+          "right": 1010,
+          "top": 309.921875,
+          "bottom": 655.40625,
+          "width": 940,
+          "height": 345.484375,
+          "cx": 540
+        },
+        "photo": {
+          "left": 220,
+          "right": 860,
+          "top": 695.40625,
+          "bottom": 1195.40625,
+          "width": 640,
+          "height": 500,
+          "cx": 540
+        },
+        "info": {
+          "left": 140,
+          "right": 940,
+          "top": 1227.40625,
+          "bottom": 1410.078125,
+          "width": 800,
+          "height": 182.671875,
+          "cx": 540
+        },
+        "brand": {
+          "left": 140,
+          "right": 940,
+          "top": 1277.796875,
+          "bottom": 1353.390625,
+          "width": 800,
+          "height": 75.59375,
+          "cx": 540
+        },
+        "date": {
+          "left": 140,
+          "right": 528,
+          "top": 1367.390625,
+          "bottom": 1410.078125,
+          "width": 388,
+          "height": 42.6875,
+          "cx": 334
+        },
+        "benefit": {
+          "left": 552,
+          "right": 940,
+          "top": 1367.390625,
+          "bottom": 1410.078125,
+          "width": 388,
+          "height": 42.6875,
+          "cx": 746
+        },
+        "cta": {
+          "left": 0,
+          "right": 1080,
+          "top": 1490,
+          "bottom": 1570,
+          "width": 1080,
+          "height": 80,
+          "cx": 540
+        }
+      }
+    },
+    {
+      "template": "t18",
+      "variant": "denim",
+      "format": "portrait",
+      "status": "passed",
+      "geometry": {
+        "head": {
+          "left": 70,
+          "right": 1010,
+          "top": 123.25,
+          "bottom": 450.40625,
+          "width": 940,
+          "height": 327.15625,
+          "cx": 540
+        },
+        "photo": {
+          "left": 240,
+          "right": 840,
+          "top": 488.40625,
+          "bottom": 918.40625,
+          "width": 600,
+          "height": 430,
+          "cx": 540
+        },
+        "info": {
+          "left": 140,
+          "right": 940,
+          "top": 948.40625,
+          "bottom": 1126.75,
+          "width": 800,
+          "height": 178.34375,
+          "cx": 540
+        },
+        "brand": {
+          "left": 140,
+          "right": 940,
+          "top": 998.796875,
+          "bottom": 1070.0625,
+          "width": 800,
+          "height": 71.265625,
+          "cx": 540
+        },
+        "date": {
+          "left": 140,
+          "right": 528,
+          "top": 1084.0625,
+          "bottom": 1126.75,
+          "width": 388,
+          "height": 42.6875,
+          "cx": 334
+        },
+        "benefit": {
+          "left": 552,
+          "right": 940,
+          "top": 1084.0625,
+          "bottom": 1126.75,
+          "width": 388,
+          "height": 42.6875,
+          "cx": 746
+        },
+        "cta": {
+          "left": 0,
+          "right": 1080,
+          "top": 1200,
+          "bottom": 1280,
+          "width": 1080,
+          "height": 80,
+          "cx": 540
+        }
+      }
+    },
+    {
+      "template": "t18",
+      "variant": "denim",
+      "format": "vertical",
+      "status": "passed",
+      "geometry": {
+        "head": {
+          "left": 70,
+          "right": 1010,
+          "top": 309.921875,
+          "bottom": 655.40625,
+          "width": 940,
+          "height": 345.484375,
+          "cx": 540
+        },
+        "photo": {
+          "left": 220,
+          "right": 860,
+          "top": 695.40625,
+          "bottom": 1195.40625,
+          "width": 640,
+          "height": 500,
+          "cx": 540
+        },
+        "info": {
+          "left": 140,
+          "right": 940,
+          "top": 1227.40625,
+          "bottom": 1410.078125,
+          "width": 800,
+          "height": 182.671875,
+          "cx": 540
+        },
+        "brand": {
+          "left": 140,
+          "right": 940,
+          "top": 1277.796875,
+          "bottom": 1353.390625,
+          "width": 800,
+          "height": 75.59375,
+          "cx": 540
+        },
+        "date": {
+          "left": 140,
+          "right": 528,
+          "top": 1367.390625,
+          "bottom": 1410.078125,
+          "width": 388,
+          "height": 42.6875,
+          "cx": 334
+        },
+        "benefit": {
+          "left": 552,
+          "right": 940,
+          "top": 1367.390625,
+          "bottom": 1410.078125,
+          "width": 388,
+          "height": 42.6875,
+          "cx": 746
+        },
+        "cta": {
+          "left": 0,
+          "right": 1080,
+          "top": 1490,
+          "bottom": 1570,
+          "width": 1080,
+          "height": 80,
+          "cx": 540
+        }
+      }
+    }
+  ]
+}

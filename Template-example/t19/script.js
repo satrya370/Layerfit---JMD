@@ -1,0 +1,12 @@
+(()=>{const el=id=>document.getElementById(id);const root=el('creative');
+const defaults={brand:'KYKLOS / AFTER DARK',series:'FOOD · DRINKS · PEOPLE',edition:'ONE NIGHT ONLY',headline:'SOUVLAKI,\nWINE &\n*LATE NIGHTS.*',subheadline:'A good night starts at the table.',photoLabel:'THE TABLE IS SET.',badgeText:'SAVE\nTHE\nDATE',eventDate:'THU / APR 18',eventTime:'7:30 PM — LATE',venue:'KYKLOS',address:'38 MAIN ST.',imageUrl:'assets/food-demo.jpg',colors:{paper:'#F8F0E3',ink:'#3A2229',accent:'#E26C47',highlight:'#E9BE77',dark:'#4C2634'},format:'portrait'};
+function drawHeadline(text){const heading=el('headline');heading.replaceChildren();const rows=String(text||'').split('\n');rows.forEach((line,i)=>{if(i)heading.append(document.createElement('br'));let value=line.trim();if(value.startsWith('*')&&value.endsWith('*')){const em=document.createElement('em');em.textContent=value.slice(1,-1);heading.append(em);}else heading.append(document.createTextNode(value));});}
+function safeColor(s){return typeof s==='string'&&/^#[0-9a-fA-F]{3,8}$/.test(s)}
+function safeImage(s){return /^(https?:\/\/|data:image\/(?:png|jpe?g|webp);base64,|blob:|\.\.?\/|\/)/i.test(String(s||''))}
+window.setCreative=async (input={})=>{const d={...defaults,...input,colors:{...defaults.colors,...input.colors}};if(!['square','portrait','story'].includes(d.format))throw new Error('Unknown format');root.dataset.format=d.format;
+for(const id of ['brand','series','edition','subheadline','photoLabel','eventDate','eventTime','venue','address']){el(id).textContent=String(d[id]||'');}
+drawHeadline(d.headline);el('badgeText').textContent=String(d.badgeText||'').replaceAll('\n','\n');el('sticker').hidden=!d.badgeText;
+for(const [k,v]of Object.entries(d.colors))if(['paper','ink','accent','highlight','dark'].includes(k)&&safeColor(v))root.style.setProperty('--'+k,v);
+const img=el('heroImage');if(safeImage(d.imageUrl))img.src=d.imageUrl;img.alt=String(d.imageAlt||'Promotional product photo');await document.fonts.ready;await img.decode().catch(()=>{});return {format:d.format,imageLoaded:img.naturalWidth>0};};
+let format=new URLSearchParams(location.search).get('format');window.__creativeReady=window.setCreative({format:['square','portrait','story'].includes(format)?format:'portrait'});
+})();

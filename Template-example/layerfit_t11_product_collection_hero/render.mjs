@@ -28,6 +28,15 @@ try {
         if(r.left<c.left-.5 || r.right>c.right+.5 || r.top<c.top-.5 || r.bottom>c.bottom+.5) errors.push(`${el.dataset.slot}: outside canvas`);
         if(s.display!=='inline' && (el.scrollWidth>el.clientWidth+1 || el.scrollHeight>el.clientHeight+Math.max(1,parseFloat(s.fontSize)*.2))) errors.push(`${el.dataset.slot}: overflow`);
       }
+      const slots=[...canvas.querySelectorAll('[data-slot]')].map(el=>({name:el.dataset.slot,r:el.getBoundingClientRect()}));
+      if(canvas.dataset.format!=='square')for(let i=1;i<slots.length;i++){
+        const gap=slots[i].r.top-slots[i-1].r.bottom;
+        if(gap<20||gap>30)errors.push(`${slots[i-1].name}/${slots[i].name}: inconsistent stack gap ${gap}`);
+      }
+      for(let i=0;i<slots.length;i++)for(let j=i+1;j<slots.length;j++){
+        const a=slots[i],b=slots[j];
+        if(a.r.width>0&&a.r.height>0&&b.r.width>0&&b.r.height>0&&a.r.left<b.r.right-2&&a.r.right>b.r.left+2&&a.r.top<b.r.bottom-2&&a.r.bottom>b.r.top+2)errors.push(`${a.name}/${b.name}: overlap (${Math.round(a.r.x)},${Math.round(a.r.y)}-${Math.round(a.r.right)},${Math.round(a.r.bottom)} / ${Math.round(b.r.x)},${Math.round(b.r.y)}-${Math.round(b.r.right)},${Math.round(b.r.bottom)})`);
+      }
       return errors;
     });
     if(issues.length) throw new Error(`${format}: ${issues.join('; ')}`);

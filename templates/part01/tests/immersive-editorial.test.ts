@@ -39,14 +39,15 @@ test('T12 schema rejects every explicitly listed invalid configuration', () => {
   }
 });
 
-test('T12 hides absent optional blocks and never invents CTA, price or benefit artwork', async () => {
-  const { input } = renderInput(1);
+test('T12 hides absent optional blocks without inventing description', async () => {
+  const { input } = renderInput(0);
+  delete input.config.t12.eyebrow;
+  delete input.config.t12.descriptionFactId;
   const body = templateModule.render(input).body.toString();
   assert.ok(!body.includes('t12-eyebrow'));
   assert.ok(!body.includes('t12-description'));
-  assert.ok(!body.includes('data-slot="cta"'));
-  assert.ok(body.includes('data-image-fit="contain"'));
-  assert.ok(!body.includes('data-allow-crop'));
+  assert.ok(body.includes('data-slot="cta"'));
+  assert.ok(body.includes('LEARN MORE'));
   const { input: reference } = renderInput(0);
   const referenceBody = templateModule.render(reference).body.toString();
   assert.ok(referenceBody.includes('t12-eyebrow'));
@@ -55,11 +56,15 @@ test('T12 hides absent optional blocks and never invents CTA, price or benefit a
   assert.ok(referenceBody.includes('data-allow-crop="true"'));
 });
 
-test('T12 compact class activates only for long headlines', async () => {
-  const { input: minimal } = renderInput(1);
-  assert.ok(!templateModule.render(minimal).body.toString().includes('t12-compact'));
-  const { input: compact } = renderInput(2);
-  assert.ok(templateModule.render(compact).body.toString().includes('t12-compact'));
+test('T12 uses only reference and renders description plus caller CTA, never compact', () => {
+  assert.equal(cases.length, 1);
+  assert.equal(cases[0]!.name, 'reference-source-state');
+  const { input } = renderInput(0);
+  input.config.copy.cta = '<b>MORE</b>';
+  const body = templateModule.render(input).body.toString();
+  assert.ok(body.includes('t12-description'));
+  assert.ok(body.includes('&lt;b&gt;MORE&lt;/b&gt;'));
+  assert.ok(!body.includes('t12-compact'));
 });
 
 test('T12 escapes copy and fails closed on missing or unverified description facts', async () => {
@@ -68,6 +73,8 @@ test('T12 escapes copy and fails closed on missing or unverified description fac
   input.config.t12.headlineLines = ['<script>bad</script>'];
   assert.ok(templateModule.render(input).body.toString().includes('&lt;script&gt;bad&lt;/script&gt;'));
   assert.throws(() => templateModule.render({ ...input, facts: new Map() }), /verified fact missing/);
+  // @ts-expect-error Deliberately bypass snapshot typing to test the runtime guard.
+  assert.throws(() => templateModule.render({ ...input, facts: new Map(item.facts.map(f => [f.id, { ...f, verified: false }])) }), /verified fact missing/);
   for (const rejected of item.rejects ?? []) {
     assert.equal(immersiveEditorialSchema.safeParse(rejected.config).success, false, rejected.name);
   }

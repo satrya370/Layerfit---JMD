@@ -1,0 +1,323 @@
+{
+  "scope": "Neutral palette per user; reference product photo is local comparison fixture only. Source original insets retained, not engine safe-area acceptance.",
+  "results": [
+    {
+      "case": "source-product-neutral-fidelity",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "c35ff21a-221b-4803-97fe-91e76030d0a0",
+        "creativeId": "1275475c-494a-4d00-80e4-ce728cda1d2b",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/1275475c-494a-4d00-80e4-ce728cda1d2b/r1/186042889a85ee70/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 442990,
+            "sha256": "1b1d65cfe46caebc6cd6cc47b077a0ccda08c4e5933eefb2c6dc337de6124986"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/1275475c-494a-4d00-80e4-ce728cda1d2b/r1/186042889a85ee70/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 134529,
+            "sha256": "ee2a80c5927ff0050bc54526842a40da93950a75b5644ef48f6847b678fc1b09"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "circular-product-benefits",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "600fd8120d92fc54dfbdb014b83c866acde4670ed604c8669bbc539d1ad578b7",
+          "fingerprint": "186042889a85ee70",
+          "durationMs": 2255,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 47,
+            "readiness": 33,
+            "layout": 6,
+            "screenshot": 583,
+            "encode": 92,
+            "storage": 32
+          },
+          "warnings": [
+            "photo: image upscaled 1.11x (source 425x374)"
+          ],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "56c6c8a0-e8e3-438a-8553-04f331546375",
+        "creativeId": "51a38393-4d2d-493c-b709-8b87a4734219",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/51a38393-4d2d-493c-b709-8b87a4734219/r1/474a2cb20426db1b/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 481112,
+            "sha256": "c82b60ce6f9812e769206808b39fa011e169603d63faa3512a903f0b9e6019b1"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/51a38393-4d2d-493c-b709-8b87a4734219/r1/474a2cb20426db1b/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 147904,
+            "sha256": "69cd6817f9fdd5439c8d7370fde35ce2f6064cb2e0b162c82cc879393dc6d899"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "circular-product-benefits",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "600fd8120d92fc54dfbdb014b83c866acde4670ed604c8669bbc539d1ad578b7",
+          "fingerprint": "474a2cb20426db1b",
+          "durationMs": 918,
+          "stageMs": {
+            "validate": 0,
+            "assets": 1,
+            "fonts": 0,
+            "template": 1,
+            "content": 96,
+            "readiness": 41,
+            "layout": 21,
+            "screenshot": 302,
+            "encode": 137,
+            "storage": 78
+          },
+          "warnings": [
+            "photo: image upscaled 1.20x (source 425x374)"
+          ],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "d4778fb8-3ca8-4a38-8885-8eb9491a4fcb",
+        "creativeId": "0081cf83-41c0-4c06-bcfb-c6735977ecf0",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/0081cf83-41c0-4c06-bcfb-c6735977ecf0/r1/355cb58b2772768c/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 572116,
+            "sha256": "961e418efce7ea51905bbf4dfe36f1d09ffa8522a3b07998ece107a1c02c5556"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/0081cf83-41c0-4c06-bcfb-c6735977ecf0/r1/355cb58b2772768c/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 173348,
+            "sha256": "bba171ed9eb46e7a2ce0d853c68f729b6cf4418fa22ceaf577c8a9c744e57aa6"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "circular-product-benefits",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "600fd8120d92fc54dfbdb014b83c866acde4670ed604c8669bbc539d1ad578b7",
+          "fingerprint": "355cb58b2772768c",
+          "durationMs": 1042,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 110,
+            "readiness": 15,
+            "layout": 8,
+            "screenshot": 442,
+            "encode": 151,
+            "storage": 67
+          },
+          "warnings": [
+            "photo: image upscaled 1.22x (source 425x374)"
+          ],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "synthetic-neutral-five-labels",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "53e79ba3-cf92-4001-83ca-ea0beec1ff81",
+        "creativeId": "687ae54d-e0ed-498b-84f2-8c23367a1e99",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/687ae54d-e0ed-498b-84f2-8c23367a1e99/r1/cd09d2e8c0709d2c/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 327948,
+            "sha256": "304d4ec9b16f25c4c9d24debfa0355eefc177ab726f86df362188c8ac23d890b"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/687ae54d-e0ed-498b-84f2-8c23367a1e99/r1/cd09d2e8c0709d2c/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 107289,
+            "sha256": "6f630e3aee3cd6b4495d9045b1e20f9cb8466dd69a925c10585d332e0a6a63b6"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "circular-product-benefits",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "600fd8120d92fc54dfbdb014b83c866acde4670ed604c8669bbc539d1ad578b7",
+          "fingerprint": "cd09d2e8c0709d2c",
+          "durationMs": 1271,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 115,
+            "readiness": 16,
+            "layout": 11,
+            "screenshot": 316,
+            "encode": 113,
+            "storage": 52
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "77e89f52-31a0-4c4a-b73c-9580e97463aa",
+        "creativeId": "643aa8c1-4e7f-4947-9a3b-bb74f63f6b20",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/643aa8c1-4e7f-4947-9a3b-bb74f63f6b20/r1/68c7c2e512339d03/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 351620,
+            "sha256": "503770193f5b430afcd3ed1c97bf55cec44ea7845a676913a1d8e6ead9e1a32b"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/643aa8c1-4e7f-4947-9a3b-bb74f63f6b20/r1/68c7c2e512339d03/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 118430,
+            "sha256": "d3d439e2d3f1998efa4e684aa357b8bca275283a9b63b54ebfc2eb073c20af47"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "circular-product-benefits",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "600fd8120d92fc54dfbdb014b83c866acde4670ed604c8669bbc539d1ad578b7",
+          "fingerprint": "68c7c2e512339d03",
+          "durationMs": 859,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 82,
+            "readiness": 14,
+            "layout": 7,
+            "screenshot": 329,
+            "encode": 112,
+            "storage": 49
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "0300be88-b6da-47af-9c1a-f0e58ecbbe3a",
+        "creativeId": "659515d4-e788-46d0-b706-7065b4550104",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/659515d4-e788-46d0-b706-7065b4550104/r1/28c8114890bf45d8/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 441422,
+            "sha256": "1d8ac0bc9f390c24a5e4d3a2f1498f7f0621974071f9ffb393d8a4955c53ac1c"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d2011111-1111-4111-8111-111111111111/creatives/659515d4-e788-46d0-b706-7065b4550104/r1/28c8114890bf45d8/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 142590,
+            "sha256": "4f112b049e24c7794fd6f5bdb8c734bd91272207ca9f567d3424f990583962bb"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "circular-product-benefits",
+          "templateVersion": "0.1.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "600fd8120d92fc54dfbdb014b83c866acde4670ed604c8669bbc539d1ad578b7",
+          "fingerprint": "28c8114890bf45d8",
+          "durationMs": 941,
+          "stageMs": {
+            "validate": 2,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 69,
+            "readiness": 40,
+            "layout": 8,
+            "screenshot": 418,
+            "encode": 106,
+            "storage": 29
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    }
+  ]
+}

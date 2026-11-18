@@ -1,0 +1,24 @@
+{
+  "format": "story",
+  "brand": "CONZURI",
+  "announcement": "",
+  "topLines": [
+    "HEIGHT",
+    "BOOSTING",
+    "SHOES"
+  ],
+  "mainHeadline": "ADD 3 INCHES",
+  "bottomLines": [
+    "WHERE IT",
+    "MATTERS",
+    "MOST"
+  ],
+  "teaser": "DOWN THERE",
+  "teaserEmoji": "\ud83d\udc47",
+  "imageUrl": "assets/boot-scene.png",
+  "imageAlt": "Black boots",
+  "colors": {
+    "highlight": "#ffffff",
+    "stroke": "#cecece"
+  }
+}

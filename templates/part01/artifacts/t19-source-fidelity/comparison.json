@@ -1,0 +1,20 @@
+{
+  "note": "Left=supplied source preview, right=engine. Source geometry/photo retained; bundled Arimo/DM Serif replace system fonts, so not an exact pixel match. No engine-safe-inset acceptance.",
+  "comparisons": [
+    {
+      "format": "square",
+      "mae": 2.1365529263831733,
+      "exactMatch": false
+    },
+    {
+      "format": "portrait",
+      "mae": 2.2222002743484226,
+      "exactMatch": false
+    },
+    {
+      "format": "vertical",
+      "mae": 2.1092766203703706,
+      "exactMatch": false
+    }
+  ]
+}

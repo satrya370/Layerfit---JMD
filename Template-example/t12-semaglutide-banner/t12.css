@@ -1,0 +1,226 @@
+/* ============================================================
+   T12 — "IS SEMAGLUTIDE RIGHT FOR YOU?"
+   Replika 1:1 iklan Eden (compounded semaglutide)
+   ------------------------------------------------------------
+   - Kanvas   : 1080 x 1080 (Meta feed 1:1)
+   - Latar    : gradien horizontal (hijau hutan -> sage),
+                21 titik warna diekstrak langsung dari referensi
+   - Font     : Jost (geometric sans) + Playfair Display (wordmark)
+   - Produk   : images/vial.png (cutout asli + bayangan)
+   ------------------------------------------------------------
+   Nilai letter-spacing / word-spacing dikalibrasi otomatis agar
+   lebar tiap baris teks cocok dengan referensi (toleransi +-2px).
+   Kustomisasi cepat: ubah nilai variabel di :root.
+   ============================================================ */
+
+:root {
+  /* --- warna --- */
+  --bg-page: #f6f8fa;            /* latar halaman (di luar kanvas) */
+  --text-main: #ffffff;          /* teks utama putih */
+  --text-accent: #fafdcb;        /* kata "Semaglutide" (krem muda) */
+  --text-disclaimer: rgba(255, 255, 255, 0.66); /* disclaimer redup */
+
+  /* --- font --- */
+  --font-head: 'Jost', 'Futura', 'Century Gothic', 'Segoe UI', sans-serif;
+  --font-brand: 'Playfair Display', 'Didot', 'Prata', serif;
+
+  /* --- geometri kanvas --- */
+  --canvas: 1080px;
+  --corner-radius: 16px;         /* pembulatan sudut (0 = full-bleed) */
+
+  /* --- posisi vertikal blok (hasil kalibrasi) --- */
+  --top-headline: 57px;          /* blok H1 */
+  --top-vial: 288px;             /* gambar vial */
+  --vial-shift: 7px;             /* geser kanan: cutout asli asimetris (bayangan) */
+  --top-subhead: 771px;          /* blok sub-headline */
+  --top-brand: 871px;            /* wordmark eden */
+  --top-disclaimer: 998px;       /* blok disclaimer */
+
+  /* --- kondensasi horizontal (_glyph_ font referensi sedikit lebih sempit) --- */
+  --squeeze: 0.93;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-head);
+  background: var(--bg-page);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 14px;
+}
+
+/* ============ KREASI UTAMA ============ */
+
+.creative {
+  position: relative;
+  width: var(--canvas);
+  height: var(--canvas);
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: var(--corner-radius);
+
+  /* Gradien horizontal — 21 titik warna diekstrak dari referensi */
+  background: linear-gradient(
+    to right,
+    #275549 0%,  #275449 5%,  #28564a 10%, #2b594e 15%, #2f5d52 20%,
+    #346257 25%, #3a675d 30%, #416d63 35%, #487369 40%, #507a70 45%,
+    #598077 50%, #62887f 55%, #6b8f87 60%, #74968f 65%, #7f9e97 70%,
+    #89a59f 75%, #93ada8 80%, #9cb5b0 85%, #a7bdb8 90%, #b1c4c0 95%,
+    #bbcbc8 100%
+  );
+
+  text-align: center;
+}
+
+/* ============ 1. HEADLINE ============ */
+
+.headline {
+  position: absolute;
+  top: var(--top-headline);
+  left: 0;
+  right: 0;
+
+  font-family: var(--font-head);
+  font-weight: 500;
+  font-size: 102.5px;
+  line-height: 1.005;               /* baseline-to-baseline ~103px */
+  letter-spacing: -0.009em;          /* terkalibrasi vs referensi */
+  word-spacing: -0.20em;            /* word space rapat seperti referensi */
+  color: var(--text-main);
+
+  /* glyph referensi sedikit lebih sempit dari Jost -> kondensasi halus */
+  transform: scaleX(var(--squeeze));
+  transform-origin: center;
+}
+
+.headline .line {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+/* baris ke-2 dirender lebih rapat di referensi aslinya */
+.headline #hl2 {
+  letter-spacing: -0.031em;
+}
+
+/* tanda tanya menempel rapat ke "You" seperti di referensi */
+.headline .qm {
+  margin-left: -5px;
+}
+
+/* kata yang ditekankan -> warna krem (bukan miring) */
+.headline__accent {
+  font-style: normal;
+  color: var(--text-accent);
+}
+
+/* ============ 2. VIAL PRODUK ============ */
+
+.vial {
+  position: absolute;
+  top: var(--top-vial);
+  left: 50%;
+  transform: translateX(calc(-50% + var(--vial-shift)));
+  width: 282px;
+  line-height: 0;
+}
+
+.vial__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============ 3. SUB-HEADLINE ============ */
+
+.subhead {
+  position: absolute;
+  top: var(--top-subhead);
+  left: 90px;
+  right: 90px;
+
+  font-weight: 400;
+  font-size: 57.5px;
+  line-height: 0.85;                 /* rapat seperti referensi */
+  letter-spacing: -0.063em;          /* terkalibrasi vs referensi */
+  word-spacing: -0.105em;
+  color: var(--text-main);
+
+  transform: scaleX(var(--squeeze));
+  transform-origin: center;
+}
+
+.subhead .line {
+  display: inline-block;
+}
+
+/* baris ke-2 sub-headline sedikit lebih longgar di referensi */
+.subhead #sh2 {
+  letter-spacing: -0.049em;
+}
+
+/* ============ 4. WORDMARK BRAND ============ */
+
+.brand {
+  position: absolute;
+  top: var(--top-brand);
+  left: 0;
+  right: 0;
+
+  font-family: var(--font-brand);
+  font-weight: 400;
+  font-size: 121px;
+  line-height: 1;
+  letter-spacing: -0.044em;          /* terkalibrasi vs referensi */
+  color: var(--text-main);
+}
+
+/* ============ 5. DISCLAIMER ============ */
+
+.disclaimer {
+  position: absolute;
+  top: var(--top-disclaimer);
+  left: 75px;
+  right: 75px;
+
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.18;                 /* 3 baris rapat */
+  letter-spacing: 0.0735em;          /* terkalibrasi vs referensi */
+  color: var(--text-disclaimer);
+}
+
+.disclaimer .line {
+  display: inline-block;
+}
+
+/* ============ PREVIEW RESPONSIF (opsional) ============
+   Saat dibuka di viewport kecil, kanvas 1080 diskalakan agar
+   tetap terlihat utuh (faktor skala di-set oleh skrip kecil
+   di t12.html, beserta ukuran .shell). Ekspor PNG tetap 1080x1080. */
+
+.shell {
+  position: relative;
+  width: 1080px;
+  height: 1080px;
+}
+
+.creative {
+  transform: scale(var(--fit-scale, 1));
+  transform-origin: top left;
+}
+
+@media (max-width: 1130px) {
+  body {
+    padding: 10px;
+    overflow-x: hidden;
+  }
+}

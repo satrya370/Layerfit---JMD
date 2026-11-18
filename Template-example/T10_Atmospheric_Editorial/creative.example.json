@@ -1,0 +1,13 @@
+{
+  "topLeft": "103 N 10TH ST",
+  "topRight": "YOUR ESCAPE STARTS HERE.",
+  "eyebrow": "TORONTO",
+  "headline": "Ableton\nSprings\n& Spa",
+  "descriptionFactId": "t10-demo-services",
+  "facts": [{"id":"t10-demo-services","text":"Sauna & cold plunge, facials & treatments, massage & body scrub.","verified":true}],
+  "cta": "EXPLORE",
+  "features": ["SAUNA &\nCOLD PLUNGE", "FACIALS &\nTREATMENTS", "MASSAGE &\nBODY SCRUB"],
+  "imageUrl": "assets/demo-spa-photo.png",
+  "imageAlt": "Spa lifestyle photo",
+  "colors": {"top":"#dce459", "mid":"#e9e6dd", "bottom":"#acc8e8", "ink":"#302d28"}
+}

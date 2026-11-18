@@ -1,0 +1,25 @@
+{
+  "templateId": "t19",
+  "concept": "denim-herfst",
+  "format": "square",
+  "brand": "NOORD.",
+  "headline": ["DENIM,", "WOL &", "AVONDEN"],
+  "accentLine": "Nieuw Binnen",
+  "badgeLines": ["LIMITED", "DROP"],
+  "address": "VANAF € 49,95",
+  "eventDate": "NU IN DE WINKEL",
+  "eventTime": "GRATIS RETOUR",
+  "cta": "SHOP NU ONLINE",
+  "imageUrl": "assets/hero-alt.jpg",
+  "imageAlt": "Vrouw in crème gebreide trui en roestbruin suède jack, herfstcollectie",
+  "imageMode": "cover",
+  "texture": true,
+  "colors": {
+    "bg": "#F1EBDF",
+    "ink": "#232B3A",
+    "mid": "#3E5C8A",
+    "accent": "#B3541E",
+    "gold": "#C0912F",
+    "onAccent": "#F5EFE2"
+  }
+}

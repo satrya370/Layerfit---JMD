@@ -13,7 +13,7 @@ import { FORMAT_PROFILES } from '../../../../Layerfit-JMD-engine/src/shared/rend
 import { FONT_REGISTRY } from '../../../../Layerfit-JMD-engine/src/shared/fonts.js';
 import type { FontDefinition, FontWeight } from '../../../../Layerfit-JMD-engine/src/shared/fonts.js';
 
-const out = resolve('artifacts/t12-immersive-editorial');
+const out = resolve('artifacts/t12-reference-cta');
 await mkdir(out, { recursive: true });
 
 const report = await checkTemplateContract(templateModule, await contractCases(), { strict: true });
@@ -37,7 +37,6 @@ const fontRegistry: Record<string, FontDefinition> = {
 };
 
 const cases = await contractCases();
-const shortName = (name: string) => name === 'reference-source-state' ? 'reference' : name === 'minimal-optional-hidden' ? 'minimal' : 'compact';
 const store = join(out, `store-${randomUUID()}`);
 const harness = await createHarness({
   templates: [templateModule],
@@ -80,7 +79,7 @@ try {
         assert.equal(meta.width, FORMAT_PROFILES[format].width);
         assert.equal(meta.height, FORMAT_PROFILES[format].height);
         await sharp(stored).raw().toBuffer();
-        await copyFile(stored, join(out, `T12-${shortName(item.name)}-${format}.${artifact.encoding}`));
+        await copyFile(stored, join(out, `T12-reference-${format}.${artifact.encoding}`));
       }
     }
   }
@@ -88,8 +87,9 @@ try {
   await harness.close();
 }
 
-/* Contact sheet: three cases × three formats. */
-const variants = ['reference', 'minimal', 'compact'];
+assert.ok(results.every(({ result }) => result.status === 'success'), 'See engine-report.json; successes retained');
+/* Contact sheet: reference only, three formats. */
+const variants = ['reference'];
 const formats = ['square', 'portrait', 'vertical'] as const;
 const tiles = [];
 for (const [row, variant] of variants.entries()) {
@@ -98,7 +98,7 @@ for (const [row, variant] of variants.entries()) {
     tiles.push({ input, left: col * 372, top: row * 652 });
   }
 }
-await sharp({ create: { width: 1104, height: 1944, channels: 3, background: '#ffffff' } }).composite(tiles).png().toFile(join(out, 'T12-all-cases.png'));
+await sharp({ create: { width: 1104, height: 640, channels: 3, background: '#ffffff' } }).composite(tiles).png().toFile(join(out, 'T12-reference-all-formats.png'));
 
 /*
  * Side-by-side against the standalone package previews. Not a fidelity claim: fonts differ
@@ -132,7 +132,7 @@ for (const [format, sourceFile] of [['square', 't12-square'], ['portrait', 't12-
   });
 }
 await writeFile(join(out, 'comparison.json'), JSON.stringify({
-  note: 'MAE is not a visual-similarity percentage. Deliberate differences: bundled Fraunces/Arimo stand-ins for URW Bookman/Arial, panel padding inside the engine safe box (source used 24-52px bottom clearance), normalized image bytes.',
+  note: 'User selected reference only, with verified description and CTA. Source has no CTA; typography and panel spacing revised to fit CTA within the safe box. Bundled Fraunces/Arimo replace URW Bookman/Arial. MAE is not a visual-similarity percentage.',
   comparisons,
 }, null, 2));
 

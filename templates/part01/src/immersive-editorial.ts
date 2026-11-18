@@ -8,7 +8,7 @@ const text = (max: number) => z.string().trim().min(1).max(max).refine((value) =
 /**
  * T12 — Immersive Image + Editorial Copy, ported from Template-example/LayerFit_T12.
  * One full-bleed hero photo with a centered eyebrow badge, then a colored editorial panel with a
- * serif headline and an optional description. No CTA, benefits, price or logo exist in this design.
+ * serif headline, verified description and CTA. Reference-only revision; no benefits, price or logo.
  */
 export const immersiveEditorialSchema = templateConfigSchema.safeExtend({
   templateId: z.literal('immersive-editorial'),
@@ -35,12 +35,9 @@ export const immersiveEditorialSchema = templateConfigSchema.safeExtend({
 
 const css = readFileSync(new URL('./immersive-editorial.css', import.meta.url), 'utf8');
 
-/** The source switches to compact headline sizing when the headline text exceeds 74 characters. */
-const COMPACT_LIMIT = 74;
-
 export const templateModule: TemplateModule = {
   id: 'immersive-editorial',
-  version: '0.1.0',
+  version: '0.2.0',
   formats: ['square', 'portrait', 'vertical'],
   rootClass: 'lf-immersive-editorial',
   slots: [
@@ -48,6 +45,7 @@ export const templateModule: TemplateModule = {
     { name: 'eyebrow', required: false },
     { name: 'headline', required: true },
     { name: 'description', required: false },
+    { name: 'cta', required: true },
   ],
   configSchema: immersiveEditorialSchema,
   render({ config: raw, photos, facts }) {
@@ -70,9 +68,10 @@ export const templateModule: TemplateModule = {
       css,
       body: html`
         <section class="t12-scene">${image}${config.t12.eyebrow ? html`<span class="t12-eyebrow" data-slot="eyebrow" data-safe="true" data-allow-overlap="scene" data-fit-group="eyebrow" data-fit-min="0.75">${config.t12.eyebrow}</span>` : ''}</section>
-        <section class="t12-panel${config.t12.headlineLines.join('').length > COMPACT_LIMIT ? ' t12-compact' : ''}">
+        <section class="t12-panel">
           <h1 class="t12-headline" data-slot="headline" data-required="true" data-safe="true" data-fit-group="headline" data-fit-min="0.55">${config.t12.headlineLines.map((line) => html`<span>${line}</span>`)}</h1>
           ${description ? html`<p class="t12-description" data-slot="description" data-safe="true" data-fit-group="description" data-fit-min="0.8">${description}</p>` : ''}
+          <div class="t12-cta" data-slot="cta" data-required="true" data-safe="true" data-fit-group="cta" data-fit-min="0.85">${config.copy.cta}</div>
         </section>`,
     };
   },

@@ -1,0 +1,11 @@
+{
+ "format":"story",
+ "brand":"LAYERFIT",
+ "discountText":"25% OFF",
+ "headline":"EVERYDAY\nESSENTIALS",
+ "description":"A SPECIAL OFFER ON SELECTED PRODUCTS.",
+ "finePrint":"DEMO OFFER ONLY — REPLACE WITH VERIFIED TERMS BEFORE PUBLISHING.",
+ "imageUrl":"assets/demo-tumbler.svg",
+ "imageAlt":"Generic demonstration product, not a real LayerFit item",
+ "colors":{"bg":"#e4d9ca","ink":"#272524","title":"#9f9363","muted":"#605a53"}
+}

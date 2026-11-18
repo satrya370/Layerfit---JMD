@@ -1,5 +1,5 @@
 {
-  "name":"layerfit-t11-product-collection-hero",
+  "name":"layerfit-t11-semaglutide-banner",
   "private":true,
   "type":"module",
   "scripts":{"render":"node render.mjs"},

@@ -3,66 +3,67 @@ import { z } from 'zod';
 import { html } from '../../../../Layerfit-JMD-engine/src/shared/html.js';
 import { idSchema, templateConfigSchema, type TemplateModule } from '../../../../Layerfit-JMD-engine/src/shared/render-contract.js';
 
-const text = (max: number) => z.string().trim().min(1).max(max).refine((value) => !/\p{Cc}/u.test(value));
+const text = (max: number) => z.string().trim().min(1).max(max).refine((value) => !/\p{Cc}/u.test(value), 'control characters are not allowed');
+
+/** T11 now uses the user-supplied Semaglutide question-banner composition. All medical copy is fact-bound. */
 export const productCollectionSchema = templateConfigSchema.safeExtend({
-  templateId: z.literal('product-collection-hero'),
+  templateId: z.literal('semaglutide-banner'),
   t11: z.object({
-    tagline: text(60).optional(), headlineLines: z.array(text(45)).min(1).max(3),
-    descriptionFactId: idSchema.optional(), benefitFactIds: z.array(idSchema).max(3),
-    primaryCta: text(32).optional(), destinationLabel: text(60).optional(),
-    website: z.string().max(120).regex(/^(?:www\.)?[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?\.[a-z]{2,}(?:\/[a-z0-9/_-]*)?$/i).optional(),
-    imageAlts: z.array(text(100)).min(1).max(3),
+    headlineFactId: idSchema,
+    headlineLines: z.array(text(40)).min(1).max(2),
+    accentPhrase: text(30),
+    subheadFactId: idSchema,
+    disclaimerFactId: idSchema,
+    imageAlt: text(120),
   }).strict(),
 }).superRefine((config, ctx) => {
-  if (config.assets.length > 3) ctx.addIssue({ code: 'custom', path: ['assets'], message: 'T11 supports one to three distinct product assets' });
-  if (config.t11.imageAlts.length !== config.assets.length) ctx.addIssue({ code: 'custom', path: ['t11', 'imageAlts'], message: 'One alt per product asset is required' });
-  if (config.t11.headlineLines.join(' ') !== config.copy.headline) ctx.addIssue({ code: 'custom', path: ['copy', 'headline'], message: 'Headline and lines must agree' });
+  const issue = (path: Array<string | number>, message: string) => ctx.addIssue({ code: 'custom', path, message });
+  if (config.assets.length !== 1) issue(['assets'], 'T11 requires exactly one vial/product image');
+  if (config.assets[0]?.allowCrop) issue(['assets', 0, 'allowCrop'], 'the vial must remain uncropped');
+  if (config.t11.headlineLines.join(' ') !== config.copy.headline) issue(['copy', 'headline'], 'headline and headlineLines must agree');
+  if (!config.copy.headline.includes(config.t11.accentPhrase)) issue(['t11', 'accentPhrase'], 'accent phrase must appear in the headline');
+  if (config.copy.benefits.length) issue(['copy', 'benefits'], 'T11 has no separate benefit chips');
+  if (config.copy.body !== undefined) issue(['copy', 'body'], 'use the fact-backed T11 subhead slot');
+  if (config.callouts?.length) issue(['callouts'], 'T11 has no callouts');
+  if (config.offerFactId !== undefined || config.proofFactId !== undefined || config.comparisonEvidenceId !== undefined) issue(['offerFactId'], 'T11 does not support offer, proof or comparison blocks');
+  if (config.brand.logoAssetId !== undefined) issue(['brand', 'logoAssetId'], 'use the source-style brand wordmark text');
 });
+
 const css = readFileSync(new URL('./product-collection-hero.css', import.meta.url), 'utf8');
-const imageSlots = ['product-main', 'product-left', 'product-right'] as const;
+
 export const templateModule: TemplateModule = {
-  id: 'product-collection-hero', version: '0.1.0', formats: ['square', 'portrait', 'vertical'],
+  id: 'semaglutide-banner', version: '0.2.1', formats: ['square', 'portrait', 'vertical'],
   rootClass: 'lf-product-collection-hero', configSchema: productCollectionSchema,
   slots: [
-    { name: 'header', required: true }, { name: 'headline', required: true },
-    { name: 'description', required: false }, { name: 'benefits', required: false },
-    { name: 'primary-cta', required: false }, { name: 'product-main', required: true },
-    { name: 'product-left', required: false }, { name: 'product-right', required: false },
-    { name: 'offer', required: false }, { name: 'bottom-cta', required: true }, { name: 'destination', required: false },
+    { name: 'headline', required: true }, { name: 'product-main', required: true },
+    { name: 'subhead', required: true }, { name: 'brand', required: true },
+    { name: 'disclaimer', required: true }, { name: 'cta', required: true },
   ],
-  render({ config: raw, photos, logo, facts }) {
+  render({ config: raw, photos, facts }) {
     const config = productCollectionSchema.parse(raw);
-    const fact = (id: string) => {
+    if (photos.length !== 1 || photos[0]?.assetId !== config.assets[0]?.assetId) throw new Error('T11 requires one matching vial image');
+    const fact = (id: string, field: string) => {
       const value = facts.get(id);
-      if (!value?.verified || value.id !== id) throw new Error(`T11 verified fact missing: ${id}`);
+      if (!value?.verified || value.id !== id) throw new Error(`T11 verified ${field} fact missing: ${id}`);
       return value.text;
     };
-    const description = config.t11.descriptionFactId ? fact(config.t11.descriptionFactId) : undefined;
-    const benefits = config.t11.benefitFactIds.map(fact);
-    const offer = config.offerFactId ? fact(config.offerFactId) : undefined;
-    const placement = ['main', 'left', 'right'];
-    if (photos.length !== config.assets.length) throw new Error('T11 photo count mismatch');
-    const productMarkup = config.assets.map((ref, index) => {
-      const asset = photos[index];
-      if (!asset || ref.assetId !== asset.assetId) throw new Error('T11 product asset missing or mismatched');
-      return html`<img class="collection-product collection-product--${placement[index]}" src="${asset.src}" alt="${config.t11.imageAlts[index]}" data-slot="${imageSlots[index]}" data-required="true" data-safe="true" data-image-fit="contain" data-allow-overlap="product-main product-left product-right"/>`;
+    const headline = fact(config.t11.headlineFactId, 'headline');
+    const subhead = fact(config.t11.subheadFactId, 'subhead');
+    const disclaimer = fact(config.t11.disclaimerFactId, 'disclaimer');
+    if (headline !== config.copy.headline) throw new Error('T11 headline must exactly match its verified fact');
+    const phrase = config.t11.accentPhrase;
+    const headlineLines = config.t11.headlineLines.map((line) => {
+      const at = line.indexOf(phrase);
+      return at < 0 ? html`<span class="collection-line">${line}</span>` : html`<span class="collection-line">${line.slice(0, at)}<em>${phrase}</em>${line.slice(at + phrase.length)}</span>`;
     });
     return { css, body: html`
-      <header class="collection-header" data-slot="header" data-required="true" data-safe="true">
-        ${logo ? html`<img class="collection-logo" src="${logo.src}" alt="${config.brand.name}" data-image-fit="contain"/>` : html`<span class="collection-brand">${config.brand.name}</span>`}
-        ${config.t11.tagline ? html`<span class="collection-tagline">${config.t11.tagline}</span>` : ''}
-      </header>
-      <section class="collection-copy">
-        <h1 class="collection-headline" data-slot="headline" data-required="true" data-safe="true" data-fit-group="collection-headline" data-fit-min="0.7">${config.t11.headlineLines.map((line) => html`<span>${line}</span>`)}</h1>
-        ${description ? html`<p class="collection-description" data-slot="description" data-safe="true">${description}</p>` : ''}
-        ${benefits.length ? html`<p class="collection-benefits" data-slot="benefits" data-safe="true">${benefits.join(' · ')}</p>` : ''}
-        ${config.t11.primaryCta ? html`<div class="collection-primary" data-slot="primary-cta" data-safe="true">${config.t11.primaryCta}</div>` : ''}
-      </section>
-      <section class="collection-stage" data-count="${photos.length}" aria-label="Product collection">${productMarkup}</section>
-      ${offer ? html`<div class="collection-offer" data-slot="offer" data-safe="true">${offer}</div>` : ''}
-      <footer class="collection-footer">
-        <span class="collection-bottom" data-slot="bottom-cta" data-required="true" data-safe="true">${config.copy.cta}</span>
-        ${config.t11.website || config.t11.destinationLabel ? html`<span class="collection-destination" data-slot="destination" data-safe="true">${config.t11.website || config.t11.destinationLabel}</span>` : ''}
-      </footer>` };
+      <main class="semaglutide-layout">
+        <h1 class="collection-headline" data-slot="headline" data-required="true" data-safe="true" data-fit-group="headline" data-fit-min="0.72">${headlineLines}</h1>
+        <figure class="collection-stage" data-slot="product-main" data-required="true" data-safe="true"><img class="collection-product" src="${photos[0]!.src}" alt="${config.t11.imageAlt}" data-image-fit="contain"/></figure>
+        <p class="collection-subhead" data-slot="subhead" data-required="true" data-safe="true" data-fit-group="subhead" data-fit-min="0.78">${subhead}</p>
+        <p class="collection-brand" data-slot="brand" data-required="true" data-safe="true">${config.brand.name}</p>
+        <p class="collection-disclaimer" data-slot="disclaimer" data-required="true" data-safe="true" data-fit-group="disclaimer" data-fit-min="0.8">${disclaimer}</p>
+        <div class="collection-cta" data-slot="cta" data-required="true" data-safe="true" data-fit-group="cta" data-fit-min="0.8">${config.copy.cta}</div>
+      </main>` };
   },
 };

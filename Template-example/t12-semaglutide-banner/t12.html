@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Semaglutide Right for You? — Eden Question Banner (t12)</title>
+
+  <!-- Font: Jost (headline & body, geometric sans) + Playfair Display (wordmark serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="t12.css">
+</head>
+<body>
+
+  <!-- ============ KREASI UTAMA (1080 x 1080) ============ -->
+  <!-- Replika 1:1 iklan Eden "Is Semaglutide Right for You?"
+       Latar: gradien horizontal hijau hutan -> sage (persis dari referensi) -->
+
+  <div class="shell">
+  <main class="creative" role="img" aria-label="Is Semaglutide Right for You? Find out who should and shouldn't take this medication.">
+
+    <!-- ===== 1. HEADLINE (2 baris, kata "Semaglutide" warna krem) ===== -->
+    <h1 class="headline">
+      <span class="line" id="hl1">Is <em class="headline__accent">Semaglutide</em></span>
+      <span class="line" id="hl2">Right for You<span class="qm">?</span></span>
+    </h1>
+
+    <!-- ===== 2. PRODUK: vial kaca amber + label eden (foto asli) ===== -->
+    <figure class="vial">
+      <img class="vial__img" src="images/vial.png"
+           alt="Botol semaglutide eden — Semaglutide Injection 2.5mg/ml"
+           width="282" height="446">
+    </figure>
+
+    <!-- ===== 3. SUB-HEADLINE (2 baris) ===== -->
+    <p class="subhead">
+      <span class="line" id="sh1">Find Out Who Should and</span><br>
+      <span class="line" id="sh2">Shouldn&rsquo;t Take This Medication.</span>
+    </p>
+
+    <!-- ===== 4. WORDMARK BRAND ===== -->
+    <p class="brand"><span class="line" id="br1">eden</span></p>
+
+    <!-- ===== 5. DISCLAIMER (3 baris, opasitas rendah) ===== -->
+    <p class="disclaimer">
+      <span class="line" id="dc1">Prescription required to be filled by state licensed pharmacy partner. Compounded drugs are not</span><br>
+      <span class="line" id="dc2">FDA-approved and do not undergo FDA review for safety or effectiveness. Results are not</span><br>
+      <span class="line" id="dc3">guaranteed and differ by individual. See our website for safety information.</span>
+    </p>
+
+  </main>
+  </div>
+
+  <!-- Pratinjau responsif: skala kanvas 1080px agar muat di viewport kecil.
+       (Konten kreatif tetap 100% HTML/CSS murni; skrip ini hanya untuk
+       kenyamanan melihat pratinjau di browser. Ekspor PNG = 1080x1080.) -->
+  <script>
+    (function () {
+      var shell = document.querySelector('.shell');
+      var c = document.querySelector('.creative');
+      function fit() {
+        var s = window.innerWidth < 1080 ? Math.max(0.15, (window.innerWidth - 20) / 1080) : 1;
+        c.style.setProperty('--fit-scale', s);
+        shell.style.width = Math.ceil(1080 * s) + 'px';
+        shell.style.height = Math.ceil(1080 * s) + 'px';
+      }
+      window.addEventListener('resize', fit);
+      fit();
+    })();
+  </script>
+
+</body>
+</html>

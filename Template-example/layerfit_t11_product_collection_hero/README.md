@@ -1,27 +1,24 @@
-# T11 — Product Collection Hero
+# T11 — Semaglutide Question Banner (replaces Product Collection Hero)
 
-HTML/CSS composition based on the hierarchy of the user-supplied Glow Theory image: brand/tagline, large red two-line headline, supporting copy/primary CTA, a three-item collection with unequal scale/rotation, and a two-part bottom banner. Not a screenshot background. No competitor logo, hands, price, rating, URL or decorative stars are copied as defaults. Demo product PNGs are original synthetic shapes, NOT the reference photography or real product assets.
+T11's former product-collection design has been replaced with the user-supplied Eden-style question banner from `Template-example/t12-semaglutide-banner`, with a compact CTA added. Composition: forest-to-sage gradient, large centered two-line question, one uncropped vial, short support line, brand wordmark, safety disclaimer and CTA. Crowded lower copy was re-spaced for square, portrait and vertical outputs.
 
-## Files and rendering
+## Files and local preview
 
-`index.html`, `styles.css`, `script.js`, `creative.example.json`, `render.mjs`, bundled Inter fonts and raster assets. `styles.css` is copied verbatim from the engine module's stylesheet. Previews at 1080×1080, 1080×1350, 1080×1920.
+`index.html`, `styles.css` (same template CSS as the engine module), `script.js`, `creative.example.json`, `render.mjs`, local Inter fonts and `assets/vial-demo.png`. The vial is synthetic and visibly marked DEMO; it is not the supplied drug-vial photo.
 
 ```powershell
-# npm install is only needed outside the Layerfit-JMD development checkout
-$env:PUPPETEER_SKIP_DOWNLOAD='true'
-npm.cmd install
 $env:CHROMIUM_EXECUTABLE_PATH='C:\Program Files\Google\Chrome\Application\chrome.exe'
-npm.cmd run render
+node render.mjs
 ```
 
-Open `index.html` or call `await window.setCreative(data)`. Supports brand/logo/tagline, headline (`\n` for up to three lines), description, ctaPrimary/ctaBottom, productName/productImages, optional benefits/website/price/originalPrice/discount, colors `{primary,secondary,accent}`, fontFamily (`inter`), format (square/portrait/story/vertical), locale. `destinationLabel` is a text alternative to a website; no URL is invented. Optional absent fields are omitted. One/two/three images are laid out without duplicating inputs; product object-fit is always contain. PNG transparency is recommended, not automatically manufactured.
+Exports square 1080×1080, portrait 1080×1350 and story/vertical 1080×1920 to `previews/`. No remote fonts/assets are fetched. Only raster files under `assets/` are accepted; text is created with `textContent`/text nodes.
 
-Only relative raster paths under `assets/` or embedded PNG/JPEG/WebP are allowed. No remote fetching, SVG URL or user HTML/CSS. Text uses textContent. Color values and font names are allowlisted. Standalone prices/features must come from verified user information: the browser API validates shape, not factual truth. Do not use demo claims or synthetic pictures in real ads.
+## Input/factual safety
 
-## Engine integration
+Supply `brand`, `headlineFactId`, `headlineLines`, `accentPhrase`, `subheadFactId`, `disclaimerFactId`, `facts`, `ctaBottom`, `imageUrl`, `imageAlt`, `format` and optional `locale`. All three medical-copy fields must resolve to matching facts with `verified:true`; this browser assertion is not substantiation. The provided example facts reproduce reference/demo content only and must not be treated as approved medication advertising. CTA is required and caller-supplied (max 32 chars). No prices, dosing instructions or efficacy claims are generated.
 
-`templates/part01/src/product-collection-hero.ts` exports `templateModule`, id `product-collection-hero`, version `0.1.0`. Engine config references asset IDs and verified description/benefit/offer fact IDs, not data URLs or arbitrary raw price fields. `scripts/render-product-collection.ts` registers it in the real engine harness, renders 9 placements (3 images / 1 shirt / 2 distinct images × 3 formats), decodes PNG/JPG and writes diagnostics. No AI invoked. Module source ZIP requires the existing engine checkout at its current relative location; this standalone folder can run separately after npm install.
+## Engine module
 
-## Limits
+The replacement engine module remains at `templates/part01/src/product-collection-hero.ts` to retain the existing T11 source path, but exports template ID `semaglutide-banner@0.2.0`. Config uses asset IDs and fact IDs (not arbitrary image URLs); medical headline, subhead and disclaimer fail closed unless verified facts are present. Gate script: `templates/part01/scripts/render-product-collection.ts`; tests: `templates/part01/tests/product-collection.test.ts`.
 
-Actual clean product/hand photos from the supplied reference were not available: no identical-photography claim. Only the composition is reconstructed. Story uses engine baseline 250 px top / 350 px bottom safe margins. Arbitrary long/new copy can fail fitting/overflow checks and needs review; no all-content guarantee. Domain facts/ownership/offer expiry, real brand approval, app registry, JMD and production deployment are not implemented by this package.
+This source reference is square-only; portrait and vertical are layout adaptations, not source-provided designs. No claim is made about medical/legal approval, brand ownership, JMD integration or ad performance. Human review and clinician/legal approval are required before any real use.

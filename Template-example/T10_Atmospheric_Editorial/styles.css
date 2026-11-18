@@ -1,0 +1,56 @@
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{-webkit-font-smoothing:antialiased;background:#f2f2f2}
+.creative{--top:#dce459;--mid:#e9e6dd;--bottom:#acc8e8;--ink:#302d28;position:relative;width:100vw;height:100vh;overflow:hidden;color:var(--ink);background:radial-gradient(ellipse 60% 24% at 52% 13%,rgba(224,228,106,.6),transparent 100%),linear-gradient(to bottom,var(--top) 0%,#e6e6b4 22%,var(--mid) 44%,#e9e7df 64%,#bad0e4 88%,var(--bottom) 100%)}
+.micro{position:absolute;top:8%;margin:0;z-index:4;font:500 21px/1.1 'Courier New',monospace;letter-spacing:.2px;white-space:nowrap}
+.micro-left{left:4%}.micro-right{right:4%}
+.photo{position:absolute;left:50.9%;top:16.4%;width:45.2%;height:65.3%;margin:0;overflow:hidden;z-index:2}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.title-block{position:absolute;left:3.9%;top:41.5%;width:47.4%;z-index:3}
+.eyebrow{margin:0 0 28px;font:500 23px/1 'Courier New',monospace;letter-spacing:2px}
+h1{margin:0;font:400 116px/.95 Georgia,'Times New Roman',serif;letter-spacing:-5.2px;white-space:pre-line;overflow-wrap:normal}
+.benefits{position:absolute;left:3.9%;right:4.2%;bottom:5.2%;z-index:4;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;align-items:start}
+.benefit{margin:0;font:500 22px/1.15 'Courier New',monospace;letter-spacing:.3px;white-space:pre-line}
+.benefit:nth-child(2){justify-self:center}.benefit:nth-child(3){justify-self:end}
+/* 4:5: retain asymmetric editorial composition, increase image height */
+.creative[data-format="portrait"] .micro{top:7%}
+.creative[data-format="portrait"] .photo{left:51%;top:15%;width:45.2%;height:66%}
+.creative[data-format="portrait"] .title-block{top:44%;width:48%}
+.creative[data-format="portrait"] h1{font-size:114px}
+.creative[data-format="portrait"] .benefits{bottom:7%;gap:20px}
+/* Stories/Reels adaptation maintains top/bottom placement-safe area. */
+.creative[data-format="story"] .micro{top:10.5%;font-size:21px}
+.creative[data-format="story"] .micro-left{left:5.6%}
+.creative[data-format="story"] .micro-right{right:5.6%}
+.creative[data-format="story"] .photo{left:36%;top:25%;width:58%;height:49%}
+.creative[data-format="story"] .title-block{left:5.6%;top:40%;width:55%}
+.creative[data-format="story"] .eyebrow{font-size:25px;margin-bottom:33px}
+.creative[data-format="story"] h1{font-size:110px;letter-spacing:-5px;line-height:.98}
+.creative[data-format="story"] .benefits{left:5.6%;right:5.6%;bottom:13%;gap:14px}
+.creative[data-format="story"] .benefit{font-size:21px}
+/* Copy extension: retain the asymmetric poster, with quiet support copy and an ink-only CTA.
+ * No card, button fill or extra decorative elements. Description stays left of the photo. */
+.creative .title-block{top:32%;width:47.4%}
+.creative h1{font-size:104px;line-height:.95}
+.creative .eyebrow{margin-bottom:22px}
+.creative .description{max-width:405px;margin:24px 0 0;font:400 24px/1.35 Arial,Helvetica,sans-serif;letter-spacing:0;white-space:pre-line}
+.creative .cta{display:table;max-width:405px;margin:22px 0 0;padding-bottom:7px;border-bottom:1px solid currentColor;font:700 22px/1.2 'Courier New',monospace;letter-spacing:.6px;white-space:pre-line}
+.creative .cta::after{content:' ↗';font-family:Arial,Helvetica,sans-serif}
+.creative [hidden]{display:none!important}
+.creative[data-format="portrait"] .title-block{top:35%}
+.creative[data-format="portrait"] h1{font-size:112px}
+.creative[data-format="portrait"] .description{font-size:26px;margin-top:28px}
+.creative[data-format="portrait"] .cta{font-size:24px;margin-top:26px}
+.creative[data-format="story"] .title-block{top:34%;width:55%}
+.creative[data-format="story"] h1{font-size:110px}
+.creative[data-format="story"] .description{max-width:300px;font-size:27px;margin-top:28px}
+.creative[data-format="story"] .cta{max-width:300px;font-size:25px;margin-top:28px}
+/* With both optional blocks absent, restore the original source geometry. */
+.creative[data-copy="false"] .title-block{top:41.5%}
+.creative[data-copy="false"] h1{font-size:116px}
+.creative[data-copy="false"] .eyebrow{margin-bottom:28px}
+.creative[data-format="portrait"][data-copy="false"] .title-block{top:44%}
+.creative[data-format="portrait"][data-copy="false"] h1{font-size:114px}
+.creative[data-format="story"][data-copy="false"] .title-block{top:40%}
+.creative[data-format="story"][data-copy="false"] h1{font-size:110px}
+.creative[data-format="story"] .eyebrow{margin-bottom:33px}

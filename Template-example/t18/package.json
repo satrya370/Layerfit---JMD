@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "puppeteer-core": "^25.17.0"
+  },
+  "type": "module",
+  "name": "layerfit-t19-tavern-night",
+  "version": "1.0.0",
+  "description": "LayerFit Meta Ads template t19 - Tavern Night (Greek tavern event poster concept)"
+}

@@ -1,0 +1,1856 @@
+{
+  "contractVersion": "0.3",
+  "template": {
+    "id": "after-dark-editorial",
+    "version": "0.2.0"
+  },
+  "passed": true,
+  "counts": {
+    "pass": 247,
+    "fail": 0,
+    "warn": 18
+  },
+  "checks": [
+    {
+      "id": "module.registry",
+      "status": "pass",
+      "detail": "registry accepts id, version, formats, rootClass and slot manifest"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-reference-photo-fixture"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "15 hostile or malformed variants rejected",
+      "case": "source-reference-photo-fixture"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "12 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "12 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "12 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "event-poster-normalized-config-synthetic-scene"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "15 hostile or malformed variants rejected",
+      "case": "event-poster-normalized-config-synthetic-scene"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "12 slot(s), unique and well-formed",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "12 slot(s), unique and well-formed",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "12 slot(s), unique and well-formed",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "event-poster-normalized-config-synthetic-scene",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-reference-photo-fixture:max"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "source-reference-photo-fixture:max"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "11 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:max",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "11 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:max",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "11 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:max",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-reference-photo-fixture:min"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "source-reference-photo-fixture:min"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "5 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:min",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "5 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:min",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "5 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:min",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-reference-photo-fixture:no-logo"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "source-reference-photo-fixture:no-logo"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "11 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "11 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "11 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-reference-photo-fixture:no-offer"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "source-reference-photo-fixture:no-offer"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "11 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "11 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "11 slot(s), unique and well-formed",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest agrees with the slot manifest and the markup",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-reference-photo-fixture:no-offer",
+      "format": "vertical"
+    }
+  ]
+}

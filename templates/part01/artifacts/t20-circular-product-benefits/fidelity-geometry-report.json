@@ -1,0 +1,341 @@
+{
+  "note": "Left=source layout with requested neutral palette and same bundled Arimo fonts as engine; right=engine. No source positions changed in baseline. Shadows neutralized and required small CTA added in engine. Raw source previews unchanged. Not Meta-safe certification; reference asset/copy fixture-only.",
+  "results": [
+    {
+      "format": "square",
+      "status": "passed",
+      "meanAbsoluteChannelError": 0.5360448102423411,
+      "geometry": {
+        ".brand-zone": {
+          "left": 0,
+          "top": 58,
+          "width": 1080,
+          "height": 108.515625,
+          "right": 1080,
+          "bottom": 166.515625,
+          "cx": 540,
+          "overflow": false
+        },
+        ".brand": {
+          "left": 445.40625,
+          "top": 58,
+          "width": 189.1875,
+          "height": 85.125,
+          "right": 634.59375,
+          "bottom": 143.125,
+          "cx": 540,
+          "overflow": false
+        },
+        ".product-type": {
+          "left": 406.390625,
+          "top": 148.125,
+          "width": 267.203125,
+          "height": 18.390625,
+          "right": 673.59375,
+          "bottom": 166.515625,
+          "cx": 539.9921875,
+          "overflow": false
+        },
+        ".orbit": {
+          "left": 238,
+          "top": 346,
+          "width": 604,
+          "height": 604,
+          "right": 842,
+          "bottom": 950,
+          "cx": 540,
+          "overflow": false
+        },
+        ".product-image": {
+          "left": 305,
+          "top": 441.203125,
+          "width": 470,
+          "height": 413.59375,
+          "right": 775,
+          "bottom": 854.796875,
+          "cx": 540,
+          "overflow": false
+        },
+        ".benefit--top": {
+          "left": 360,
+          "top": 270,
+          "width": 360,
+          "height": 52.0625,
+          "right": 720,
+          "bottom": 322.0625,
+          "cx": 540,
+          "overflow": false
+        },
+        ".benefit--mid-left": {
+          "left": 24,
+          "top": 501,
+          "width": 240,
+          "height": 52.0625,
+          "right": 264,
+          "bottom": 553.0625,
+          "cx": 144,
+          "overflow": false
+        },
+        ".benefit--mid-right": {
+          "left": 816,
+          "top": 501,
+          "width": 240,
+          "height": 52.0625,
+          "right": 1056,
+          "bottom": 553.0625,
+          "cx": 936,
+          "overflow": false
+        },
+        ".benefit--bottom-left": {
+          "left": 13,
+          "top": 903,
+          "width": 300,
+          "height": 52.0625,
+          "right": 313,
+          "bottom": 955.0625,
+          "cx": 163,
+          "overflow": false
+        },
+        ".benefit--bottom-right": {
+          "left": 767,
+          "top": 903,
+          "width": 300,
+          "height": 52.0625,
+          "right": 1067,
+          "bottom": 955.0625,
+          "cx": 917,
+          "overflow": false
+        }
+      },
+      "cta": {
+        "cx": 540,
+        "top": 1019.3125,
+        "bottom": 1044
+      }
+    },
+    {
+      "format": "portrait",
+      "status": "passed",
+      "meanAbsoluteChannelError": 0.4131035665294925,
+      "geometry": {
+        ".brand-zone": {
+          "left": 0,
+          "top": 72,
+          "width": 1080,
+          "height": 118.734375,
+          "right": 1080,
+          "bottom": 190.734375,
+          "cx": 540,
+          "overflow": false
+        },
+        ".brand": {
+          "left": 436.609375,
+          "top": 72,
+          "width": 206.78125,
+          "height": 93.046875,
+          "right": 643.390625,
+          "bottom": 165.046875,
+          "cx": 540,
+          "overflow": false
+        },
+        ".product-type": {
+          "left": 389.6875,
+          "top": 170.046875,
+          "width": 300.609375,
+          "height": 20.6875,
+          "right": 690.296875,
+          "bottom": 190.734375,
+          "cx": 539.9921875,
+          "overflow": false
+        },
+        ".orbit": {
+          "left": 195,
+          "top": 438,
+          "width": 690,
+          "height": 690,
+          "right": 885,
+          "bottom": 1128,
+          "cx": 540,
+          "overflow": false
+        },
+        ".product-image": {
+          "left": 285,
+          "top": 558.6015625,
+          "width": 510,
+          "height": 448.796875,
+          "right": 795,
+          "bottom": 1007.3984375,
+          "cx": 540,
+          "overflow": false
+        },
+        ".benefit--top": {
+          "left": 360,
+          "top": 349,
+          "width": 360,
+          "height": 52.0625,
+          "right": 720,
+          "bottom": 401.0625,
+          "cx": 540,
+          "overflow": false
+        },
+        ".benefit--mid-left": {
+          "left": 24,
+          "top": 688,
+          "width": 240,
+          "height": 52.0625,
+          "right": 264,
+          "bottom": 740.0625,
+          "cx": 144,
+          "overflow": false
+        },
+        ".benefit--mid-right": {
+          "left": 816,
+          "top": 688,
+          "width": 240,
+          "height": 52.0625,
+          "right": 1056,
+          "bottom": 740.0625,
+          "cx": 936,
+          "overflow": false
+        },
+        ".benefit--bottom-left": {
+          "left": 13,
+          "top": 1143,
+          "width": 300,
+          "height": 52.0625,
+          "right": 313,
+          "bottom": 1195.0625,
+          "cx": 163,
+          "overflow": false
+        },
+        ".benefit--bottom-right": {
+          "left": 767,
+          "top": 1143,
+          "width": 300,
+          "height": 52.0625,
+          "right": 1067,
+          "bottom": 1195.0625,
+          "cx": 917,
+          "overflow": false
+        }
+      },
+      "cta": {
+        "cx": 540,
+        "top": 1265.3125,
+        "bottom": 1290
+      }
+    },
+    {
+      "format": "vertical",
+      "status": "passed",
+      "meanAbsoluteChannelError": 0.34058674125514404,
+      "geometry": {
+        ".brand-zone": {
+          "left": 0,
+          "top": 168,
+          "width": 1080,
+          "height": 138.03125,
+          "right": 1080,
+          "bottom": 306.03125,
+          "cx": 540,
+          "overflow": false
+        },
+        ".brand": {
+          "left": 419.015625,
+          "top": 168,
+          "width": 241.96875,
+          "height": 108.890625,
+          "right": 660.984375,
+          "bottom": 276.890625,
+          "cx": 540,
+          "overflow": false
+        },
+        ".product-type": {
+          "left": 362.4375,
+          "top": 281.890625,
+          "width": 355.109375,
+          "height": 24.140625,
+          "right": 717.546875,
+          "bottom": 306.03125,
+          "cx": 539.9921875,
+          "overflow": false
+        },
+        ".orbit": {
+          "left": 117.5,
+          "top": 652.6875,
+          "width": 845,
+          "height": 845,
+          "right": 962.5,
+          "bottom": 1497.6875,
+          "cx": 540,
+          "overflow": false
+        },
+        ".product-image": {
+          "left": 280,
+          "top": 846.390625,
+          "width": 520,
+          "height": 457.59375,
+          "right": 800,
+          "bottom": 1303.984375,
+          "cx": 540,
+          "overflow": false
+        },
+        ".benefit--top": {
+          "left": 335,
+          "top": 580,
+          "width": 410,
+          "height": 63.828125,
+          "right": 745,
+          "bottom": 643.828125,
+          "cx": 540,
+          "overflow": false
+        },
+        ".benefit--mid-left": {
+          "left": 21,
+          "top": 988,
+          "width": 259,
+          "height": 63.828125,
+          "right": 280,
+          "bottom": 1051.828125,
+          "cx": 150.5,
+          "overflow": false
+        },
+        ".benefit--mid-right": {
+          "left": 800,
+          "top": 988,
+          "width": 259,
+          "height": 63.828125,
+          "right": 1059,
+          "bottom": 1051.828125,
+          "cx": 929.5,
+          "overflow": false
+        },
+        ".benefit--bottom-left": {
+          "left": 46,
+          "top": 1531,
+          "width": 326,
+          "height": 63.828125,
+          "right": 372,
+          "bottom": 1594.828125,
+          "cx": 209,
+          "overflow": false
+        },
+        ".benefit--bottom-right": {
+          "left": 708,
+          "top": 1531,
+          "width": 326,
+          "height": 63.828125,
+          "right": 1034,
+          "bottom": 1594.828125,
+          "cx": 871,
+          "overflow": false
+        }
+      },
+      "cta": {
+        "cx": 540,
+        "top": 1651.40625,
+        "bottom": 1680
+      }
+    }
+  ]
+}

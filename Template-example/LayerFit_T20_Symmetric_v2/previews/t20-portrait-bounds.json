@@ -1,0 +1,45 @@
+{
+  "image": {
+    "x": 285,
+    "y": 558.6015625,
+    "width": 510,
+    "height": 448.796875
+  },
+  "labels": [
+    {
+      "slot": "benefit benefit--top",
+      "x": 360,
+      "y": 349,
+      "width": 360,
+      "height": 52.0625
+    },
+    {
+      "slot": "benefit benefit--mid-left",
+      "x": 24,
+      "y": 688,
+      "width": 240,
+      "height": 52.0625
+    },
+    {
+      "slot": "benefit benefit--mid-right",
+      "x": 816,
+      "y": 688,
+      "width": 240,
+      "height": 52.0625
+    },
+    {
+      "slot": "benefit benefit--bottom-left",
+      "x": 13,
+      "y": 1143,
+      "width": 300,
+      "height": 52.0625
+    },
+    {
+      "slot": "benefit benefit--bottom-right",
+      "x": 767,
+      "y": 1143,
+      "width": 300,
+      "height": 52.0625
+    }
+  ]
+}

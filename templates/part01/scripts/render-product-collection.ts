@@ -11,7 +11,7 @@ import { renderOutput } from '../../../../Layerfit-JMD-engine/src/server/render/
 import { FORMAT_PROFILES } from '../../../../Layerfit-JMD-engine/src/shared/render-contract.js';
 import { composeDocument } from '../../../../Layerfit-JMD-engine/src/server/render/document.js';
 
-const out = resolve('artifacts/t11-product-collection');
+const out = resolve('artifacts/t11-semaglutide-banner');
 await mkdir(join(out, 'assets'), { recursive: true });
 for (const [index, image] of (await collectionAssets()).entries()) await writeFile(join(out, 'assets', `product-${index}.png`), image);
 const cases = await contractCases();
@@ -52,10 +52,8 @@ try {
 console.log(JSON.stringify({ out, contract: report.counts, results: results.map(({ case: name, format, result }) => ({ name, format, status: result.status, violations: result.diagnostics?.violations, error: result.error })) }, null, 2));
 assert.ok(results.every(({ result }) => result.status === 'success'), 'See engine-report.json for actual failures; successes retained');
 const tiles = [];
-for (const [row, variant] of ['collection', 'one-product', 'two-products'].entries()) {
-  for (const [col, format] of ['square', 'portrait', 'vertical'].entries()) {
-    const input = await sharp(join(out, `T11-${variant}-${format}.png`)).resize(360, 640, { fit: 'contain', background: '#ffffff' }).png().toBuffer();
-    tiles.push({ input, left: col * 372, top: row * 652 });
-  }
+for (const [col, format] of ['square', 'portrait', 'vertical'].entries()) {
+  const input = await sharp(join(out, `T11-collection-${format}.png`)).resize(360, 640, { fit: 'contain', background: '#ffffff' }).png().toBuffer();
+  tiles.push({ input, left: col * 372, top: 0 });
 }
-await sharp({ create: { width: 1104, height: 1944, channels: 3, background: '#ffffff' } }).composite(tiles).png().toFile(join(out, 'T11-all-cases.png'));
+await sharp({ create: { width: 1104, height: 640, channels: 3, background: '#ffffff' } }).composite(tiles).png().toFile(join(out, 'T11-all-formats-v021.png'));

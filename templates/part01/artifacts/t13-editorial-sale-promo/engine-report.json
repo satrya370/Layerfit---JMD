@@ -1,0 +1,161 @@
+{
+  "syntheticAssetsOnly": true,
+  "results": [
+    {
+      "case": "editorial-sale-reference-synthetic-product",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "fe8330b2-25d2-475a-8b5b-b42b2e6ba1bc",
+        "creativeId": "91819aaf-a554-4533-9c30-bdb1ad0b56eb",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1311111-1111-4111-8111-111111111111/creatives/91819aaf-a554-4533-9c30-bdb1ad0b56eb/r1/7dd432a2f64bce80/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 72730,
+            "sha256": "3c7df443f93a593fa40c552a5ed7915a230124ff4881d09b484ad00de51e1f3f"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1311111-1111-4111-8111-111111111111/creatives/91819aaf-a554-4533-9c30-bdb1ad0b56eb/r1/7dd432a2f64bce80/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 101820,
+            "sha256": "e598b37aa34a38e9563566e3b0edd12abafdca30cc11937270e3c2890b20c9ee"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "editorial-sale-promo",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "958131e86baa57c57bc2b111148d25dc361ed3487b481a2c6ed26911886ee1ad",
+          "fingerprint": "7dd432a2f64bce80",
+          "durationMs": 3040,
+          "stageMs": {
+            "validate": 1,
+            "assets": 0,
+            "fonts": 0,
+            "template": 2,
+            "content": 225,
+            "readiness": 24,
+            "layout": 13,
+            "screenshot": 167,
+            "encode": 84,
+            "storage": 29
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "editorial-sale-reference-synthetic-product",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "21237cef-54e7-43da-ad79-8873c6c5e270",
+        "creativeId": "af879f0f-7348-4856-b938-9e5dc83af826",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1311111-1111-4111-8111-111111111111/creatives/af879f0f-7348-4856-b938-9e5dc83af826/r1/812fd28f7b98672f/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 81306,
+            "sha256": "fa47a0e564dfb1a16b422137ba32ead682891164e81b3ee2a5f0455dc0495076"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1311111-1111-4111-8111-111111111111/creatives/af879f0f-7348-4856-b938-9e5dc83af826/r1/812fd28f7b98672f/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 122370,
+            "sha256": "23c893ae06c56a6bcb4bd9e543b1b8bd36e2bb6c7c30b1e93587df2f3be7de4f"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "editorial-sale-promo",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "958131e86baa57c57bc2b111148d25dc361ed3487b481a2c6ed26911886ee1ad",
+          "fingerprint": "812fd28f7b98672f",
+          "durationMs": 844,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 149,
+            "readiness": 28,
+            "layout": 19,
+            "screenshot": 166,
+            "encode": 165,
+            "storage": 54
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "editorial-sale-reference-synthetic-product",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "4ca1499e-bee3-450f-95be-51f9b0cafd05",
+        "creativeId": "016ceb6a-9c55-4594-adfe-b15c64b3d8a4",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/d1311111-1111-4111-8111-111111111111/creatives/016ceb6a-9c55-4594-adfe-b15c64b3d8a4/r1/58cfc84718cea06e/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 85565,
+            "sha256": "794b7f5b5202ca0cc71a8a9da63c88076a7b634764193115a34ef5879bfe2f9a"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/d1311111-1111-4111-8111-111111111111/creatives/016ceb6a-9c55-4594-adfe-b15c64b3d8a4/r1/58cfc84718cea06e/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 129033,
+            "sha256": "037f9ca5fc8a3abb28e668f531ac5d6466782bf328e2b1153e5449995961470a"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "editorial-sale-promo",
+          "templateVersion": "0.2.0",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "958131e86baa57c57bc2b111148d25dc361ed3487b481a2c6ed26911886ee1ad",
+          "fingerprint": "58cfc84718cea06e",
+          "durationMs": 1116,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 2,
+            "content": 194,
+            "readiness": 39,
+            "layout": 12,
+            "screenshot": 187,
+            "encode": 223,
+            "storage": 54
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    }
+  ]
+}

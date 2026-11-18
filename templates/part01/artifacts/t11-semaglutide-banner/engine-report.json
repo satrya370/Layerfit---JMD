@@ -1,0 +1,161 @@
+{
+  "syntheticAssetsOnly": true,
+  "results": [
+    {
+      "case": "reference-composition-synthetic-vial",
+      "format": "square",
+      "result": {
+        "status": "success",
+        "taskId": "0164c2be-344a-4081-a2c5-d47d49197b05",
+        "creativeId": "b0111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "square",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/60b113e5f4ed0183/square.png",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 448235,
+            "sha256": "345743bd6f1b04da0a9635b7548d6be53c52eb5127e0430015152bc7dd37b1c4"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/60b113e5f4ed0183/square.jpg",
+            "width": 1080,
+            "height": 1080,
+            "bytes": 153527,
+            "sha256": "7bd1f76fdeb0e1bce51534d3d95328ddb75e59085e21271cc9bb2b275bfa19aa"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "semaglutide-banner",
+          "templateVersion": "0.2.1",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "d5b89019b8dbe49b2554a34b307a5600909a13203db166d0850e3be4f90d15f6",
+          "fingerprint": "60b113e5f4ed0183",
+          "durationMs": 1775,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 82,
+            "readiness": 21,
+            "layout": 5,
+            "screenshot": 406,
+            "encode": 86,
+            "storage": 25
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "reference-composition-synthetic-vial",
+      "format": "portrait",
+      "result": {
+        "status": "success",
+        "taskId": "7f8a1bb7-40c5-4607-b5fe-594a4df915b9",
+        "creativeId": "b0111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "portrait",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/2d1122dda647f96e/portrait.png",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 522964,
+            "sha256": "3446bfc0363c2fdd9c466f0736873930baf68c2cafa3e09923eca0b5f829ce48"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/2d1122dda647f96e/portrait.jpg",
+            "width": 1080,
+            "height": 1350,
+            "bytes": 166267,
+            "sha256": "ddfc4e225e106bd8741381cd5b214418de15da990ac9cae08dc0a10e115d95f7"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "semaglutide-banner",
+          "templateVersion": "0.2.1",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "d5b89019b8dbe49b2554a34b307a5600909a13203db166d0850e3be4f90d15f6",
+          "fingerprint": "2d1122dda647f96e",
+          "durationMs": 668,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 0,
+            "content": 56,
+            "readiness": 16,
+            "layout": 3,
+            "screenshot": 338,
+            "encode": 96,
+            "storage": 19
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    },
+    {
+      "case": "reference-composition-synthetic-vial",
+      "format": "vertical",
+      "result": {
+        "status": "success",
+        "taskId": "59f1c8ac-8711-422f-b4dd-211e7932978e",
+        "creativeId": "b0111111-1111-4111-8111-111111111111",
+        "revision": 1,
+        "format": "vertical",
+        "artifacts": [
+          {
+            "encoding": "png",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/f0c34b021e79bd4c/vertical.png",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 671594,
+            "sha256": "3aeb910cbf0e9d285061acb684300dabd405aa1fb3d3119f49c0dc4b3ff7859c"
+          },
+          {
+            "encoding": "jpg",
+            "storageKey": "campaigns/b1111111-1111-4111-8111-111111111111/creatives/b0111111-1111-4111-8111-111111111111/r1/f0c34b021e79bd4c/vertical.jpg",
+            "width": 1080,
+            "height": 1920,
+            "bytes": 186862,
+            "sha256": "4405a21798caaf7894d38b13784e689c2ec971d7b261eb00f6dbfd4cd93c7e91"
+          }
+        ],
+        "diagnostics": {
+          "templateId": "semaglutide-banner",
+          "templateVersion": "0.2.1",
+          "browserVersion": "Chrome/157.0.8103.79",
+          "cssHash": "d5b89019b8dbe49b2554a34b307a5600909a13203db166d0850e3be4f90d15f6",
+          "fingerprint": "f0c34b021e79bd4c",
+          "durationMs": 910,
+          "stageMs": {
+            "validate": 0,
+            "assets": 0,
+            "fonts": 0,
+            "template": 1,
+            "content": 61,
+            "readiness": 17,
+            "layout": 4,
+            "screenshot": 547,
+            "encode": 117,
+            "storage": 19
+          },
+          "warnings": [],
+          "fittingSteps": 0,
+          "violations": []
+        }
+      }
+    }
+  ]
+}

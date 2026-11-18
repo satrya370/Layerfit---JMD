@@ -1,0 +1,1992 @@
+{
+  "contractVersion": "0.3",
+  "template": {
+    "id": "circular-product-benefits",
+    "version": "0.1.0"
+  },
+  "passed": true,
+  "counts": {
+    "pass": 267,
+    "fail": 0,
+    "warn": 18
+  },
+  "checks": [
+    {
+      "id": "module.registry",
+      "status": "pass",
+      "detail": "registry accepts id, version, formats, rootClass and slot manifest"
+    },
+    {
+      "id": "content.manifest",
+      "status": "pass",
+      "detail": "the content manifest is within the shared schema limits and agrees with the slot manifest"
+    },
+    {
+      "id": "cases.derived",
+      "status": "pass",
+      "detail": "4 case(s) derived from the manifest: max, min, no-logo, no-offer"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-product-neutral-fidelity"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "16 hostile or malformed variants rejected",
+      "case": "source-product-neutral-fidelity"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "9 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "9 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "9 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "synthetic-neutral-five-labels"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "16 hostile or malformed variants rejected",
+      "case": "synthetic-neutral-five-labels"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "9 slot(s), unique and well-formed",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "synthetic-neutral-five-labels",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "9 slot(s), unique and well-formed",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "synthetic-neutral-five-labels",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "9 slot(s), unique and well-formed",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "synthetic-neutral-five-labels",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-product-neutral-fidelity:max"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "source-product-neutral-fidelity:max"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "10 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "the brand slot shows the logo",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "10 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "the brand slot shows the logo",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "10 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "the brand slot shows the logo",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:max",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-product-neutral-fidelity:min"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "source-product-neutral-fidelity:min"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "4 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "3 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "4 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "3 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "4 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "3 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:min",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-product-neutral-fidelity:no-logo"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "source-product-neutral-fidelity:no-logo"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "10 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "10 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "10 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "no logo in this case, the brand slot shows the name",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:no-logo",
+      "format": "vertical"
+    },
+    {
+      "id": "schema.accepts",
+      "status": "pass",
+      "detail": "config accepted",
+      "case": "source-product-neutral-fidelity:no-offer"
+    },
+    {
+      "id": "schema.strict",
+      "status": "pass",
+      "detail": "10 hostile or malformed variants rejected",
+      "case": "source-product-neutral-fidelity:no-offer"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "10 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "the brand slot shows the logo",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "square"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "10 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "the brand slot shows the logo",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "portrait"
+    },
+    {
+      "id": "render.output",
+      "status": "pass",
+      "detail": "returns { body: SafeHtml, css: string }",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "render.deterministic",
+      "status": "pass",
+      "detail": "identical input gives identical body and css",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "css.rules",
+      "status": "pass",
+      "detail": "no @import, no non-data url(), no markup or script-like constructs",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "css.scoped",
+      "status": "pass",
+      "detail": "all selectors are scoped to the template",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "css.tokens",
+      "status": "warn",
+      "detail": "css never reads --lf-safe-* tokens; safe insets would be duplicated instead of coming from the engine",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.forbidden",
+      "status": "pass",
+      "detail": "no scripts, handlers, forms, frames or style tags in the body",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "markup.assets",
+      "status": "pass",
+      "detail": "only engine-resolved asset URLs; no external references",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.names",
+      "status": "pass",
+      "detail": "10 slot(s), unique and well-formed",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.manifest",
+      "status": "pass",
+      "detail": "every required manifest slot is present in the markup",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.canonical",
+      "status": "pass",
+      "detail": "every slot name is canonical",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "slots.core",
+      "status": "pass",
+      "detail": "brand, headline, cta and photo are present, and supporting copy has a slot",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "content.logo",
+      "status": "pass",
+      "detail": "the brand slot shows the logo",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "attributes.values",
+      "status": "pass",
+      "detail": "semantic data-* attributes are valid",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "fit.group.unused",
+      "status": "pass",
+      "detail": "4 fit group(s) are read by the CSS",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    },
+    {
+      "id": "image.fit",
+      "status": "pass",
+      "detail": "every <img> declares contain/cover and crops only with permission",
+      "case": "source-product-neutral-fidelity:no-offer",
+      "format": "vertical"
+    }
+  ]
+}
