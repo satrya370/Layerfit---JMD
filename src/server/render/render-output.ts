@@ -48,7 +48,8 @@ export interface RenderEngine {
 function referencedFactIds(config: TemplateConfig): string[] {
   return [
     ...config.copy.benefits.flatMap((b) => b.factIds),
-    config.offerFactId, config.proofFactId, config.comparisonEvidenceId,
+    ...(config.copy.bodyFactIds ?? []),
+    config.offerFactId, config.heroFactId, config.proofFactId, config.disclaimerFactId, config.comparisonEvidenceId,
   ].filter((id): id is string => typeof id === 'string');
 }
 
